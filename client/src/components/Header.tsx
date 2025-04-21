@@ -69,6 +69,12 @@ export default function Header() {
             Services
           </button>
           <button 
+            onClick={() => scrollToSection('planwise')} 
+            className="font-medium hover:text-primary transition-colors"
+          >
+            Plan Wise ESL
+          </button>
+          <button 
             onClick={() => scrollToSection('testimonials')} 
             className="font-medium hover:text-primary transition-colors"
           >
@@ -109,6 +115,12 @@ export default function Header() {
             className="block w-full text-left py-2 font-medium hover:text-primary transition-colors"
           >
             Services
+          </button>
+          <button 
+            onClick={() => scrollToSection('planwise')} 
+            className="block w-full text-left py-2 font-medium hover:text-primary transition-colors"
+          >
+            Plan Wise ESL
           </button>
           <button 
             onClick={() => scrollToSection('testimonials')} 

@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import PlanWiseESL from "@/components/PlanWiseESL";
 import Testimonials from "@/components/Testimonials";
 import Process from "@/components/Process";
 import FAQ from "@/components/FAQ";
@@ -21,6 +22,7 @@ export default function Home() {
         <Features />
         <About />
         <Services />
+        <PlanWiseESL />
         <Testimonials />
         <Process />
         <FAQ />
