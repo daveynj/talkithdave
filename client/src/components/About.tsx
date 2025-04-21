@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
-import TeacherImage from "./TeacherImage";
+import { daveImages } from "../images";
 
 const qualifications = [
   "Native English Speaker (UK)",
@@ -24,9 +24,10 @@ export default function About() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-2/5">
-            <TeacherImage 
-              className="w-full max-w-md mx-auto" 
+            <img 
+              src={daveImages.outdoor} 
               alt="Dave, ESL Teacher" 
+              className="rounded-lg shadow-lg w-full max-w-md mx-auto object-cover"
             />
           </div>
           <div className="w-full md:w-3/5">

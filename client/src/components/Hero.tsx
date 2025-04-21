@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import TeacherImage from "./TeacherImage";
+import { daveImages } from "../images";
 
 export default function Hero() {
   const scrollToSection = (id: string) => {
@@ -59,7 +59,11 @@ export default function Hero() {
             </div>
           </div>
           <div className="w-full md:w-1/2 flex justify-center">
-            <TeacherImage className="max-w-sm w-full" alt="Dave teaching English online" />
+            <img 
+              src={daveImages.formal} 
+              alt="Dave, professional ESL teacher" 
+              className="rounded-lg shadow-lg max-w-sm w-full object-cover"
+            />
           </div>
         </div>
       </div>
