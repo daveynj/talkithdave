@@ -1,4 +1,4 @@
-import { Mail, Video, Clock, Twitter } from "lucide-react";
+import { Mail, Video, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Contact() {
@@ -58,19 +58,6 @@ export default function Contact() {
                     <div>
                       <h4 className="font-medium mb-1">Lesson Platform</h4>
                       <p>Zoom (or Tencent Meeting for Chinese students)</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="bg-primary/10 p-3 rounded-full mr-4">
-                      <Clock className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium mb-1">Availability</h4>
-                      <p>
-                        Monday to Friday: 9am - 8pm (UK Time)<br/>
-                        Saturday: 10am - 2pm (UK Time)
-                      </p>
                     </div>
                   </div>
                 </div>
