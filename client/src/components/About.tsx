@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 
 const qualifications = [
   "Native English Speaker (UK)",
-  "5+ Years Teaching Experience",
+  "10+ Years Teaching Experience",
   "Business English Specialist",
   "Conversation Expert"
 ];
@@ -24,14 +24,14 @@ export default function About() {
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-2/5">
             <img 
-              src="/assets/dave_profile2.jpg" 
+              src="/dave_profile2.jpg" 
               alt="Dave, ESL Teacher" 
               className="rounded-lg shadow-lg w-full max-w-md mx-auto"
             />
           </div>
           <div className="w-full md:w-3/5">
             <h2 className="font-heading text-3xl font-bold mb-6 text-primary">Meet Dave - Your Online English Teacher</h2>
-            <p className="mb-4 text-lg">Hi there! I'm Dave, a native English teacher from England with 5+ years of experience helping students improve their conversation skills.</p>
+            <p className="mb-4 text-lg">Hi there! I'm Dave, a native English teacher from England with over 10 years of teaching experience - 5 years in a kindergarten in China and 5 years teaching adults conversation and business English online.</p>
             <p className="mb-4">With a Bachelor's in Business Administration from the University of Southampton and a background in sales, I understand the importance of effective communication in both professional and personal settings.</p>
             <p className="mb-6">My teaching approach focuses on building your confidence through engaging conversations, practical vocabulary, and real-world scenarios — all in a friendly, supportive environment.</p>
             
