@@ -1,71 +1,7 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
 import { Mail, Video, Clock, Linkedin, Youtube, Instagram } from "lucide-react";
-
-const formSchema = z.object({
-  name: z.string().min(1, { message: "Name is required" }),
-  email: z.string().email({ message: "Invalid email address" }),
-  subject: z.string().min(1, { message: "Subject is required" }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters" }),
-});
-
-type ContactFormData = z.infer<typeof formSchema>;
+import { Button } from "@/components/ui/button";
 
 export default function Contact() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-  
-  const form = useForm<ContactFormData>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    },
-  });
-
-  const contactMutation = useMutation({
-    mutationFn: (data: ContactFormData) => {
-      return apiRequest("POST", "/api/contact", data);
-    },
-    onSuccess: () => {
-      toast({
-        title: "Message received!",
-        description: "Thank you for your message. For a faster response, you can also email me directly at Dave@talkwithdave.co.uk",
-        variant: "default",
-      });
-      form.reset();
-    },
-    onError: (error) => {
-      toast({
-        title: "Error sending message",
-        description: error.message || "Please try again later.",
-        variant: "destructive",
-      });
-    },
-  });
-
-  function onSubmit(data: ContactFormData) {
-    contactMutation.mutate(data);
-  }
-
   return (
     <section id="contact" className="py-12 md:py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -76,78 +12,26 @@ export default function Contact() {
         
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col md:flex-row gap-8">
-            <div className="w-full md:w-1/2">
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="font-medium">Your Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="John Doe" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="font-medium">Email Address</FormLabel>
-                        <FormControl>
-                          <Input placeholder="john@example.com" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="subject"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="font-medium">Subject</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Lesson inquiry" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="font-medium">Your Message</FormLabel>
-                        <FormControl>
-                          <Textarea 
-                            placeholder="I'm interested in learning more about your English lessons..." 
-                            rows={5} 
-                            {...field} 
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
+            <div className="w-full md:w-1/2 bg-gray-50 p-8 rounded-lg">
+              <div className="text-center mb-6">
+                <Mail className="h-12 w-12 text-primary mx-auto mb-4" />
+                <h3 className="font-heading text-xl font-semibold mb-2">Contact Me Directly</h3>
+                <p className="text-gray-600 mb-4">For the fastest response, please email me directly:</p>
+                <a 
+                  href="mailto:Dave@talkwithdave.co.uk" 
+                  className="text-xl text-primary hover:underline font-semibold"
+                >
+                  Dave@talkwithdave.co.uk
+                </a>
+                <div className="mt-6">
                   <Button 
-                    type="submit" 
                     className="bg-primary hover:bg-primary/90 text-white"
-                    disabled={contactMutation.isPending}
+                    onClick={() => window.location.href = "mailto:Dave@talkwithdave.co.uk"}
                   >
-                    {contactMutation.isPending ? "Sending..." : "Send Message"}
+                    Send Email
                   </Button>
-                </form>
-              </Form>
+                </div>
+              </div>
             </div>
             
             <div className="w-full md:w-1/2">
