@@ -4,7 +4,7 @@ import { storage } from "./storage";
 import { insertContactMessageSchema } from "@shared/schema";
 import { ZodError } from "zod";
 import { fromZodError } from "zod-validation-error";
-import { sendContactNotification, isEmailConfigured } from "./mail";
+import { sendContactNotification, isEmailConfigured, configureEmail } from "./mail";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // API routes
@@ -39,6 +39,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json(post);
     } catch (error) {
       res.status(500).json({ message: "Error fetching blog post" });
+    }
+  });
+  
+  // Get all contact messages
+  app.get("/api/contact", async (_req: Request, res: Response) => {
+    try {
+      const messages = await storage.getContactMessages();
+      res.json(messages);
+    } catch (error) {
+      res.status(500).json({ message: "Error fetching contact messages" });
     }
   });
   
