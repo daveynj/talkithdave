@@ -8,35 +8,35 @@ const testimonials = [
   {
     name: "Kevin",
     location: "from China",
-    image: "https://randomuser.me/api/portraits/men/72.jpg",
+    image: "https://api.multiavatar.com/Kevin.svg",
     rating: 5,
     text: "Dave is really friendly and patient. He explains the background behind idioms and phrases, and discusses cultural differences. Not only the content of the course itself but also his teaching style helps tremendously."
   },
   {
     name: "Christy",
     location: "from South Korea",
-    image: "https://randomuser.me/api/portraits/women/60.jpg",
+    image: "https://api.multiavatar.com/Christy.svg",
     rating: 5,
     text: "He leads natural conversations. We talked smiling all through the lesson. Despite having many lessons, he didn't seem tired at all. I appreciate his kind teaching and great manner of listening."
   },
   {
     name: "Francesco",
     location: "from Italy",
-    image: "https://randomuser.me/api/portraits/men/36.jpg",
+    image: "https://api.multiavatar.com/Francesco.svg",
     rating: 4.5,
     text: "Great lessons. Dave is really prepared and focused on achieving results. Overall I've had a great experience in which I improved my English skills significantly."
   },
   {
     name: "Lily",
     location: "from China",
-    image: "https://randomuser.me/api/portraits/women/33.jpg",
+    image: "https://api.multiavatar.com/Lily.svg",
     rating: 5,
     text: "Dave is very responsible and tailors his lessons to my English level. It's great to learn from him and the feedback after each lesson is very detailed and helpful!"
   },
   {
     name: "Sero",
     location: "from Hong Kong",
-    image: "https://randomuser.me/api/portraits/men/55.jpg",
+    image: "https://api.multiavatar.com/Sero.svg",
     rating: 5,
     text: "Dave is very experienced and knowledgeable. A charming personality with excellent insight on IELTS matters, and a super amazing teacher to chat with casually."
   }
