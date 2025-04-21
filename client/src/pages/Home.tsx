@@ -9,7 +9,6 @@ import Process from "@/components/Process";
 import FAQ from "@/components/FAQ";
 import Booking from "@/components/Booking";
 import Contact from "@/components/Contact";
-import Blog from "@/components/Blog";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -28,7 +27,6 @@ export default function Home() {
         <FAQ />
         <Booking />
         <Contact />
-        <Blog />
         <CTA />
       </main>
       <Footer />

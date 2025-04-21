@@ -1,4 +1,4 @@
-import { Mail, Video, Clock, Linkedin, Youtube, Instagram } from "lucide-react";
+import { Mail, Video, Clock, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Contact() {
@@ -76,27 +76,15 @@ export default function Contact() {
                 </div>
                 
                 <h4 className="font-medium mb-2">Follow Me</h4>
-                <div className="flex space-x-4">
+                <div className="flex">
                   <a 
-                    href="#" 
+                    href="https://x.com/DaveTeacher1" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="bg-primary/10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-colors"
-                    aria-label="LinkedIn"
+                    aria-label="Twitter"
                   >
-                    <Linkedin className="h-5 w-5" />
-                  </a>
-                  <a 
-                    href="#" 
-                    className="bg-primary/10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-colors"
-                    aria-label="YouTube"
-                  >
-                    <Youtube className="h-5 w-5" />
-                  </a>
-                  <a 
-                    href="#" 
-                    className="bg-primary/10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-colors"
-                    aria-label="Instagram"
-                  >
-                    <Instagram className="h-5 w-5" />
+                    <Twitter className="h-5 w-5" />
                   </a>
                 </div>
               </div>
