@@ -50,8 +50,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Store contact message
       const message = await storage.createContactMessage(validatedData);
       
-      // In a real application, you would send an email here
-      // using nodemailer or a similar service
+      // Currently we're only storing the message in the database
+      // If email functionality is needed in the future, implement using a service like:
+      // - Nodemailer with your own SMTP server
+      // - SendGrid (requires API key)
+      // - Amazon SES
+      // - Other email delivery services
+      // For now, users are encouraged to email directly via the success message
       
       res.status(201).json({ 
         message: "Message sent successfully", 

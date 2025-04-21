@@ -47,8 +47,8 @@ export default function Contact() {
     },
     onSuccess: () => {
       toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
+        title: "Message received!",
+        description: "Thank you for your message. For a faster response, you can also email me directly at Dave@talkwithdave.co.uk",
         variant: "default",
       });
       form.reset();
