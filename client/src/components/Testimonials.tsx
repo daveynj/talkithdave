@@ -15,14 +15,14 @@ const testimonials = [
   {
     name: "Christy",
     location: "from South Korea",
-    image: "https://api.multiavatar.com/Christy.svg",
+    image: "https://randomuser.me/api/portraits/women/60.jpg",
     rating: 5,
     text: "He leads natural conversations. We talked smiling all through the lesson. Despite having many lessons, he didn't seem tired at all. I appreciate his kind teaching and great manner of listening."
   },
   {
     name: "Francesco",
     location: "from Italy",
-    image: "https://api.multiavatar.com/Francesco.svg",
+    image: "https://randomuser.me/api/portraits/men/36.jpg",
     rating: 4.5,
     text: "Great lessons. Dave is really prepared and focused on achieving results. Overall I've had a great experience in which I improved my English skills significantly."
   },
