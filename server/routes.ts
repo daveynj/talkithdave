@@ -4,6 +4,7 @@ import { storage } from "./storage";
 import { insertContactMessageSchema } from "@shared/schema";
 import { ZodError } from "zod";
 import { fromZodError } from "zod-validation-error";
+import { sendContactNotification, isEmailConfigured } from "./mail";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // API routes
@@ -41,6 +42,23 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
   
+  // Configure email credentials
+  app.post("/api/config/email", async (req: Request, res: Response) => {
+    // In a production app, this endpoint should be protected with authentication
+    try {
+      const { user, pass } = req.body;
+      
+      if (!user || !pass) {
+        return res.status(400).json({ message: "Email user and password are required" });
+      }
+      
+      configureEmail(user, pass);
+      res.json({ message: "Email configuration updated successfully" });
+    } catch (error) {
+      res.status(500).json({ message: "Error updating email configuration" });
+    }
+  });
+  
   // Submit contact form
   app.post("/api/contact", async (req: Request, res: Response) => {
     try {
@@ -50,13 +68,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Store contact message
       const message = await storage.createContactMessage(validatedData);
       
-      // Currently we're only storing the message in the database
-      // If email functionality is needed in the future, implement using a service like:
-      // - Nodemailer with your own SMTP server
-      // - SendGrid (requires API key)
-      // - Amazon SES
-      // - Other email delivery services
-      // For now, users are encouraged to email directly via the success message
+      // Try to send an email notification
+      let emailSent = false;
+      if (isEmailConfigured()) {
+        emailSent = await sendContactNotification(message);
+      }
+      
+      // Log the email status
+      if (!emailSent) {
+        console.log('Contact form submission saved to database but email notification was not sent.');
+      }
       
       res.status(201).json({ 
         message: "Message sent successfully", 
