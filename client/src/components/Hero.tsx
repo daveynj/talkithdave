@@ -19,8 +19,11 @@ export default function Hero() {
             <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               Speak English With Confidence
             </h1>
-            <p className="text-lg md:text-xl mb-6">
-              1-on-1 personalized English lessons with Dave, your native-speaking online ESL teacher.
+            <p className="text-lg md:text-xl mb-3">
+              1-on-1 personalized English lessons with Dave, your native-speaking online ESL teacher and creator of <span className="font-semibold">Plan Wise ESL</span> - teaching software used by 500+ teachers worldwide.
+            </p>
+            <p className="text-lg mb-6">
+              Learn from someone who doesn't just teach English, but innovates how English is taught online.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 

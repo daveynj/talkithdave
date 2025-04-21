@@ -9,13 +9,13 @@ export default function PlanWiseESL() {
         <div className="flex flex-col md:flex-row gap-8 items-center">
           <div className="w-full md:w-1/2">
             <h2 className="font-heading text-3xl font-bold mb-4 text-primary">
-              Enhanced Learning with <span className="text-secondary">Plan Wise ESL</span>
+              Created by Dave: <span className="text-secondary">Plan Wise ESL</span>
             </h2>
             <p className="mb-4 text-lg">
-              As the creator of <a href="https://planwiseesl.com" target="_blank" rel="noopener noreferrer" className="text-secondary font-medium hover:underline">Plan Wise ESL</a>, I use innovative AI technology to craft personalized, CEFR-aligned lessons for each of my students.
+              As the <span className="font-semibold">founder and developer</span> of <a href="https://planwiseesl.com" target="_blank" rel="noopener noreferrer" className="text-secondary font-medium hover:underline">Plan Wise ESL</a> - a platform used by 500+ ESL teachers worldwide - I leverage cutting-edge AI technology to create exceptional learning experiences.
             </p>
             <p className="mb-6">
-              This means you'll always receive carefully tailored materials that match your exact learning level, interests, and goals - giving you the most effective and engaging English learning experience possible.
+              My students benefit from my expertise not just as a teacher, but as an EdTech innovator who understands how to optimize language learning with technology. You'll receive professionally designed, CEFR-aligned lessons tailored to your exact needs and learning style.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
