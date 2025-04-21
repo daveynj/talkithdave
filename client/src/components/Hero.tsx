@@ -59,7 +59,7 @@ export default function Hero() {
           </div>
           <div className="w-full md:w-1/2 flex justify-center">
             <img 
-              src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=600&q=80" 
+              src="/assets/dave_profile2.jpg" 
               alt="Dave teaching English online" 
               className="rounded-lg shadow-lg max-w-sm w-full"
             />

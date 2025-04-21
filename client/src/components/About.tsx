@@ -24,7 +24,7 @@ export default function About() {
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-2/5">
             <img 
-              src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=700&q=80" 
+              src="/assets/dave_profile2.jpg" 
               alt="Dave, ESL Teacher" 
               className="rounded-lg shadow-lg w-full max-w-md mx-auto"
             />
