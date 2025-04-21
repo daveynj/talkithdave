@@ -1,10 +1,10 @@
-import type { Express, Request, Response } from "express";
+import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactMessageSchema } from "@shared/schema";
 import { ZodError } from "zod";
 import { fromZodError } from "zod-validation-error";
-import { sendContactNotification, isEmailConfigured, configureEmail } from "./mail";
+import { sendContactNotification } from "./mail";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // API routes
@@ -52,23 +52,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
   
-  // Configure email credentials
-  app.post("/api/config/email", async (req: Request, res: Response) => {
-    // In a production app, this endpoint should be protected with authentication
-    try {
-      const { user, pass } = req.body;
-      
-      if (!user || !pass) {
-        return res.status(400).json({ message: "Email user and password are required" });
-      }
-      
-      configureEmail(user, pass);
-      res.json({ message: "Email configuration updated successfully" });
-    } catch (error) {
-      res.status(500).json({ message: "Error updating email configuration" });
-    }
-  });
-  
   // Submit contact form
   app.post("/api/contact", async (req: Request, res: Response) => {
     try {
@@ -78,15 +61,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Store contact message
       const message = await storage.createContactMessage(validatedData);
       
-      // Try to send an email notification
-      let emailSent = false;
-      if (isEmailConfigured()) {
-        emailSent = await sendContactNotification(message);
-      }
+      // Send an email notification
+      const emailResult = await sendContactNotification(message);
       
       // Log the email status
-      if (!emailSent) {
+      if (!emailResult.success) {
         console.log('Contact form submission saved to database but email notification was not sent.');
+      }
+      
+      // Log preview URL for development testing
+      if (emailResult.previewUrl) {
+        console.log('Email preview URL:', emailResult.previewUrl);
       }
       
       res.status(201).json({ 

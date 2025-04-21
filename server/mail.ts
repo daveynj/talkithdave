@@ -1,39 +1,35 @@
 import nodemailer from 'nodemailer';
 import { ContactMessage } from '@shared/schema';
 
-// Default configuration - needs to be updated with real credentials
-const mailConfig = {
-  isConfigured: false,
-  user: 'talkwithdaveapp@gmail.com',
-  pass: 'app-specific-password'
-};
-
-// Create a transporter using Gmail
-// For a production app, consider using a dedicated email service
-const createTransporter = () => {
-  return nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: mailConfig.user,
-      pass: mailConfig.pass
-    }
-  });
-};
-
-export async function sendContactNotification(message: ContactMessage): Promise<boolean> {
-  if (!mailConfig.isConfigured) {
-    console.log('Email not configured. Skipping email sending.');
-    return false;
-  }
-
+/**
+ * Send a contact form notification email
+ * 
+ * This function uses nodemailer's ethereal email service for testing purposes.
+ * In a production environment, you would replace this with a real SMTP service.
+ */
+export async function sendContactNotification(message: ContactMessage): Promise<{ success: boolean; previewUrl?: string }> {
   try {
-    const transporter = createTransporter();
+    // Create a test account for development
+    const testAccount = await nodemailer.createTestAccount();
+    
+    // Create reusable transporter with test account
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.ethereal.email',
+      port: 587,
+      secure: false,
+      auth: {
+        user: testAccount.user,
+        pass: testAccount.pass
+      }
+    } as nodemailer.TransportOptions);
     
     // Prepare email content
     const mailOptions = {
-      from: `"Talk with Dave Website" <${mailConfig.user}>`,
+      from: `"${message.name}" <${message.email}>`,
       to: 'Dave@talkwithdave.co.uk',
-      subject: `New Contact Form Submission: ${message.subject}`,
+      replyTo: message.email,
+      subject: `New Contact Form: ${message.subject}`,
+      text: `From: ${message.name} (${message.email})\nSubject: ${message.subject}\n\n${message.message}`,
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>From:</strong> ${message.name} (${message.email})</p>
@@ -49,22 +45,22 @@ export async function sendContactNotification(message: ContactMessage): Promise<
     };
 
     // Send email
-    await transporter.sendMail(mailOptions);
-    return true;
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Message sent successfully');
+    
+    // Get preview URL (only works with Ethereal SMTP)
+    const previewUrl = nodemailer.getTestMessageUrl(info);
+    
+    if (previewUrl) {
+      console.log('Preview URL: %s', previewUrl);
+    }
+    
+    return { 
+      success: true,
+      previewUrl: typeof previewUrl === 'string' ? previewUrl : undefined
+    };
   } catch (error) {
     console.error('Email sending error:', error);
-    return false;
+    return { success: false };
   }
-}
-
-export function isEmailConfigured(): boolean {
-  return mailConfig.isConfigured;
-}
-
-// This would be called with real credentials when they become available
-export function configureEmail(user: string, pass: string): void {
-  mailConfig.user = user;
-  mailConfig.pass = pass;
-  mailConfig.isConfigured = true;
-  console.log('Email configuration updated.');
 }
