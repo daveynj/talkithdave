@@ -9,7 +9,7 @@ import {
 const faqs = [
   {
     question: "How do the online lessons work?",
-    answer: "Lessons are conducted via Zoom, Microsoft Teams, or your preferred video platform. You'll receive a link before your scheduled session. All you need is a reliable internet connection, a device with a camera and microphone, and a quiet space."
+    answer: "Lessons are primarily conducted via Zoom. For Chinese students, I also offer the option to use Tencent Meeting. You'll receive a link before your scheduled session. All you need is a reliable internet connection, a device with a camera and microphone, and a quiet space."
   },
   {
     question: "What level of English do I need to take lessons?",
@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: "How do I make a payment?",
-    answer: "Payments can be made securely through PayPal, credit card, or bank transfer. You'll receive payment instructions after booking your lesson. Payment should be completed at least 24 hours before your scheduled lesson."
+    answer: "Payments are processed securely through Stripe, which accepts all major credit and debit cards. The payment link will be provided after you book your lesson through Calendly. Payment should be completed at least 24 hours before your scheduled lesson."
   },
   {
     question: "What if I need to reschedule or cancel?",
@@ -25,7 +25,11 @@ const faqs = [
   },
   {
     question: "Do you provide learning materials?",
-    answer: "Yes, I provide customized learning materials based on your needs and interests. After each lesson, I'll share relevant resources, vocabulary lists, and practice exercises to help reinforce what we've covered."
+    answer: "Yes, I provide customized learning materials based on your needs and interests. After each lesson, I'll share relevant resources, vocabulary lists, and practice exercises to help reinforce what we've covered. As the creator of Plan Wise ESL, I use my own platform to create professional, tailored lesson materials that perfectly match your level and goals."
+  },
+  {
+    question: "Is there any special software I need to install?",
+    answer: "You'll need to download Zoom (or Tencent Meeting for Chinese students), which is free and easy to set up. I'll provide detailed instructions if needed. No other special software is required for the lessons."
   }
 ];
 

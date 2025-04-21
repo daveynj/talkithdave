@@ -173,7 +173,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-medium mb-1">Lesson Platform</h4>
-                      <p>Zoom, Microsoft Teams, or your preferred platform</p>
+                      <p>Zoom (or Tencent Meeting for Chinese students)</p>
                     </div>
                   </div>
                   
