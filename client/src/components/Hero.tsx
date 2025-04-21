@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { daveProfileImage } from "../assets";
 
 export default function Hero() {
   const scrollToSection = (id: string) => {
@@ -59,7 +60,7 @@ export default function Hero() {
           </div>
           <div className="w-full md:w-1/2 flex justify-center">
             <img 
-              src="/dave_profile2.jpg" 
+              src={daveProfileImage} 
               alt="Dave teaching English online" 
               className="rounded-lg shadow-lg max-w-sm w-full"
             />

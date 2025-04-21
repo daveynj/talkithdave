@@ -1,8 +1,6 @@
 // Import assets for correct handling by Vite
-import daveProfileImage from '../assets/dave_profile2.jpg';
-import daveProfileThumbnail from '../assets/dave_profile.jpg';
+import daveProfileImage from './images/dave_profile2.jpg';
 
 export { 
-  daveProfileImage,
-  daveProfileThumbnail
+  daveProfileImage
 };
