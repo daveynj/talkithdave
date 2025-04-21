@@ -68,11 +68,15 @@ export default function PlanWiseESL() {
                 Explore Plan Wise ESL
               </Button>
               
-              <Button variant="outline" asChild>
-                <Link href="#booking">
+              <a 
+                href="https://calendly.com/daveynj113/english" 
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline">
                   Book a Lesson
-                </Link>
-              </Button>
+                </Button>
+              </a>
             </div>
           </div>
           
