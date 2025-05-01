@@ -83,7 +83,7 @@ export default function PlanWiseESL() {
           <div className="w-full md:w-1/2">
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <img 
-                src="/images/planwise-screenshot.png" 
+                src="/assets/planwise-screenshot.png" 
                 alt="Plan Wise ESL Platform Screenshot" 
                 className="w-full h-auto"
               />

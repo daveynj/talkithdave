@@ -25,7 +25,7 @@ export default function About() {
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-2/5">
             <img 
-              src="/images/dave_outdoor.png" 
+              src="/assets/dave_outdoor.png" 
               alt="Dave, ESL Teacher" 
               className="rounded-lg shadow-lg w-full max-w-md mx-auto object-cover"
             />
