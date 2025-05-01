@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Lightbulb, Clock, Settings, Star } from "lucide-react";
+import { daveImages } from "../images";
 
 export default function PlanWiseESL() {
   return (
@@ -83,7 +84,7 @@ export default function PlanWiseESL() {
           <div className="w-full md:w-1/2">
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <img 
-                src="/assets/planwise-screenshot.png" 
+                src={daveImages.planwiseScreenshot} 
                 alt="Plan Wise ESL Platform Screenshot" 
                 className="w-full h-auto"
               />
