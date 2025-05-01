@@ -62,7 +62,7 @@ export default function Hero() {
           </div>
           <div className="w-full md:w-1/2 flex justify-center">
             <img 
-              src="/dave-formal.jpg" 
+              src="/images/dave_formal.jpg" 
               alt="Dave, professional ESL teacher" 
               className="rounded-lg shadow-lg max-w-sm w-full object-cover"
             />
