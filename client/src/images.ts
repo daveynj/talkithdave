@@ -1,6 +1,9 @@
-// Project images - using proper public path references for deployment
+// Project images - importing as assets to be bundled
+import daveFormal from './assets/dave-formal.jpg';
+import daveOutdoor from './assets/dave-outdoor.png';
+
 export const daveImages = {
-  formal: '/dave-formal.jpg',
-  outdoor: '/dave-outdoor.png',
-  profile: '/dave_profile2.jpg'
+  formal: daveFormal,
+  outdoor: daveOutdoor,
+  profile: daveFormal // Using formal as fallback for profile
 };

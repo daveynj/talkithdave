@@ -1,14 +1,17 @@
 #!/bin/bash
-# Production build script that includes image copying
 
+# Build the frontend
 echo "Building frontend..."
-npm run build
+npx vite build
 
-echo "Copying public assets to production..."
+# Copy public assets to dist/public (images, etc.)
+echo "Copying public assets..."
 cp -r public/* dist/public/
 
-echo "Copying assets to server public directory..."
-mkdir -p server/public
-cp -r dist/public/* server/public/
+# Build the backend
+echo "Building backend..."
+npx esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
 
-echo "Build complete! All images and assets copied to both dist/public/ and server/public/"
+echo "Production build complete!"
+echo "Images copied to dist/public/"
+ls -la dist/public/dave*

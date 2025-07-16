@@ -8,6 +8,13 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// CRITICAL: Serve static files FIRST before any other middleware
+// In production, serve from dist/public; in development, serve from public
+const staticPath = process.env.NODE_ENV === 'production' 
+  ? path.resolve(import.meta.dirname, "public")
+  : path.resolve(import.meta.dirname, "..", "public");
+app.use(express.static(staticPath));
+
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
@@ -57,16 +64,17 @@ app.use((req, res, next) => {
       throw err;
     });
 
-    // Serve static files from public directory before Vite catch-all
-    app.use(express.static(path.resolve(import.meta.dirname, "..", "public")));
-
     // importantly only setup vite in development and after
     // setting up all the other routes so the catch-all route
     // doesn't interfere with the other routes
     if (app.get("env") === "development") {
       await setupVite(app, server);
     } else {
-      serveStatic(app);
+      // Static files already served at the top, just need the catch-all for production
+      const distPath = path.resolve(import.meta.dirname, "public");
+      app.use("*", (_req, res) => {
+        res.sendFile(path.resolve(distPath, "index.html"));
+      });
     }
 
     // ALWAYS serve the app on port 5000
