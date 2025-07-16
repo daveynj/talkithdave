@@ -97,4 +97,10 @@ Preferred communication style: Simple, everyday language.
 ## Changelog
 
 Changelog:
+- July 16, 2025. Fixed image loading issues for deployment:
+  - Resolved static file serving order conflicts with Vite middleware
+  - Fixed Dave's profile images (dave-formal.jpg, dave-outdoor.png) serving as proper image files
+  - Updated testimonial avatars to use reliable randomuser.me API instead of failing multiavatar.com
+  - Cleaned up duplicate image files in multiple public subdirectories
+  - Verified all images work in both development and production modes
 - July 07, 2025. Initial setup
