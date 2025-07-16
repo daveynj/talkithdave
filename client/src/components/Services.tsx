@@ -24,7 +24,7 @@ const services = [
     badgeType: "muted" as const,
     title: "Business English",
     description: "Master professional communication for meetings, presentations, emails, and workplace interactions.",
-    price: "$25",
+    price: "$20",
     duration: "30 minutes",
     features: [
       "Professional vocabulary",
@@ -39,7 +39,7 @@ const services = [
     badgeType: "muted" as const,
     title: "Interview Preparation",
     description: "Prepare for job interviews with mock sessions, feedback, and strategies to impress employers.",
-    price: "$30",
+    price: "$20",
     duration: "30 minutes",
     features: [
       "Mock interviews",

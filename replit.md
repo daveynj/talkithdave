@@ -105,4 +105,7 @@ Changelog:
   - Added PlanWise screenshot (planwise-screenshot.png) to assets and imported it properly
   - Updated images.ts to properly import and export all Dave images and screenshots as bundled assets
   - Verified all images work in both development and production deployed environments
+- July 16, 2025. Updated lesson pricing:
+  - Standardized all lesson types (Conversation Practice, Business English, Interview Preparation) to $20 for 30 minutes
+  - Simplified pricing structure for better customer clarity
 - July 07, 2025. Initial setup
