@@ -7,8 +7,6 @@ import path from "path";
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// Serve static files from public directory
-app.use(express.static(path.resolve(import.meta.dirname, "..", "public")));
 
 app.use((req, res, next) => {
   const start = Date.now();
@@ -58,6 +56,9 @@ app.use((req, res, next) => {
       res.status(status).json({ message });
       throw err;
     });
+
+    // Serve static files from public directory before Vite catch-all
+    app.use(express.static(path.resolve(import.meta.dirname, "..", "public")));
 
     // importantly only setup vite in development and after
     // setting up all the other routes so the catch-all route
