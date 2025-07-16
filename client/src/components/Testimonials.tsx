@@ -8,7 +8,7 @@ const testimonials = [
   {
     name: "Kevin",
     location: "from China",
-    image: "https://api.multiavatar.com/Kevin.svg",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
     rating: 5,
     text: "Dave is really friendly and patient. He explains the background behind idioms and phrases, and discusses cultural differences. Not only the content of the course itself but also his teaching style helps tremendously."
   },
@@ -29,14 +29,14 @@ const testimonials = [
   {
     name: "Lily",
     location: "from China",
-    image: "https://api.multiavatar.com/Lily.svg",
+    image: "https://randomuser.me/api/portraits/women/45.jpg",
     rating: 5,
     text: "Dave is very responsible and tailors his lessons to my English level. It's great to learn from him and the feedback after each lesson is very detailed and helpful!"
   },
   {
     name: "Sero",
     location: "from Hong Kong",
-    image: "https://api.multiavatar.com/Sero.svg",
+    image: "https://randomuser.me/api/portraits/men/55.jpg",
     rating: 5,
     text: "Dave is very experienced and knowledgeable. A charming personality with excellent insight on IELTS matters, and a super amazing teacher to chat with casually."
   }

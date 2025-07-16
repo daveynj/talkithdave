@@ -7,7 +7,8 @@ import path from "path";
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(process.cwd(), 'public')));
+// Serve static files from public directory
+app.use(express.static(path.resolve(import.meta.dirname, "..", "public")));
 
 app.use((req, res, next) => {
   const start = Date.now();
