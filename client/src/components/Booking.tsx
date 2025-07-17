@@ -63,13 +63,13 @@ export default function Booking() {
               </div>
               
               <a 
-                href="https://calendly.com/daveynj113/english" 
+                href="https://meet.brevo.com/david-jackson-1" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-center"
               >
                 <Button className="w-full bg-secondary hover:bg-secondary/90 text-white">
-                  Book on Calendly
+                  Book Your Lesson
                 </Button>
               </a>
             </div>
