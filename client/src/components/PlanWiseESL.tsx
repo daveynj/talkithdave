@@ -70,7 +70,7 @@ export default function PlanWiseESL() {
               </Button>
               
               <a 
-                href="https://calendly.com/daveynj113/english" 
+                href="https://meet.brevo.com/david-jackson-1" 
                 target="_blank"
                 rel="noopener noreferrer"
               >
