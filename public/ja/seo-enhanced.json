@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "title": "デイブ・ジャクソン - 英語講師 | オンライン英会話レッスン | ビジネス英語",
+    "description": "プロフェッショナルなオンライン英語講師。個別のESLレッスン、英会話練習、ビジネス英語、面接準備を提供。イギリス出身のネイティブスピーカー、5年以上の経験。20ドルレッスンを今すぐ予約。",
+    "keywords": "オンライン英語講師,ESL講師,英会話練習,ビジネス英語,面接準備,英語ネイティブスピーカー,オンライン英語レッスン,英会話,プロ英語講師,デイブジャクソン",
+    "author": "デイブ・ジャクソン",
+    "robots": "index, follow",
+    "canonical": "https://talkwithdave.co.uk/ja/",
+    "hreflang": "ja-JP"
+  },
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": ["Person", "EducationalOrganization"],
+    "name": "デイブ・ジャクソン",
+    "alternateName": "Dave Jackson",
+    "jobTitle": "オンライン英語講師",
+    "description": "ESL英会話練習、ビジネス英語、面接準備を専門とするプロフェッショナルなオンライン英語講師",
+    "url": "https://talkwithdave.co.uk/ja/",
+    "email": "Dave@talkwithdave.co.uk",
+    "nationality": "イギリス",
+    "knowsLanguage": ["英語", "イギリス英語"],
+    "teachesLanguage": "英語",
+    "educationalCredential": "サウサンプトン大学経営学学士",
+    "yearsOfExperience": "10年以上",
+    "specialization": ["英会話練習", "ビジネス英語", "面接準備", "ESL指導"],
+    "priceRange": "$20",
+    "serviceArea": "世界中オンライン",
+    "teaches": {
+      "@type": "Course",
+      "name": "オンライン英語レッスン",
+      "description": "個別化された英語学習体験",
+      "provider": {
+        "@type": "Person",
+        "name": "デイブ・ジャクソン"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "20",
+        "priceCurrency": "USD",
+        "description": "30分間の個別英語レッスン"
+      }
+    }
+  },
+  "yahooJapanOptimization": {
+    "nativeJapanese": true,
+    "portalIntegration": true,
+    "mobileFirst": true,
+    "localKeywords": [
+      "英語講師",
+      "オンライン英会話",
+      "ビジネス英語",
+      "ESL講師",
+      "英語面接",
+      "イギリス人講師",
+      "デイブジャクソン",
+      "英会話レッスン"
+    ]
+  },
+  "localizedContent": {
+    "currency": "円 ¥3,000",
+    "timezone": "日本標準時",
+    "culturalAdaptations": [
+      "日本のビジネス文化に特化",
+      "敬語とビジネスマナー",
+      "TOEIC/EIKEN試験対策",
+      "日本人学習者の特性に配慮"
+    ]
+  }
+}

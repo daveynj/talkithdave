@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "title": "Dave Jackson - Giáo viên tiếng Anh | Luyện hội thoại tiếng Anh online | Tiếng Anh thương mại",
+    "description": "Giáo viên tiếng Anh chuyên nghiệp cung cấp các khóa học ESL cá nhân hóa, luyện hội thoại, tiếng Anh thương mại và chuẩn bị phỏng vấn. Giáo viên bản ngữ từ Anh, 5+ năm kinh nghiệm. Đặt bài học $20 ngay hôm nay.",
+    "keywords": "giáo viên tiếng Anh online,gia sư ESL,luyện hội thoại,tiếng Anh thương mại,chuẩn bị phỏng vấn,người bản ngữ tiếng Anh,bài học tiếng Anh online,hội thoại tiếng Anh,giáo viên tiếng Anh chuyên nghiệp,Dave Jackson",
+    "author": "Dave Jackson",
+    "robots": "index, follow",
+    "canonical": "https://talkwithdave.co.uk/vi/",
+    "hreflang": "vi-VN"
+  },
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": ["Person", "EducationalOrganization"],
+    "name": "Dave Jackson",
+    "jobTitle": "Giáo viên tiếng Anh online",
+    "description": "Giáo viên tiếng Anh chuyên nghiệp chuyên về luyện hội thoại ESL, tiếng Anh thương mại và chuẩn bị phỏng vấn",
+    "url": "https://talkwithdave.co.uk/vi/",
+    "email": "Dave@talkwithdave.co.uk",
+    "nationality": "Anh",
+    "knowsLanguage": ["Tiếng Anh", "Tiếng Anh Anh"],
+    "teachesLanguage": "Tiếng Anh",
+    "educationalCredential": "Cử nhân Quản trị Kinh doanh - Đại học Southampton",
+    "yearsOfExperience": "Hơn 10 năm",
+    "specialization": ["Luyện hội thoại", "Tiếng Anh thương mại", "Chuẩn bị phỏng vấn", "Giảng dạy ESL"],
+    "priceRange": "$20",
+    "serviceArea": "Toàn cầu online",
+    "teaches": {
+      "@type": "Course",
+      "name": "Bài học tiếng Anh online",
+      "description": "Trải nghiệm học tiếng Anh cá nhân hóa",
+      "provider": {
+        "@type": "Person",
+        "name": "Dave Jackson"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "20",
+        "priceCurrency": "USD",
+        "description": "Bài học tiếng Anh cá nhân hóa 30 phút"
+      }
+    }
+  },
+  "googleOptimization": {
+    "nativeVietnamese": true,
+    "mobileFirst": true,
+    "coccocOptimization": true,
+    "localKeywords": [
+      "giáo viên tiếng Anh",
+      "gia sư tiếng Anh",
+      "học tiếng Anh online",
+      "tiếng Anh thương mại",
+      "chuẩn bị phỏng vấn",
+      "luyện nói tiếng Anh",
+      "Dave Jackson",
+      "giáo viên bản ngữ"
+    ],
+    "diacriticsOptimized": true
+  },
+  "localizedContent": {
+    "currency": "VND 500,000",
+    "timezone": "Giờ Indochina",
+    "culturalAdaptations": [
+      "Tập trung vào kỹ năng giao tiếp thực tế",
+      "Chuẩn bị IELTS/TOEFL",
+      "Phù hợp với văn hóa học tập Việt Nam",
+      "Tiếng Anh trong môi trường công sở"
+    ]
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "marketSpecificOptimizations": {
+    "china": {
+      "searchBehavior": {
+        "preferredTerms": [
+          "外教一对一",
+          "英语培训机构",
+          "专业英语老师",
+          "在线英语学习平台"
+        ],
+        "avoidTerms": ["tutor", "private teacher"],
+        "culturalNuances": [
+          "Emphasize credentials and institutional backing",
+          "Highlight structured learning approach",
+          "Focus on business and career advancement",
+          "Mention IELTS/TOEFL preparation explicitly"
+        ]
+      },
+      "contentStrategy": {
+        "trustSignals": [
+          "University degree mentioned prominently",
+          "Years of experience quantified",
+          "Success stories with specific results",
+          "Professional certifications highlighted"
+        ],
+        "localizedPricing": {
+          "currency": "人民币 ¥140",
+          "comparisonPoint": "比传统培训机构便宜70%"
+        }
+      },
+      "technicalOptimization": {
+        "baiduSpecific": {
+          "metaKeywords": "必需",
+          "exactMatch": "重要",
+          "freshContent": "优先",
+          "simplifiedChinese": "必须"
+        }
+      }
+    },
+    "japan": {
+      "searchBehavior": {
+        "preferredTerms": [
+          "マンツーマンレッスン",
+          "個人指導",
+          "プロフェッショナル講師",
+          "オンライン英会話スクール"
+        ],
+        "culturalNuances": [
+          "Emphasize politeness and respect",
+          "Highlight systematic learning approach",
+          "Focus on business communication skills",
+          "Mention TOEIC preparation specifically"
+        ]
+      },
+      "contentStrategy": {
+        "trustSignals": [
+          "Detailed qualifications",
+          "Structured lesson plans",
+          "Progress tracking systems",
+          "Cultural sensitivity awareness"
+        ],
+        "localizedPricing": {
+          "currency": "円 ¥3,000",
+          "comparisonPoint": "他の英会話スクールより60%安い"
+        }
+      },
+      "technicalOptimization": {
+        "yahooJapan": {
+          "portalIntegration": true,
+          "mobileFirst": true,
+          "communityContent": true
+        }
+      }
+    },
+    "korea": {
+      "searchBehavior": {
+        "preferredTerms": [
+          "일대일 영어 수업",
+          "개인 영어 과외",
+          "전문 영어 강사",
+          "온라인 영어 학원"
+        ],
+        "culturalNuances": [
+          "Emphasize competitive advantage",
+          "Highlight global communication skills",
+          "Focus on career advancement",
+          "Mention specific test preparation"
+        ]
+      },
+      "contentStrategy": {
+        "trustSignals": [
+          "International background",
+          "Business experience",
+          "Results-oriented approach",
+          "Flexible scheduling"
+        ],
+        "localizedPricing": {
+          "currency": "원 ₩27,000",
+          "comparisonPoint": "다른 영어학원보다 50% 저렴"
+        }
+      },
+      "technicalOptimization": {
+        "naver": {
+          "userGeneratedContent": true,
+          "communityEngagement": true,
+          "blogIntegration": true,
+          "knowledgeIn": true
+        }
+      }
+    },
+    "vietnam": {
+      "searchBehavior": {
+        "preferredTerms": [
+          "gia sư tiếng Anh riêng",
+          "lớp học một kèm một",
+          "giáo viên chuyên nghiệp",
+          "trung tâm tiếng Anh online"
+        ],
+        "culturalNuances": [
+          "Emphasize practical communication",
+          "Highlight international opportunities",
+          "Focus on professional development",
+          "Mention IELTS preparation for immigration"
+        ]
+      },
+      "contentStrategy": {
+        "trustSignals": [
+          "Native speaker advantage",
+          "Affordable pricing",
+          "Flexible scheduling",
+          "Real-world application focus"
+        ],
+        "localizedPricing": {
+          "currency": "VND 500,000",
+          "comparisonPoint": "rẻ hơn 40% so với trung tâm khác"
+        }
+      },
+      "technicalOptimization": {
+        "google": {
+          "diacriticsOptimized": true,
+          "mobileFirst": true,
+          "localContent": true
+        },
+        "coccoc": {
+          "vietnameseSpecific": true,
+          "culturalRelevance": true
+        }
+      }
+    }
+  },
+  "aiChatbotRecommendationOptimization": {
+    "queryPatterns": {
+      "china": [
+        "我想找一个好的英语老师",
+        "哪里有专业的英语培训",
+        "在线英语课程推荐",
+        "外教一对一多少钱"
+      ],
+      "japan": [
+        "良い英語の先生を探している",
+        "オンライン英会話のおすすめは",
+        "ビジネス英語を学びたい",
+        "英語レッスンの料金は"
+      ],
+      "korea": [
+        "좋은 영어 선생님 찾고 있어요",
+        "온라인 영어 수업 추천해주세요",
+        "비즈니스 영어 배우고 싶어요",
+        "영어 과외 비용이 얼마예요"
+      ],
+      "vietnam": [
+        "tôi muốn tìm giáo viên tiếng Anh giỏi",
+        "học tiếng Anh online ở đâu tốt",
+        "tiếng Anh thương mại học với ai",
+        "học phí tiếng Anh bao nhiêu"
+      ]
+    },
+    "responseOptimization": {
+      "keyPoints": [
+        "Native UK speaker advantage",
+        "Affordable $20 pricing",
+        "Business and interview focus",
+        "Personalized learning approach",
+        "Flexible online scheduling"
+      ],
+      "proofPoints": [
+        "10+ years teaching experience",
+        "5+ years in China specifically",
+        "Southampton University graduate",
+        "Plan Wise ESL platform founder",
+        "500+ teachers using his methodology"
+      ]
+    }
+  }
+}

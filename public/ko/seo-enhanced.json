@@ -1,0 +1,75 @@
+{
+  "metadata": {
+    "title": "데이브 잭슨 - 영어 선생님 | 온라인 영어회화 연습 | 비즈니스 영어",
+    "description": "전문 온라인 영어 교사가 개인맞춤 ESL 수업, 회화 연습, 비즈니스 영어, 면접 준비를 제공합니다. 영국 원어민 강사, 5년 이상 경험. 20달러 수업을 지금 예약하세요.",
+    "keywords": "온라인 영어 선생님,ESL 강사,영어회화 연습,비즈니스 영어,면접 준비,영어 원어민,온라인 영어 수업,영어 회화,전문 영어 교사,데이브잭슨",
+    "author": "데이브 잭슨",
+    "robots": "index, follow",
+    "canonical": "https://talkwithdave.co.uk/ko/",
+    "hreflang": "ko-KR"
+  },
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": ["Person", "EducationalOrganization"],
+    "name": "데이브 잭슨",
+    "alternateName": "Dave Jackson",
+    "jobTitle": "온라인 영어 선생님",
+    "description": "ESL 영어회화 연습, 비즈니스 영어, 면접 준비를 전문으로 하는 전문 온라인 영어 교사",
+    "url": "https://talkwithdave.co.uk/ko/",
+    "email": "Dave@talkwithdave.co.uk",
+    "nationality": "영국",
+    "knowsLanguage": ["영어", "영국 영어"],
+    "teachesLanguage": "영어",
+    "educationalCredential": "사우샘프턴 대학교 경영학 학사",
+    "yearsOfExperience": "10년 이상",
+    "specialization": ["영어회화 연습", "비즈니스 영어", "면접 준비", "ESL 교육"],
+    "priceRange": "$20",
+    "serviceArea": "전 세계 온라인",
+    "teaches": {
+      "@type": "Course",
+      "name": "온라인 영어 수업",
+      "description": "개인맞춤형 영어 학습 경험",
+      "provider": {
+        "@type": "Person",
+        "name": "데이브 잭슨"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "20",
+        "priceCurrency": "USD",
+        "description": "30분 개인맞춤 영어 수업"
+      }
+    }
+  },
+  "naverOptimization": {
+    "nativeKorean": true,
+    "userGeneratedContent": true,
+    "communityEngagement": true,
+    "naverBlogIntegration": true,
+    "localKeywords": [
+      "영어 선생님",
+      "온라인 영어",
+      "영어회화",
+      "비즈니스 영어",
+      "ESL 강사",
+      "영어 면접",
+      "영국 선생님",
+      "데이브잭슨"
+    ],
+    "cRankFactors": [
+      "사용자 참여도",
+      "지역 관련성",
+      "콘텐츠 최신성"
+    ]
+  },
+  "localizedContent": {
+    "currency": "원 ₩27,000",
+    "timezone": "한국 표준시",
+    "culturalAdaptations": [
+      "한국 비즈니스 문화 특화",
+      "토익/오픽 시험 대비",
+      "한국 학습자 특성 고려",
+      "존댓말과 비즈니스 매너"
+    ]
+  }
+}

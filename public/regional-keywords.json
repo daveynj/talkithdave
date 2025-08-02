@@ -1,0 +1,148 @@
+{
+  "china": {
+    "primaryKeywords": [
+      "英语老师",
+      "在线英语",
+      "英语培训",
+      "外教一对一",
+      "商务英语培训",
+      "英语口语练习",
+      "雅思托福培训",
+      "英语外教课程"
+    ],
+    "longTailKeywords": [
+      "专业英语老师在线授课",
+      "英国外教一对一教学",
+      "商务英语面试培训课程",
+      "在线英语口语练习平台",
+      "资深英语老师戴夫杰克逊",
+      "Southampton大学毕业英语老师"
+    ],
+    "localizedTerms": [
+      "外教",
+      "一对一",
+      "在线教育",
+      "英语培训机构",
+      "口语提升",
+      "商务沟通"
+    ],
+    "searchEngineOptimization": {
+      "baidu": {
+        "metaKeywordsRequired": true,
+        "simplifiedChineseOnly": true,
+        "exactMatchImportant": true,
+        "freshContentBoost": true
+      }
+    }
+  },
+  "japan": {
+    "primaryKeywords": [
+      "英語講師",
+      "オンライン英会話",
+      "ビジネス英語",
+      "英語レッスン",
+      "英会話スクール",
+      "TOEIC対策",
+      "英語面接対策",
+      "ネイティブ講師"
+    ],
+    "longTailKeywords": [
+      "プロフェッショナル英語講師オンライン",
+      "イギリス人ネイティブ英語レッスン",
+      "ビジネス英語面接対策コース",
+      "個人指導英会話レッスン",
+      "経験豊富英語講師デイブジャクソン",
+      "サウサンプトン大学卒業英語講師"
+    ],
+    "localizedTerms": [
+      "個人レッスン",
+      "マンツーマン",
+      "オンライン学習",
+      "英会話教室",
+      "語学力向上",
+      "国際コミュニケーション"
+    ],
+    "searchEngineOptimization": {
+      "yahoo": {
+        "portalIntegration": true,
+        "mobileFirst": true,
+        "communityContent": true
+      }
+    }
+  },
+  "korea": {
+    "primaryKeywords": [
+      "영어 선생님",
+      "온라인 영어",
+      "비즈니스 영어",
+      "영어회화",
+      "영어 과외",
+      "토익 준비",
+      "영어 면접",
+      "원어민 강사"
+    ],
+    "longTailKeywords": [
+      "전문 영어 교사 온라인 수업",
+      "영국 원어민 영어 레슨",
+      "비즈니스 영어 면접 준비 과정",
+      "일대일 영어회화 수업",
+      "경험 풍부한 영어 선생님 데이브잭슨",
+      "사우샘프턴 대학 졸업 영어 교사"
+    ],
+    "localizedTerms": [
+      "일대일 수업",
+      "개인 과외",
+      "온라인 학습",
+      "어학원",
+      "영어 실력 향상",
+      "국제 커뮤니케이션"
+    ],
+    "searchEngineOptimization": {
+      "naver": {
+        "userGeneratedContent": true,
+        "communityEngagement": true,
+        "blogIntegration": true,
+        "knowledgeIn": true
+      }
+    }
+  },
+  "vietnam": {
+    "primaryKeywords": [
+      "giáo viên tiếng Anh",
+      "học tiếng Anh online",
+      "tiếng Anh thương mại",
+      "luyện nói tiếng Anh",
+      "gia sư tiếng Anh",
+      "IELTS TOEFL",
+      "phỏng vấn tiếng Anh",
+      "giáo viên bản ngữ"
+    ],
+    "longTailKeywords": [
+      "giáo viên tiếng Anh chuyên nghiệp online",
+      "học tiếng Anh với giáo viên người Anh",
+      "kỹ năng phỏng vấn tiếng Anh thương mại",
+      "lớp học tiếng Anh một kèm một",
+      "giáo viên tiếng Anh kinh nghiệm Dave Jackson",
+      "cử nhân đại học Southampton dạy tiếng Anh"
+    ],
+    "localizedTerms": [
+      "một kèm một",
+      "gia sư riêng",
+      "học trực tuyến",
+      "trung tâm tiếng Anh",
+      "nâng cao tiếng Anh",
+      "giao tiếp quốc tế"
+    ],
+    "searchEngineOptimization": {
+      "google": {
+        "diacriticsOptimized": true,
+        "mobileFirst": true,
+        "localContent": true
+      },
+      "coccoc": {
+        "vietnameseSpecific": true,
+        "culturalRelevance": true
+      }
+    }
+  }
+}

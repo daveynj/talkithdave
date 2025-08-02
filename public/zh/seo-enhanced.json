@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "title": "戴夫·杰克逊 - 英语老师 | 在线英语会话练习 | 商务英语",
+    "description": "专业在线英语老师，提供个性化ESL课程、会话练习、商务英语和面试准备。英国本土讲师，5年以上教学经验。立即预订20美元课程。",
+    "keywords": "在线英语老师,ESL导师,会话练习,商务英语,面试准备,英语母语者,在线英语课程,英语会话,专业英语老师,戴夫杰克逊",
+    "author": "戴夫·杰克逊",
+    "robots": "index, follow",
+    "canonical": "https://talkwithdave.co.uk/zh/",
+    "hreflang": "zh-CN"
+  },
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": ["Person", "EducationalOrganization"],
+    "name": "戴夫·杰克逊",
+    "alternateName": "Dave Jackson",
+    "jobTitle": "在线英语老师",
+    "description": "专业在线英语老师，专门从事ESL会话练习、商务英语和面试准备",
+    "url": "https://talkwithdave.co.uk/zh/",
+    "email": "Dave@talkwithdave.co.uk",
+    "nationality": "英国",
+    "knowsLanguage": ["英语", "英国英语"],
+    "teachesLanguage": "英语",
+    "educationalCredential": "南安普顿大学商业管理学士",
+    "yearsOfExperience": "10+",
+    "specialization": ["会话练习", "商务英语", "面试准备", "ESL教学"],
+    "priceRange": "$20",
+    "serviceArea": "全球在线",
+    "teaches": {
+      "@type": "Course",
+      "name": "在线英语课程",
+      "description": "个性化英语学习体验",
+      "provider": {
+        "@type": "Person",
+        "name": "戴夫·杰克逊"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "20",
+        "priceCurrency": "USD",
+        "description": "30分钟个性化英语课程"
+      }
+    }
+  },
+  "baiduOptimization": {
+    "simplifiedChinese": true,
+    "exactMatchKeywords": [
+      "英语老师",
+      "在线英语",
+      "英语会话",
+      "商务英语",
+      "ESL老师",
+      "英语面试",
+      "英国老师",
+      "戴夫杰克逊"
+    ],
+    "metaKeywords": "英语老师,在线英语,ESL导师,商务英语,面试准备,英语会话,英国老师,戴夫杰克逊",
+    "freshContent": true,
+    "mobileOptimized": true,
+    "httpsEnabled": true
+  },
+  "localizedContent": {
+    "currency": "人民币 ¥140",
+    "timezone": "北京时间",
+    "culturalAdaptations": [
+      "专注于商务英语技能",
+      "面试准备专业化",
+      "IELTS/TOEFL考试辅导",
+      "与中国学生学习习惯相适应"
+    ]
+  }
+}
