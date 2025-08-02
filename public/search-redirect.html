@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dave Jackson - English Teacher | Redirecting...</title>
+    <meta name="robots" content="noindex, nofollow">
+    <script>
+        // Detect search query language and redirect appropriately
+        function detectLanguageAndRedirect() {
+            const params = new URLSearchParams(window.location.search);
+            const query = params.get('q') || params.get('query') || document.referrer;
+            
+            // Chinese language detection
+            if (/[\u4e00-\u9fff]/.test(query) || 
+                query.includes('英语老师') || 
+                query.includes('英语培训') ||
+                query.includes('在线英语')) {
+                window.location.href = '/zh/';
+                return;
+            }
+            
+            // Japanese language detection  
+            if (/[\u3040-\u309f\u30a0-\u30ff]/.test(query) ||
+                query.includes('英語講師') ||
+                query.includes('英会話') ||
+                query.includes('オンライン英語')) {
+                window.location.href = '/ja/';
+                return;
+            }
+            
+            // Korean language detection
+            if (/[\uac00-\ud7af]/.test(query) ||
+                query.includes('영어 선생님') ||
+                query.includes('영어회화') ||
+                query.includes('온라인 영어')) {
+                window.location.href = '/ko/';
+                return;
+            }
+            
+            // Vietnamese language detection
+            if (/[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/.test(query) ||
+                query.includes('giáo viên tiếng Anh') ||
+                query.includes('học tiếng Anh') ||
+                query.includes('gia sư tiếng Anh')) {
+                window.location.href = '/vi/';
+                return;
+            }
+            
+            // Default to English
+            window.location.href = '/';
+        }
+        
+        // Run detection immediately
+        detectLanguageAndRedirect();
+    </script>
+</head>
+<body>
+    <div style="font-family: Arial, sans-serif; text-align: center; padding: 50px;">
+        <h2>Redirecting to your language...</h2>
+        <p>正在跳转到中文页面... / 日本語ページにリダイレクト中... / 한국어 페이지로 리디렉션 중... / Đang chuyển hướng đến trang tiếng Việt...</p>
+        <p><a href="/">Click here if you're not redirected automatically</a></p>
+    </div>
+</body>
+</html>

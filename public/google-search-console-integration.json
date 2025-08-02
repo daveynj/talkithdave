@@ -1,0 +1,109 @@
+{
+  "searchConsoleConfiguration": {
+    "multilingualSetup": {
+      "description": "Configuration for Google Search Console multilingual website setup",
+      "properties": [
+        {
+          "url": "https://talkwithdave.co.uk/",
+          "language": "en",
+          "region": "global",
+          "hreflang": "en"
+        },
+        {
+          "url": "https://talkwithdave.co.uk/zh/",
+          "language": "zh-CN", 
+          "region": "China",
+          "hreflang": "zh-CN"
+        },
+        {
+          "url": "https://talkwithdave.co.uk/ja/",
+          "language": "ja-JP",
+          "region": "Japan", 
+          "hreflang": "ja-JP"
+        },
+        {
+          "url": "https://talkwithdave.co.uk/ko/",
+          "language": "ko-KR",
+          "region": "South Korea",
+          "hreflang": "ko-KR"
+        },
+        {
+          "url": "https://talkwithdave.co.uk/vi/",
+          "language": "vi-VN",
+          "region": "Vietnam",
+          "hreflang": "vi-VN"
+        }
+      ]
+    },
+    "targetKeywords": {
+      "english": [
+        "online English teacher",
+        "ESL tutor",
+        "business English lessons",
+        "conversation practice"
+      ],
+      "chinese": [
+        "英语老师",
+        "在线英语",
+        "商务英语",
+        "英语会话"
+      ],
+      "japanese": [
+        "英語講師", 
+        "オンライン英会話",
+        "ビジネス英語",
+        "英会話レッスン"
+      ],
+      "korean": [
+        "영어 선생님",
+        "온라인 영어",
+        "비즈니스 영어", 
+        "영어회화"
+      ],
+      "vietnamese": [
+        "giáo viên tiếng Anh",
+        "học tiếng Anh online",
+        "tiếng Anh thương mại",
+        "luyện hội thoại"
+      ]
+    },
+    "searchEngineSubmission": {
+      "google": {
+        "searchConsole": "Submit all language versions",
+        "sitemaps": [
+          "/sitemap.xml",
+          "/sitemap-zh.xml", 
+          "/sitemap-ja.xml",
+          "/sitemap-ko.xml",
+          "/sitemap-vi.xml"
+        ]
+      },
+      "baidu": {
+        "webmasterTools": "Submit Chinese version",
+        "requirements": "ICP license recommended for China hosting"
+      },
+      "naver": {
+        "searchAdvisor": "Submit Korean version",
+        "blogIntegration": "Create Naver Blog presence"
+      },
+      "yahoo": {
+        "japanSubmission": "Submit Japanese version",
+        "mobileOptimization": "Ensure mobile-first indexing"
+      }
+    }
+  },
+  "aiSearchOptimization": {
+    "chatGPT": {
+      "optimizedFor": ["Natural language queries", "Conversational searches"],
+      "contentStructure": "FAQ format with direct answers"
+    },
+    "bard": {
+      "optimizedFor": ["Comprehensive responses", "Multi-step queries"],
+      "contentStructure": "Detailed information with proof points"
+    },
+    "bingChat": {
+      "optimizedFor": ["Citation-heavy responses", "Source verification"],
+      "contentStructure": "Fact-based content with clear attributions"
+    }
+  }
+}
