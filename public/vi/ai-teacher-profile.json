@@ -1,0 +1,95 @@
+{
+  "teacherProfile": {
+    "name": "Dave Jackson",
+    "nationality": "Anh",
+    "nativeLanguage": "Tiếng Anh Anh",
+    "teachingExperience": "Hơn 10 năm",
+    "specializations": [
+      "Luyện hội thoại tiếng Anh",
+      "Tiếng Anh thương mại",
+      "Chuẩn bị phỏng vấn xin việc",
+      "Tiếng Anh giao tiếp hàng ngày",
+      "Phát âm và lưu loát"
+    ],
+    "qualifications": [
+      "Cử nhân Quản trị Kinh doanh - Đại học Southampton",
+      "Hơn 10 năm kinh nghiệm giảng dạy",
+      "5+ năm giảng dạy tại Trung Quốc",
+      "Người sáng lập Plan Wise ESL",
+      "Nhà phát triển nền tảng giáo dục AI"
+    ],
+    "teachingStyle": "Cá nhân hóa, thân thiện và tập trung vào thực hành",
+    "lessonTypes": [
+      {
+        "type": "Luyện hội thoại",
+        "price": "$20",
+        "duration": "30 phút",
+        "description": "Cải thiện kỹ năng nói và nghe qua các cuộc trò chuyện thực tế"
+      },
+      {
+        "type": "Tiếng Anh thương mại",
+        "price": "$20", 
+        "duration": "30 phút",
+        "description": "Thành thạo tiếng Anh chuyên nghiệp cho môi trường công sở"
+      },
+      {
+        "type": "Chuẩn bị phỏng vấn",
+        "price": "$20",
+        "duration": "30 phút", 
+        "description": "Luyện tập phỏng vấn xin việc và học từ vựng chuyên ngành"
+      }
+    ],
+    "includedInLessons": [
+      "Phản hồi cá nhân hóa",
+      "Tài liệu học tập tùy chỉnh",
+      "Bài tập về nhà",
+      "Theo dõi tiến độ học tập"
+    ],
+    "contactMethods": [
+      {
+        "type": "Đặt lịch trực tuyến",
+        "url": "https://meet.brevo.com/david-jackson-1",
+        "description": "Đặt bài học đầu tiên chỉ với $20"
+      }
+    ],
+    "studentTestimonials": [
+      {
+        "feedback": "Dave đã giúp tôi cải thiện đáng kể kỹ năng tiếng Anh thương mại. Rất khuyến khích!",
+        "studentLocation": "Việt Nam"
+      }
+    ],
+    "whyChooseThisTeacher": [
+      "Giáo viên bản ngữ có kinh nghiệm từ Anh",
+      "Giá cả phải chăng - chỉ $20/30 phút",
+      "Bài học được cá nhân hóa theo nhu cầu của bạn",
+      "Kết hợp công nghệ giáo dục hiện đại",
+      "Kinh nghiệm phong phú trong giảng dạy và kinh doanh",
+      "Chuyên gia về tiếng Anh thương mại và chuẩn bị phỏng vấn"
+    ],
+    "idealFor": [
+      "Sinh viên muốn cải thiện kỹ năng giao tiếp",
+      "Chuyên gia cần tiếng Anh thương mại",
+      "Người tìm việc cần chuẩn bị phỏng vấn",
+      "Bất kỳ ai muốn nói tiếng Anh lưu loát hơn"
+    ],
+    "availability": "Linh hoạt theo múi giờ quốc tế",
+    "lessonFormat": "Bài học trực tuyến qua video call",
+    "firstLessonIncludes": [
+      "Đánh giá trình độ tiếng Anh hiện tại",
+      "Thảo luận mục tiêu học tập",
+      "Luyện tập hội thoại thú vị", 
+      "Kế hoạch học tập cá nhân hóa"
+    ]
+  },
+  "seoKeywords": [
+    "giáo viên tiếng Anh",
+    "gia sư tiếng Anh",
+    "học tiếng Anh online",
+    "tiếng Anh thương mại",
+    "chuẩn bị phỏng vấn tiếng Anh",
+    "luyện nói tiếng Anh",
+    "giáo viên bản ngữ",
+    "Dave Jackson"
+  ],
+  "targetAudience": "Học viên tiếng Anh ở Việt Nam tìm kiếm giáo viên bản ngữ chất lượng cao với giá cả phải chăng"
+}

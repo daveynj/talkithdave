@@ -483,6 +483,103 @@ export const translations: Record<string, Translation> = {
       examPrep: "시험 준비",
       customLessons: "맞춤 레슨"
     }
+  },
+  vi: {
+    nav: {
+      home: "Trang chủ",
+      about: "Giới thiệu", 
+      services: "Dịch vụ",
+      testimonials: "Nhận xét",
+      faq: "Câu hỏi thường gặp", 
+      contact: "Liên hệ",
+      booking: "Đặt lịch học"
+    },
+    hero: {
+      headline: "Học Tiếng Anh với Giáo Viên Bản Ngữ",
+      subtitle: "Cải thiện kỹ năng tiếng Anh của bạn với các bài học cá nhân hóa từ giáo viên người Anh có kinh nghiệm",
+      description: "Bài học chất lượng cao với giáo viên bản ngữ người Anh",
+      ctaPrimary: "Đặt Bài Học Đầu Tiên",
+      ctaSecondary: "Tìm hiểu thêm",
+      socialProof: "Chỉ $20 cho 30 phút"
+    },
+    about: {
+      title: "Gặp Gỡ Giáo Viên Của Bạn",
+      subtitle: "Người bản ngữ từ Anh, hơn 10 năm kinh nghiệm giảng dạy",
+      experience: "Với hơn 10 năm kinh nghiệm giảng dạy và nền tảng kinh doanh, tôi chuyên giúp học sinh đạt được mục tiêu học tiếng Anh.",
+      innovation: "Là người sáng lập Plan Wise ESL, tôi kết hợp phương pháp giảng dạy truyền thống với công nghệ tiên tiến để mang đến trải nghiệm học tập cá nhân hóa.",
+      credentials: "Cử nhân Quản trị Kinh doanh Đại học Southampton, hơn 5 năm giảng dạy tại Trung Quốc, người sáng lập nền tảng giáo dục AI được 500+ giáo viên trên thế giới sử dụng.",
+      qualifications: [
+        "Người bản ngữ tiếng Anh Anh",
+        "Hơn 10 năm kinh nghiệm giảng dạy", 
+        "Nhà đổi mới và phát triển công nghệ giáo dục",
+        "Chuyên gia tiếng Anh thương mại",
+        "Chuyên gia hội thoại"
+      ],
+      cta: "Đặt bài học đầu tiên"
+    },
+    services: {
+      title: "Dịch Vụ Giảng Dạy",
+      subtitle: "Các bài học được thiết kế riêng cho mục tiêu học tập của bạn",
+      conversation: {
+        title: "Luyện Hội Thoại",
+        description: "Cải thiện kỹ năng nói và nghe qua các cuộc trò chuyện thực tế"
+      },
+      business: {
+        title: "Tiếng Anh Thương Mại", 
+        description: "Thành thạo tiếng Anh chuyên nghiệp cho môi trường công sở"
+      },
+      interview: {
+        title: "Chuẩn Bị Phỏng Vấn",
+        description: "Luyện tập phỏng vấn xin việc và học từ vựng chuyên ngành"
+      },
+      price: "$20",
+      duration: "30 phút",
+      includes: ["Phản hồi cá nhân hóa", "Tài liệu tùy chỉnh", "Bài tập về nhà", "Theo dõi tiến độ"],
+      cta: "Đặt lịch ngay"
+    },
+    testimonials: {
+      title: "Nhận Xét Của Học Viên",
+      subtitle: "Phản hồi thực tế từ các học viên trên toàn thế giới"
+    },
+    faq: {
+      title: "Câu Hỏi Thường Gặp",
+      subtitle: "Tìm câu trả lời cho các câu hỏi phổ biến về dịch vụ của chúng tôi",
+      questions: [
+        {
+          question: "Bài học có giá bao nhiêu?",
+          answer: "Tất cả các bài học đều có giá $20 cho 30 phút. Giá này áp dụng cho tất cả các loại bài học: luyện hội thoại, tiếng Anh thương mại, hay chuẩn bị phỏng vấn. Bao gồm phản hồi cá nhân hóa, tài liệu học tập tùy chỉnh, bài tập về nhà và theo dõi tiến độ."
+        },
+        {
+          question: "Bạn có thể giúp tiếng Anh thương mại và chuẩn bị phỏng vấn không?",
+          answer: "Hoàn toàn có thể! Với bằng cử nhân kinh doanh và kinh nghiệm chuyên môn, tôi chuyên về tiếng Anh thương mại bao gồm viết email, kỹ năng thuyết trình, tham gia họp và giao tiếp chuyên nghiệp. Đối với chuẩn bị phỏng vấn, tôi tiến hành phỏng vấn thử, dạy từ vựng chuyên ngành và cung cấp phản hồi chi tiết."
+        }
+      ],
+      contactPrompt: "Có câu hỏi nào chưa được trả lời ở đây không?",
+      contactCta: "Liên hệ để biết thêm chi tiết"
+    },
+    contact: {
+      title: "Liên Hệ",
+      subtitle: "Sẵn sàng bắt đầu hành trình học tiếng Anh?",
+      email: "Email",
+      social: "Theo dõi Twitter"
+    },
+    booking: {
+      title: "Đặt Lịch Học",
+      subtitle: "Chọn thời gian phù hợp với bạn",
+      description: "Chọn khung thời gian ưa thích và cùng nhau bắt đầu cải thiện tiếng Anh. Tất cả các bài học đều được thực hiện qua video call.",
+      button: "Đặt Lịch Ngay",
+      firstLessonTitle: "Bài học đầu tiên bao gồm:",
+      firstLessonBenefits: [
+        "Đánh giá trình độ tiếng Anh hiện tại",
+        "Thảo luận mục tiêu học tập",
+        "Luyện tập hội thoại thú vị",
+        "Kế hoạch học tập cá nhân hóa"
+      ]
+    },
+    footer: {
+      examPrep: "Chuẩn bị thi",
+      customLessons: "Bài học tùy chỉnh"
+    }
   }
 };
 
@@ -494,5 +591,6 @@ export const supportedLanguages = [
   { code: 'en', name: 'English', nativeName: 'English' },
   { code: 'zh', name: 'Chinese', nativeName: '中文' },
   { code: 'ja', name: 'Japanese', nativeName: '日本語' },
-  { code: 'ko', name: 'Korean', nativeName: '한국어' }
+  { code: 'ko', name: 'Korean', nativeName: '한국어' },
+  { code: 'vi', name: 'Vietnamese', nativeName: 'Tiếng Việt' }
 ];

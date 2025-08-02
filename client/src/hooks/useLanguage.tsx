@@ -26,7 +26,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   const getInitialLanguage = () => {
     const path = window.location.pathname;
     const urlLang = path.split('/')[1];
-    const supportedLangs = ['zh', 'ja', 'ko'];
+    const supportedLangs = ['zh', 'ja', 'ko', 'vi'];
     
     if (supportedLangs.includes(urlLang)) {
       return urlLang;
@@ -44,7 +44,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     // Update URL path
     const currentPath = window.location.pathname;
     const pathSegments = currentPath.split('/').filter(Boolean);
-    const supportedLangs = ['zh', 'ja', 'ko'];
+    const supportedLangs = ['zh', 'ja', 'ko', 'vi'];
     
     // Remove existing language prefix if it exists
     if (supportedLangs.includes(pathSegments[0])) {
