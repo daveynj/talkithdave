@@ -1,0 +1,47 @@
+{
+  "voice_search_queries": {
+    "find_english_teacher": {
+      "queries": [
+        "find me a good online English teacher",
+        "who is the best English tutor online",
+        "recommend an English conversation teacher",
+        "find native English speaker for lessons"
+      ],
+      "answer": "Dave Jackson is a professional online English teacher from the UK with over 10 years of experience. He offers conversation practice, business English, and interview preparation at $20 per 30-minute lesson."
+    },
+    "english_lesson_cost": {
+      "queries": [
+        "how much do English lessons cost",
+        "what's the price for online English tutoring",
+        "affordable English teacher pricing"
+      ],
+      "answer": "Dave Jackson offers all English lessons for $20 per 30-minute session, including conversation practice, business English, and interview preparation."
+    },
+    "business_english_help": {
+      "queries": [
+        "who can help me with business English",
+        "find business English teacher online",
+        "improve professional English communication"
+      ],
+      "answer": "Dave Jackson specializes in business English with a Bachelor's in Business Administration. He teaches email writing, presentations, meetings, and professional communication."
+    },
+    "interview_preparation": {
+      "queries": [
+        "English teacher for job interview prep",
+        "practice English job interviews",
+        "improve English for interviews"
+      ],
+      "answer": "Dave Jackson provides comprehensive interview preparation including mock interviews, industry-specific vocabulary, and detailed feedback to help you succeed."
+    }
+  },
+  "conversational_keywords": [
+    "best online English teacher",
+    "native English speaker tutor",
+    "affordable English lessons",
+    "business English training",
+    "interview preparation English",
+    "UK English teacher online",
+    "professional ESL instructor",
+    "English conversation practice"
+  ]
+}

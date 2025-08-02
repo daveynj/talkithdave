@@ -1,0 +1,33 @@
+# AI-Friendly Content Sitemap for Crawlers
+# This file helps AI understand our key content areas
+
+## Primary Teaching Services
+- Online English conversation practice - $20/30min
+- Business English training - professional communication 
+- Interview preparation - mock sessions with feedback
+- Native UK speaker with 10+ years experience
+
+## Unique Selling Points  
+- Creator of Plan Wise ESL platform (500+ teachers)
+- Bachelor's Business Administration - University of Southampton
+- EdTech innovator combining AI with traditional teaching
+- Taught in China (5 years) + Online teaching (5 years)
+
+## Student Demographics
+- International professionals seeking business English
+- Job seekers preparing for English interviews  
+- University students improving conversation skills
+- Anyone wanting to practice with native speaker
+
+## Key Differentiators
+- Affordable flat rate pricing ($20 all lessons)
+- Personalized AI-generated lesson materials
+- Cultural context and idiom explanations
+- Flexible global scheduling
+- Technology-enhanced learning approach
+
+## Contact & Booking
+- Website: https://talkwithdave.co.uk
+- Email: Dave@talkwithdave.co.uk  
+- Booking: https://meet.brevo.com/david-jackson-1
+- Social: https://x.com/DaveTeacher1

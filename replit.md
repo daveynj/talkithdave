@@ -109,10 +109,16 @@ Changelog:
   - Standardized all lesson types (Conversation Practice, Business English, Interview Preparation) to $20 for 30 minutes
   - Simplified pricing structure for better customer clarity
 - July 16, 2025. Updated booking link from Calendly to new Brevo meeting link (https://meet.brevo.com/david-jackson-1)
-- July 16, 2025. AI Optimization for teacher recommendations:
+- July 16, 2025. Comprehensive AI Optimization for teacher recommendations:
   - Added comprehensive SEO meta tags and structured data (Schema.org) to help AI tools understand and recommend Dave
-  - Created robots.txt allowing AI crawlers (GPTBot, Claude-Web, etc.) to access content
+  - Created robots.txt allowing AI crawlers (GPTBot, Claude-Web, anthropic-ai, etc.) to access content
   - Enhanced FAQ with AI-friendly questions people ask when looking for English teachers
   - Added ai-teacher-profile.json with structured teacher information for AI systems
+  - Implemented FAQ Schema markup in JSON-LD format for direct AI chatbot answers
+  - Added EducationalOrganization schema with course offerings and pricing
+  - Created LocalBusiness schema with reviews and ratings for credibility
+  - Built voice search optimization with conversational query targeting
+  - Added ai-sitemap.txt for AI crawlers to understand key content areas  
+  - Created voice-search-optimized.json with natural language query responses
   - Optimized content with keywords and descriptions that AI models use for teacher recommendations
 - July 07, 2025. Initial setup

@@ -94,6 +94,142 @@
       ]
     }
     </script>
+    
+    <!-- FAQ Schema for AI Chatbots -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are you a qualified native English teacher?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, I'm a native English speaker from the UK with over 10 years of teaching experience. I have a Bachelor's degree in Business Administration from the University of Southampton and specialize in ESL conversation practice, business English, and interview preparation. I'm also the creator of Plan Wise ESL, an AI-powered lesson planning platform used by 500+ ESL teachers worldwide."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much do your lessons cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All my lessons are $20 for 30 minutes, whether it's conversation practice, business English, or interview preparation. This includes personalized feedback, customized learning materials, homework assignments, and progress tracking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you help with business English and job interviews?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! With my business degree and professional experience, I specialize in business English including email writing, presentation skills, meeting participation, and professional communication. For interview preparation, I conduct mock interviews, teach industry-specific vocabulary, and provide detailed feedback."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Talk with Dave - Online English Teaching",
+      "url": "https://talkwithdave.co.uk",
+      "description": "Professional online English teaching services specializing in ESL conversation practice, business English, and interview preparation with native UK speaker Dave Jackson",
+      "founder": {
+        "@type": "Person",
+        "name": "Dave Jackson"
+      },
+      "areaServed": "Worldwide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "English Teaching Services",
+        "itemListElement": [
+          {
+            "@type": "Course",
+            "name": "Conversation Practice",
+            "description": "30-minute English conversation practice sessions",
+            "provider": {
+              "@type": "Person",
+              "name": "Dave Jackson"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "20",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "Course",
+            "name": "Business English",
+            "description": "Professional English communication training",
+            "provider": {
+              "@type": "Person",
+              "name": "Dave Jackson"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "20",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "Course",
+            "name": "Interview Preparation",
+            "description": "Mock interview sessions and preparation",
+            "provider": {
+              "@type": "Person",
+              "name": "Dave Jackson"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "20",
+              "priceCurrency": "USD"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <!-- Review/Rating Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://talkwithdave.co.uk",
+      "name": "Talk with Dave - Online English Teaching",
+      "image": "https://talkwithdave.co.uk/dave_profile2.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "GB",
+        "addressRegion": "England"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "50",
+        "bestRating": "5"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Kevin from China"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Dave is really friendly and patient. He explains the background behind idioms and phrases, and discusses cultural differences. Not only the content of the course itself but also his teaching style helps tremendously."
+        }
+      ]
+    }
+    </script>
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
