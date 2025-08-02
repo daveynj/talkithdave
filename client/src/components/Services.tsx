@@ -2,56 +2,44 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check } from "lucide-react";
+import { useLanguage } from "../hooks/useLanguage";
+
+export default function Services() {
+  const { t } = useLanguage();
 
 const services = [
   {
     badge: "Most Popular",
     badgeType: "primary",
-    title: "Conversation Practice",
-    description: "Improve your speaking fluency through natural, engaging conversations on topics that interest you.",
-    price: "$20",
-    duration: "30 minutes",
-    features: [
-      "Personalized feedback",
-      "Natural speaking practice",
-      "Vocabulary enrichment",
-      "Confidence building"
-    ],
+    title: t.services.conversation.title,
+    description: t.services.conversation.description,
+    price: t.services.price,
+    duration: t.services.duration,
+    features: t.services.includes,
     buttonVariant: "default" as const
   },
   {
     badge: "Professional",
     badgeType: "muted" as const,
-    title: "Business English",
-    description: "Master professional communication for meetings, presentations, emails, and workplace interactions.",
-    price: "$20",
-    duration: "30 minutes",
-    features: [
-      "Professional vocabulary",
-      "Email writing skills",
-      "Meeting participation",
-      "Presentation practice"
-    ],
+    title: t.services.business.title,
+    description: t.services.business.description,
+    price: t.services.price,
+    duration: t.services.duration,
+    features: t.services.includes,
     buttonVariant: "outline" as const
   },
   {
     badge: "Specialized",
     badgeType: "muted" as const,
-    title: "Interview Preparation",
-    description: "Prepare for job interviews with mock sessions, feedback, and strategies to impress employers.",
-    price: "$20",
-    duration: "30 minutes",
-    features: [
-      "Mock interviews",
-      "Common question practice",
-      "Industry-specific preparation",
-      "Detailed feedback"
-    ],
+    title: t.services.interview.title,
+    description: t.services.interview.description,
+    price: t.services.price,
+    duration: t.services.duration,
+    features: t.services.includes,
     buttonVariant: "outline" as const
   }
 ];
 
-export default function Services() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -65,8 +53,8 @@ export default function Services() {
     <section id="services" className="py-12 md:py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl font-bold mb-4 text-primary">My Teaching Services</h2>
-          <p className="max-w-2xl mx-auto text-lg text-gray-700">Choose the perfect option that fits your English learning goals</p>
+          <h2 className="font-heading text-3xl font-bold mb-4 text-primary">{t.services.title}</h2>
+          <p className="max-w-2xl mx-auto text-lg text-gray-700">{t.services.subtitle}</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -101,7 +89,7 @@ export default function Services() {
                   className={`w-full ${service.buttonVariant === 'default' ? 'bg-secondary text-white hover:bg-secondary/90' : 'border-secondary text-secondary hover:bg-secondary hover:text-white'}`}
                   variant={service.buttonVariant}
                 >
-                  Book Now
+                  {t.services.cta}
                 </Button>
               </CardFooter>
             </Card>

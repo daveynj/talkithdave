@@ -1,22 +1,24 @@
 import { Linkedin, Youtube, Instagram, Mail, Calendar } from "lucide-react";
+import { useLanguage } from "../hooks/useLanguage";
+
+export default function Footer() {
+  const { t } = useLanguage();
 
 const quickLinks = [
-  { name: "About Me", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Reviews", href: "#testimonials" },
-  { name: "FAQ", href: "#faq" },
-  { name: "Contact", href: "#contact" }
+  { name: t.nav.about, href: "#about" },
+  { name: t.nav.services, href: "#services" },
+  { name: t.nav.testimonials, href: "#testimonials" },
+  { name: t.nav.faq, href: "#faq" },
+  { name: t.nav.contact, href: "#contact" }
 ];
 
 const services = [
-  { name: "Conversation Practice", href: "#services" },
-  { name: "Business English", href: "#services" },
-  { name: "Interview Preparation", href: "#services" },
-  { name: "Exam Preparation", href: "#services" },
-  { name: "Custom Lessons", href: "#services" }
+  { name: t.services.conversation.title, href: "#services" },
+  { name: t.services.business.title, href: "#services" },
+  { name: t.services.interview.title, href: "#services" },
+  { name: t.footer.examPrep, href: "#services" },
+  { name: t.footer.customLessons, href: "#services" }
 ];
-
-export default function Footer() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {

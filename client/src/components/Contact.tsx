@@ -1,13 +1,15 @@
 import { Mail, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "../hooks/useLanguage";
 
 export default function Contact() {
+  const { t } = useLanguage();
   return (
     <section id="contact" className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl font-bold mb-4 text-primary">Get in Touch</h2>
-          <p className="max-w-2xl mx-auto text-lg text-gray-700">Ready to improve your English skills? Reach out directly to get started.</p>
+          <h2 className="font-heading text-3xl font-bold mb-4 text-primary">{t.contact.title}</h2>
+          <p className="max-w-2xl mx-auto text-lg text-gray-700">{t.contact.subtitle}</p>
         </div>
         
         <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">

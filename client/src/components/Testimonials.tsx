@@ -42,7 +42,10 @@ const testimonials = [
   }
 ];
 
+import { useLanguage } from "../hooks/useLanguage";
+
 export default function Testimonials() {
+  const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slidesToShow, setSlidesToShow] = useState(3);
   const sliderRef = useRef<HTMLDivElement>(null);

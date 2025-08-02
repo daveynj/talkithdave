@@ -1,16 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { daveImages } from "../images";
-
-const qualifications = [
-  "Native English Speaker (UK)",
-  "10+ Years Teaching Experience",
-  "EdTech Innovator & Developer",
-  "Business English Specialist",
-  "Conversation Expert"
-];
+import { useLanguage } from "../hooks/useLanguage";
 
 export default function About() {
+  const { t } = useLanguage();
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -32,14 +26,13 @@ export default function About() {
             />
           </div>
           <div className="w-full md:w-3/5">
-            <h2 className="font-heading text-3xl font-bold mb-6 text-primary">Meet Dave - ESL Teacher & EdTech Innovator</h2>
-            <p className="mb-4 text-lg">Hi there! I'm Dave, a native English teacher from England with over 10 years of teaching experience - 5 years in a kindergarten in China and 5 years teaching adults conversation and business English online.</p>
-            <p className="mb-4">In addition to teaching, I'm the creator of <span className="font-semibold">Plan Wise ESL</span>, an innovative lesson planning platform now used by 500+ ESL teachers worldwide. My background in EdTech development gives me unique insights into effective language learning methods.</p>
-            <p className="mb-4">With a Bachelor's in Business Administration from the University of Southampton and a background in sales, I understand the importance of effective communication in both professional and personal settings.</p>
-            <p className="mb-6">My teaching approach combines proven educational techniques with cutting-edge technology to create engaging lessons focused on practical vocabulary and real-world scenarios — all in a friendly, supportive environment.</p>
+            <h2 className="font-heading text-3xl font-bold mb-6 text-primary">{t.about.title}</h2>
+            <p className="mb-4 text-lg">{t.about.experience}</p>
+            <p className="mb-4">{t.about.innovation}</p>
+            <p className="mb-6">{t.about.credentials}</p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              {qualifications.map((qualification, index) => (
+              {(t.about.qualifications || []).map((qualification, index) => (
                 <div key={index} className="flex items-center gap-3">
                   <div className="bg-primary/10 p-2 rounded-full">
                     <Check className="h-4 w-4 text-primary" />
