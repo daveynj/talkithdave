@@ -14,6 +14,7 @@ function Router() {
       <Route path="/zh" component={Home} />
       <Route path="/ja" component={Home} />
       <Route path="/ko" component={Home} />
+      <Route path="/vi" component={Home} />
       <Route component={NotFound} />
     </Switch>
   );
