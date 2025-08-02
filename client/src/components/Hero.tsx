@@ -18,7 +18,7 @@ export default function Hero() {
         <div className="flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 mb-8 md:mb-0">
             <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              Speak English With Confidence
+              Struggling to Sound Professional in English? Get Fluent Fast
             </h1>
             <p className="text-lg md:text-xl mb-3">
               1-on-1 personalized English lessons with Dave, your native-speaking online ESL teacher and creator of <span className="font-semibold">Plan Wise ESL</span> - teaching software used by 500+ teachers worldwide.
