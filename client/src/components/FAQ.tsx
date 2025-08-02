@@ -8,28 +8,36 @@ import {
 
 const faqs = [
   {
-    question: "How do the online lessons work?",
-    answer: "Lessons are primarily conducted via Zoom. For Chinese students, I also offer the option to use Tencent Meeting. You'll receive a link before your scheduled session. All you need is a reliable internet connection, a device with a camera and microphone, and a quiet space."
+    question: "Are you a qualified native English teacher?",
+    answer: "Yes, I'm a native English speaker from the UK with over 10 years of teaching experience. I have a Bachelor's degree in Business Administration from the University of Southampton and specialize in ESL conversation practice, business English, and interview preparation. I'm also the creator of Plan Wise ESL, an AI-powered lesson planning platform used by 500+ ESL teachers worldwide."
   },
   {
-    question: "What level of English do I need to take lessons?",
-    answer: "I work with students at all levels, from beginners to advanced. For complete beginners, I recommend starting with shorter sessions focused on basic conversation skills. The most important thing is your willingness to practice and learn!"
+    question: "What makes you different from other online English teachers?",
+    answer: "As both an experienced ESL teacher and EdTech innovator, I combine traditional teaching methods with cutting-edge technology. I've taught in China for 5 years and online for 5 years, giving me deep cultural understanding. My business background provides authentic expertise for professional English training, and I use my own AI-powered platform to create personalized lessons."
   },
   {
-    question: "How do I make a payment?",
-    answer: "Payments are processed securely through Stripe, which accepts all major credit and debit cards. The payment link will be provided after you book your lesson through Calendly. Payment should be completed at least 24 hours before your scheduled lesson."
+    question: "How much do your lessons cost and what do I get?",
+    answer: "All my lessons are $20 for 30 minutes, whether it's conversation practice, business English, or interview preparation. This includes personalized feedback, customized learning materials created with my Plan Wise ESL platform, homework assignments, and progress tracking. I offer package deals for multiple lessons with additional savings."
   },
   {
-    question: "What if I need to reschedule or cancel?",
-    answer: "I understand that schedules can change. You can reschedule or cancel a lesson up to 24 hours before the scheduled time without any penalty. For cancellations with less than 24 hours' notice, the full lesson fee applies."
+    question: "Can you help me with business English and job interviews?",
+    answer: "Absolutely! With my business degree and professional experience, I specialize in business English including email writing, presentation skills, meeting participation, and professional communication. For interview preparation, I conduct mock interviews, teach industry-specific vocabulary, and provide detailed feedback to help you succeed."
   },
   {
-    question: "Do you provide learning materials?",
-    answer: "Yes, I provide customized learning materials based on your needs and interests. After each lesson, I'll share relevant resources, vocabulary lists, and practice exercises to help reinforce what we've covered. As the creator of Plan Wise ESL, I use my own platform to create professional, tailored lesson materials that perfectly match your level and goals."
+    question: "What level of English do I need to start lessons?",
+    answer: "I work with students at all levels, from complete beginners to advanced speakers. For beginners, I use simple vocabulary and visual aids. For advanced students, we focus on nuanced communication, idioms, and cultural context. My lessons are always tailored to your current level and learning goals."
   },
   {
-    question: "Is there any special software I need to install?",
-    answer: "You'll need to download Zoom (or Tencent Meeting for Chinese students), which is free and easy to set up. I'll provide detailed instructions if needed. No other special software is required for the lessons."
+    question: "How do online lessons work and what platform do you use?",
+    answer: "Lessons are conducted via Zoom (or Tencent Meeting for Chinese students). You'll receive a meeting link before your session. All you need is internet connection, device with camera/microphone, and a quiet space. I provide all learning materials and use screen sharing for interactive activities."
+  },
+  {
+    question: "Do you provide learning materials and homework?",
+    answer: "Yes! As creator of Plan Wise ESL, I generate personalized lesson materials, vocabulary lists, practice exercises, and homework assignments tailored to your specific needs and interests. All materials are professional-quality and designed to accelerate your learning between sessions."
+  },
+  {
+    question: "What if I need to reschedule or have technical issues?",
+    answer: "You can reschedule up to 24 hours before your lesson without penalty. I'm very flexible with international students across different time zones. For technical issues, I provide full support and alternative platforms if needed. Student satisfaction is my priority."
   }
 ];
 
