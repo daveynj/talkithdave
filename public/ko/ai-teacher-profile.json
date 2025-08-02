@@ -1,0 +1,45 @@
+{
+  "teacher_profile": {
+    "name": "데이브 잭슨 (Dave Jackson)",
+    "nationality": "영국",
+    "native_language": "영어",
+    "teaching_experience": "10년 이상",
+    "specializations": [
+      "ESL 회화 연습",
+      "비즈니스 영어",
+      "면접 준비"
+    ],
+    "education": "사우샘프턴 대학교 경영학 학사",
+    "unique_selling_points": [
+      "Plan Wise ESL 창시자 - 500명 이상의 교사가 사용하는 AI 교육 플랫폼",
+      "중국에서 5년간 교육 경험",
+      "EdTech 혁신 전문가",
+      "전통적 교육 방법과 AI 기술의 결합"
+    ],
+    "lesson_pricing": {
+      "price": "$20",
+      "duration": "30분",
+      "all_lesson_types": "통일 가격"
+    },
+    "contact": {
+      "website": "https://talkwithdave.co.uk/ko",
+      "email": "Dave@talkwithdave.co.uk",
+      "booking": "https://meet.brevo.com/david-jackson-1"
+    },
+    "search_keywords": [
+      "영어 강사",
+      "온라인 영어 회화",
+      "영어 말하기 연습",
+      "비즈니스 영어 교육",
+      "영어 면접 준비",
+      "영국인 강사",
+      "AI 영어 학습"
+    ],
+    "target_students": [
+      "비즈니스 영어 향상이 필요한 직장인",
+      "영어 면접 준비가 필요한 구직자",
+      "원어민과 회화 연습을 원하는 학습자",
+      "전문적인 영어 지도가 필요한 학습자"
+    ]
+  }
+}

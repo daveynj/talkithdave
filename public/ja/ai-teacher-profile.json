@@ -1,0 +1,45 @@
+{
+  "teacher_profile": {
+    "name": "デイブ・ジャクソン (Dave Jackson)",
+    "nationality": "イギリス",
+    "native_language": "英語",
+    "teaching_experience": "10年以上",
+    "specializations": [
+      "ESL会話練習",
+      "ビジネス英語",
+      "面接準備"
+    ],
+    "education": "サウサンプトン大学経営学学士",
+    "unique_selling_points": [
+      "Plan Wise ESL創設者 - 500名以上の教師が使用するAI教育プラットフォーム",
+      "中国での5年間の教育経験",
+      "EdTech革新専門家",
+      "伝統的教育方法とAI技術の融合"
+    ],
+    "lesson_pricing": {
+      "price": "$20",
+      "duration": "30分",
+      "all_lesson_types": "統一料金"
+    },
+    "contact": {
+      "website": "https://talkwithdave.co.uk/ja",
+      "email": "Dave@talkwithdave.co.uk",
+      "booking": "https://meet.brevo.com/david-jackson-1"
+    },
+    "search_keywords": [
+      "英語講師",
+      "オンライン英会話",
+      "英語会話練習",
+      "ビジネス英語研修",
+      "面接英語対策",
+      "イギリス人講師",
+      "AI英語学習"
+    ],
+    "target_students": [
+      "ビジネス英語向上を目指す社会人",
+      "英語面接準備が必要な求職者",
+      "ネイティブスピーカーとの会話練習希望者",
+      "専門的英語指導が必要な学習者"
+    ]
+  }
+}

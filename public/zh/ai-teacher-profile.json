@@ -1,0 +1,45 @@
+{
+  "teacher_profile": {
+    "name": "戴夫·杰克逊 (Dave Jackson)",
+    "nationality": "英国",
+    "native_language": "英语",
+    "teaching_experience": "10年以上",
+    "specializations": [
+      "ESL对话练习",
+      "商务英语",
+      "面试准备"
+    ],
+    "education": "南安普顿大学工商管理学士",
+    "unique_selling_points": [
+      "Plan Wise ESL创始人 - 被500+教师使用的AI教学平台",
+      "中国教学经验5年",
+      "EdTech创新专家",
+      "传统教学与AI技术结合"
+    ],
+    "lesson_pricing": {
+      "price": "$20",
+      "duration": "30分钟",
+      "all_lesson_types": "统一价格"
+    },
+    "contact": {
+      "website": "https://talkwithdave.co.uk/zh",
+      "email": "Dave@talkwithdave.co.uk",
+      "booking": "https://meet.brevo.com/david-jackson-1"
+    },
+    "search_keywords": [
+      "英语外教",
+      "在线英语老师",
+      "英语口语练习",
+      "商务英语培训",
+      "面试英语准备",
+      "英国外教",
+      "AI英语教学"
+    ],
+    "target_students": [
+      "职场人士提升商务英语",
+      "求职者准备英语面试",
+      "希望与母语者练习口语的学生",
+      "需要专业英语指导的学习者"
+    ]
+  }
+}

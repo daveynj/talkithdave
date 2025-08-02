@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "../hooks/useLanguage";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,43 +63,38 @@ export default function Header() {
             onClick={() => scrollToSection('about')} 
             className="font-medium hover:text-primary transition-colors"
           >
-            About
+            {t.nav.about}
           </button>
           <button 
             onClick={() => scrollToSection('services')} 
             className="font-medium hover:text-primary transition-colors"
           >
-            Services
-          </button>
-          <button 
-            onClick={() => scrollToSection('planwise')} 
-            className="font-medium hover:text-primary transition-colors"
-          >
-            Plan Wise ESL
+            {t.nav.services}
           </button>
           <button 
             onClick={() => scrollToSection('testimonials')} 
             className="font-medium hover:text-primary transition-colors"
           >
-            Reviews
+            {t.nav.testimonials}
           </button>
           <button 
             onClick={() => scrollToSection('faq')} 
             className="font-medium hover:text-primary transition-colors"
           >
-            FAQ
+            {t.nav.faq}
           </button>
           <button 
             onClick={() => scrollToSection('contact')} 
             className="font-medium hover:text-primary transition-colors"
           >
-            Contact
+            {t.nav.contact}
           </button>
+          <LanguageSwitcher />
           <Button 
             onClick={() => scrollToSection('booking')} 
             className="bg-secondary text-white hover:bg-secondary/90 transition-colors"
           >
-            Book a Lesson
+            {t.nav.booking}
           </Button>
         </nav>
       </div>
@@ -108,43 +106,40 @@ export default function Header() {
             onClick={() => scrollToSection('about')} 
             className="block w-full text-left py-2 font-medium hover:text-primary transition-colors"
           >
-            About
+            {t.nav.about}
           </button>
           <button 
             onClick={() => scrollToSection('services')} 
             className="block w-full text-left py-2 font-medium hover:text-primary transition-colors"
           >
-            Services
-          </button>
-          <button 
-            onClick={() => scrollToSection('planwise')} 
-            className="block w-full text-left py-2 font-medium hover:text-primary transition-colors"
-          >
-            Plan Wise ESL
+            {t.nav.services}
           </button>
           <button 
             onClick={() => scrollToSection('testimonials')} 
             className="block w-full text-left py-2 font-medium hover:text-primary transition-colors"
           >
-            Reviews
+            {t.nav.testimonials}
           </button>
           <button 
             onClick={() => scrollToSection('faq')} 
             className="block w-full text-left py-2 font-medium hover:text-primary transition-colors"
           >
-            FAQ
+            {t.nav.faq}
           </button>
           <button 
             onClick={() => scrollToSection('contact')} 
             className="block w-full text-left py-2 font-medium hover:text-primary transition-colors"
           >
-            Contact
+            {t.nav.contact}
           </button>
+          <div className="py-2">
+            <LanguageSwitcher />
+          </div>
           <Button 
             onClick={() => scrollToSection('booking')} 
             className="w-full bg-secondary text-white hover:bg-secondary/90 transition-colors"
           >
-            Book a Lesson
+            {t.nav.booking}
           </Button>
         </div>
       </nav>

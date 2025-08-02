@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { daveImages } from "../images";
+import { useLanguage } from "../hooks/useLanguage";
 
 export default function Hero() {
+  const { t } = useLanguage();
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -18,13 +20,13 @@ export default function Hero() {
         <div className="flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 mb-8 md:mb-0">
             <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              Struggling to Sound Professional in English? Get Fluent Fast
+              {t.hero.headline}
             </h1>
             <p className="text-lg md:text-xl mb-3">
-              1-on-1 personalized English lessons with Dave, your native-speaking online ESL teacher and creator of <span className="font-semibold">Plan Wise ESL</span> - teaching software used by 500+ teachers worldwide.
+              {t.hero.subtitle}
             </p>
             <p className="text-lg mb-6">
-              Learn from someone who doesn't just teach English, but innovates how English is taught online.
+              {t.hero.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
@@ -32,7 +34,7 @@ export default function Hero() {
                 className="bg-secondary hover:bg-secondary/90 text-white font-medium px-6 py-6 h-auto"
                 size="lg"
               >
-                Book Your First Lesson for $20
+                {t.hero.ctaPrimary}
               </Button>
               <Button
                 onClick={() => scrollToSection('about')}
@@ -40,7 +42,7 @@ export default function Hero() {
                 size="lg"
                 variant="outline"
               >
-                Learn More
+                {t.hero.ctaSecondary}
               </Button>
             </div>
             <div className="mt-6 flex items-center">
@@ -58,7 +60,7 @@ export default function Hero() {
                   <AvatarFallback>ST</AvatarFallback>
                 </Avatar>
               </div>
-              <p className="ml-3 text-sm">Join <span className="font-bold">150+ students</span> who improved their English</p>
+              <p className="ml-3 text-sm">{t.hero.socialProof}</p>
             </div>
           </div>
           <div className="w-full md:w-1/2 flex justify-center">
