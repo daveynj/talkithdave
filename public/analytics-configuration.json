@@ -1,0 +1,96 @@
+{
+  "googleAnalytics": {
+    "trackingId": "G-PJ2XKCFZWS",
+    "configuration": {
+      "multilingualTracking": {
+        "enabled": true,
+        "customDimensions": {
+          "language": "custom_parameter_1",
+          "market": "custom_parameter_2",
+          "userJourney": "custom_parameter_3"
+        }
+      },
+      "eventTracking": {
+        "languageSwitch": {
+          "event": "language_change",
+          "category": "engagement",
+          "parameters": ["language", "previous_language", "method"]
+        },
+        "bookingClicks": {
+          "event": "booking_click", 
+          "category": "conversion",
+          "parameters": ["language", "section", "cta_type"]
+        },
+        "contactForm": {
+          "event": "contact_form_submit",
+          "category": "lead_generation",
+          "parameters": ["language", "form_type", "user_input"]
+        }
+      },
+      "audienceSegmentation": {
+        "byLanguage": {
+          "chinese": "zh_speakers",
+          "japanese": "ja_speakers", 
+          "korean": "ko_speakers",
+          "vietnamese": "vi_speakers",
+          "english": "en_speakers"
+        },
+        "byMarket": {
+          "china": "china_market",
+          "japan": "japan_market",
+          "korea": "korea_market", 
+          "vietnam": "vietnam_market",
+          "global": "global_market"
+        }
+      }
+    }
+  },
+  "conversionTracking": {
+    "goals": [
+      {
+        "name": "Book Lesson Click",
+        "type": "event", 
+        "event": "booking_click",
+        "value": 20,
+        "currency": "USD"
+      },
+      {
+        "name": "Contact Form Submission",
+        "type": "event",
+        "event": "contact_form_submit", 
+        "value": 10,
+        "currency": "USD"
+      },
+      {
+        "name": "Language Switch Engagement",
+        "type": "event",
+        "event": "language_change",
+        "value": 5,
+        "currency": "USD"
+      }
+    ]
+  },
+  "recommendedReports": {
+    "multilingual": [
+      "Traffic by Language", 
+      "Conversion Rate by Market",
+      "User Journey Across Languages",
+      "Popular Content by Region",
+      "Booking Funnel by Language"
+    ],
+    "businessIntelligence": [
+      "Revenue Attribution by Language",
+      "Customer Acquisition Cost by Market", 
+      "Lifetime Value by Region",
+      "Seasonal Trends by Geography"
+    ]
+  },
+  "dataStudio": {
+    "dashboardTemplates": [
+      "Multilingual Performance Overview",
+      "Language-Specific Conversion Funnels", 
+      "Regional Market Comparison",
+      "AI Chatbot Referral Analysis"
+    ]
+  }
+}

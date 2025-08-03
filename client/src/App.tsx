@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "./hooks/useLanguage";
 import LanguageSpecificHead from "./components/LanguageSpecificHead";
 import LanguageDetector from "./components/LanguageDetector";
+import AnalyticsTracker from "./components/AnalyticsTracker";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 
@@ -28,6 +29,7 @@ function App() {
       <LanguageProvider>
         <LanguageDetector />
         <LanguageSpecificHead />
+        <AnalyticsTracker />
         <TooltipProvider>
           <Toaster />
           <Router />
