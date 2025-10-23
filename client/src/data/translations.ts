@@ -82,7 +82,7 @@ export interface Translation {
 export const translations: Record<string, Translation> = {
   en: {
     hero: {
-      headline: "Struggling to Sound Professional in English? Get Fluent Fast",
+      headline: "Stop Struggling to Sound Professional. Book Your 30-Minute Trial Lesson for $20 and Get Fluent Fast.",
       subtitle: "1-on-1 personalized English lessons with Dave, your native-speaking online ESL teacher and creator of Plan Wise ESL - teaching software used by 500+ teachers worldwide.",
       description: "Learn from someone who doesn't just teach English, but innovates how English is taught online.",
       ctaPrimary: "Book Your First Lesson for $20",

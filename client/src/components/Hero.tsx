@@ -28,40 +28,31 @@ export default function Hero() {
             <p className="text-lg mb-6">
               {t.hero.description}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                onClick={() => scrollToSection('booking')}
-                className="bg-secondary hover:bg-secondary/90 text-white font-medium px-6 py-6 h-auto"
-                size="lg"
-              >
-                {t.hero.ctaPrimary}
-              </Button>
-              <Button
-                onClick={() => scrollToSection('about')}
-                className="bg-white text-primary hover:bg-white/90 font-medium px-6 py-6 h-auto"
-                size="lg"
-                variant="outline"
-              >
-                {t.hero.ctaSecondary}
-              </Button>
-            </div>
-            <div className="mt-6 flex items-center">
+            <div className="mb-6 flex items-center">
               <div className="flex -space-x-2">
-                <Avatar className="border-2 border-white h-8 w-8">
+                <Avatar className="border-2 border-white h-10 w-10">
                   <AvatarImage src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student" />
                   <AvatarFallback>ST</AvatarFallback>
                 </Avatar>
-                <Avatar className="border-2 border-white h-8 w-8">
+                <Avatar className="border-2 border-white h-10 w-10">
                   <AvatarImage src="https://randomuser.me/api/portraits/men/42.jpg" alt="Student" />
                   <AvatarFallback>ST</AvatarFallback>
                 </Avatar>
-                <Avatar className="border-2 border-white h-8 w-8">
+                <Avatar className="border-2 border-white h-10 w-10">
                   <AvatarImage src="https://randomuser.me/api/portraits/women/22.jpg" alt="Student" />
                   <AvatarFallback>ST</AvatarFallback>
                 </Avatar>
               </div>
-              <p className="ml-3 text-sm">{t.hero.socialProof}</p>
+              <p className="ml-3 text-base font-medium">{t.hero.socialProof}</p>
             </div>
+            <Button 
+              data-testid="button-book-lesson"
+              onClick={() => scrollToSection('booking')}
+              className="bg-yellow-400 hover:bg-yellow-500 text-primary font-bold px-10 py-8 h-auto text-xl shadow-2xl transform hover:scale-105 transition-all duration-200"
+              size="lg"
+            >
+              {t.hero.ctaPrimary}
+            </Button>
           </div>
           <div className="w-full md:w-1/2 flex justify-center">
             <img 
