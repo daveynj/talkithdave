@@ -1,4 +1,4 @@
-import { Mail, Twitter } from "lucide-react";
+import { Mail, Twitter, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "../hooks/useLanguage";
 
@@ -12,41 +12,86 @@ export default function Contact() {
           <p className="max-w-2xl mx-auto text-lg text-gray-700">{t.contact.subtitle}</p>
         </div>
         
-        <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
-          <div className="flex flex-col md:flex-row">
-            <div className="md:flex-1 p-8 md:p-10 border-b md:border-b-0 md:border-r border-gray-100">
-              <div className="text-center">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Primary Booking Card - Takes 2 columns on large screens */}
+            <div className="lg:col-span-2 bg-white rounded-xl shadow-lg p-8 md:p-10">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="bg-yellow-400/20 px-4 py-2 rounded-full">
+                  <span className="font-bold text-primary">$20</span>
+                </div>
+                <h3 className="font-heading text-2xl font-bold text-primary">{t.booking.firstLessonTitle}</h3>
+              </div>
+              
+              <p className="text-gray-700 mb-6 text-lg">
+                {t.booking.description}
+              </p>
+              
+              <ul className="space-y-3 mb-8">
+                {t.booking.firstLessonBenefits.map((benefit, index) => (
+                  <li key={index} className="flex items-start">
+                    <Check className="h-5 w-5 text-secondary mt-0.5 mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <Button 
+                asChild
+                className="w-full md:w-auto bg-yellow-400 hover:bg-yellow-500 text-primary font-bold px-10 py-6 h-auto text-lg shadow-lg"
+                size="lg"
+              >
+                <a 
+                  href="https://meet.brevo.com/david-jackson-1" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="button-book-trial"
+                >
+                  {t.booking.button}
+                </a>
+              </Button>
+              
+              <p className="text-sm text-gray-500 mt-4">
+                All lessons are conducted via video call. Choose a time that works for you.
+              </p>
+            </div>
+            
+            {/* Right Column - Email and Twitter stacked */}
+            <div className="space-y-6">
+              {/* Email Card */}
+              <div className="bg-white rounded-xl shadow-lg p-6 text-center">
                 <div className="inline-block bg-primary/10 p-4 rounded-full mb-4">
                   <Mail className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="font-heading text-xl font-semibold mb-3">Email Me</h3>
                 <a 
                   href="mailto:Dave@talkwithdave.co.uk" 
-                  className="text-primary hover:underline font-medium block mb-5"
+                  className="text-primary hover:underline font-medium block mb-4 break-all"
                 >
                   Dave@talkwithdave.co.uk
                 </a>
                 <Button 
-                  className="bg-primary hover:bg-primary/90 text-white w-full md:w-auto"
+                  className="bg-primary hover:bg-primary/90 text-white w-full"
                   onClick={() => window.location.href = "mailto:Dave@talkwithdave.co.uk"}
+                  data-testid="button-email"
                 >
                   Send Email
                 </Button>
               </div>
-            </div>
-            
-            <div className="md:flex-1 p-8 md:p-10">
-              <div className="text-center">
+              
+              {/* Twitter Card */}
+              <div className="bg-white rounded-xl shadow-lg p-6 text-center">
                 <div className="inline-block bg-primary/10 p-4 rounded-full mb-4">
                   <Twitter className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="font-heading text-xl font-semibold mb-3">Follow Me</h3>
-                <p className="text-gray-600 mb-5">Stay updated with teaching tips and resources</p>
+                <p className="text-gray-600 mb-4 text-sm">Stay updated with teaching tips</p>
                 <a 
                   href="https://x.com/DaveTeacher1" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-md bg-primary text-white px-6 py-2 font-medium hover:bg-primary/90 transition-colors"
+                  className="inline-flex items-center justify-center rounded-md bg-primary text-white px-6 py-2 font-medium hover:bg-primary/90 transition-colors w-full"
+                  data-testid="link-twitter"
                 >
                   @DaveTeacher1
                 </a>

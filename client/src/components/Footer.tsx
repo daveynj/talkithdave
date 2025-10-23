@@ -109,7 +109,7 @@ const services = [
               <li className="flex items-center">
                 <Calendar className="h-4 w-4 mr-2 text-primary" />
                 <button 
-                  onClick={() => scrollToSection('booking')} 
+                  onClick={() => scrollToSection('contact')} 
                   className="hover:text-primary transition-colors"
                 >
                   Book a Lesson
