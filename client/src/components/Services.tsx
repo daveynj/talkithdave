@@ -10,7 +10,7 @@ export default function Services() {
 const services = [
   {
     badge: "Most Popular",
-    badgeType: "primary",
+    badgeType: "default" as const,
     title: t.services.conversation.title,
     description: t.services.conversation.description,
     price: t.services.price,

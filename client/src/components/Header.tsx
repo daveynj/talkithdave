@@ -92,7 +92,7 @@ export default function Header() {
           <LanguageSwitcher />
           <Button 
             asChild
-            className="bg-secondary text-white hover:bg-secondary/90 transition-colors"
+            className="bg-yellow-400 text-primary hover:bg-yellow-500 transition-colors font-bold shadow-md"
           >
             <a 
               href="https://meet.brevo.com/david-jackson-1" 
@@ -143,7 +143,7 @@ export default function Header() {
           </div>
           <Button 
             asChild
-            className="w-full bg-secondary text-white hover:bg-secondary/90 transition-colors"
+            className="w-full bg-yellow-400 text-primary hover:bg-yellow-500 transition-colors font-bold shadow-md"
           >
             <a 
               href="https://meet.brevo.com/david-jackson-1" 

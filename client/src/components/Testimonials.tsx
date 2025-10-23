@@ -185,10 +185,17 @@ export default function Testimonials() {
 
         <div className="mt-12 text-center">
           <Button 
-            onClick={() => scrollToSection('booking')} 
-            className="bg-primary hover:bg-primary/90 text-white"
+            asChild
+            className="bg-secondary hover:bg-secondary/90 text-white px-8 py-6 h-auto text-lg font-semibold shadow-lg"
+            size="lg"
           >
-            Join My Happy Students
+            <a 
+              href="https://meet.brevo.com/david-jackson-1" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ready to Join Them? Book Your Trial Lesson
+            </a>
           </Button>
         </div>
       </div>

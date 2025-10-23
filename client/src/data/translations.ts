@@ -142,6 +142,10 @@ export const translations: Record<string, Translation> = {
       subtitle: "Everything you need to know about learning English with Dave",
       questions: [
         {
+          question: "What is included in the $20 First Lesson?",
+          answer: "The $20 lesson is a one-time, 30-minute trial that includes a full English level assessment, a discussion of your learning goals, and a personalized learning plan. You'll also get to experience my teaching style and see how AI-powered lesson planning creates content tailored specifically to your job, industry, and interests."
+        },
+        {
           question: "Are you a qualified native English teacher?",
           answer: "Yes, I'm a native English speaker from the UK with over 10 years of teaching experience. I have a Bachelor's degree in Business Administration from the University of Southampton and specialize in ESL conversation practice, business English, and interview preparation."
         },
