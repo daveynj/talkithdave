@@ -91,10 +91,16 @@ export default function Header() {
           </button>
           <LanguageSwitcher />
           <Button 
-            onClick={() => scrollToSection('booking')} 
+            asChild
             className="bg-secondary text-white hover:bg-secondary/90 transition-colors"
           >
-            {t.nav.booking}
+            <a 
+              href="https://meet.brevo.com/david-jackson-1" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t.nav.booking}
+            </a>
           </Button>
         </nav>
       </div>
@@ -136,10 +142,16 @@ export default function Header() {
             <LanguageSwitcher />
           </div>
           <Button 
-            onClick={() => scrollToSection('booking')} 
+            asChild
             className="w-full bg-secondary text-white hover:bg-secondary/90 transition-colors"
           >
-            {t.nav.booking}
+            <a 
+              href="https://meet.brevo.com/david-jackson-1" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t.nav.booking}
+            </a>
           </Button>
         </div>
       </nav>

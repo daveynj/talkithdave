@@ -43,10 +43,16 @@ export default function About() {
             </div>
             
             <Button 
-              onClick={() => scrollToSection('booking')}
+              asChild
               className="bg-secondary hover:bg-secondary/90 text-white"
             >
-              Book a Conversation Now
+              <a 
+                href="https://meet.brevo.com/david-jackson-1" 
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book a Conversation Now
+              </a>
             </Button>
           </div>
         </div>

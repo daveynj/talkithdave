@@ -17,11 +17,17 @@ export default function CTA() {
         <p className="text-lg md:text-xl mb-8">Start your journey to English fluency with personalized lessons tailored to your goals.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
-            onClick={() => scrollToSection('booking')}
+            asChild
             className="bg-white text-primary hover:bg-white/90 px-8 py-6 h-auto"
             size="lg"
           >
-            Book Your First Lesson
+            <a 
+              href="https://meet.brevo.com/david-jackson-1" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book Your First Lesson
+            </a>
           </Button>
           <Button 
             onClick={() => scrollToSection('contact')}

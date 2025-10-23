@@ -54,10 +54,16 @@ export default function Process() {
             <p className="text-center mb-6">In our first session, we'll get to know each other, assess your current English level, and develop a personalized learning plan.</p>
             <div className="text-center">
               <Button 
-                onClick={() => scrollToSection('booking')}
+                asChild
                 className="bg-secondary hover:bg-secondary/90 text-white"
               >
-                Book Your First Lesson for $20
+                <a 
+                  href="https://meet.brevo.com/david-jackson-1" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book Your First Lesson for $20
+                </a>
               </Button>
             </div>
           </div>

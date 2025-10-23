@@ -85,11 +85,17 @@ const services = [
               </CardContent>
               <CardFooter>
                 <Button 
-                  onClick={() => scrollToSection('booking')}
+                  asChild
                   className={`w-full ${service.buttonVariant === 'default' ? 'bg-secondary text-white hover:bg-secondary/90' : 'border-secondary text-secondary hover:bg-secondary hover:text-white'}`}
                   variant={service.buttonVariant}
                 >
-                  {t.services.cta}
+                  <a 
+                    href="https://meet.brevo.com/david-jackson-1" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t.services.cta}
+                  </a>
                 </Button>
               </CardFooter>
             </Card>

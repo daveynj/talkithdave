@@ -46,12 +46,18 @@ export default function Hero() {
               <p className="ml-3 text-base font-medium">{t.hero.socialProof}</p>
             </div>
             <Button 
-              data-testid="button-book-lesson"
-              onClick={() => scrollToSection('booking')}
+              asChild
               className="bg-yellow-400 hover:bg-yellow-500 text-primary font-bold px-10 py-8 h-auto text-xl shadow-2xl transform hover:scale-105 transition-all duration-200"
               size="lg"
             >
-              {t.hero.ctaPrimary}
+              <a 
+                href="https://meet.brevo.com/david-jackson-1" 
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="button-book-lesson"
+              >
+                {t.hero.ctaPrimary}
+              </a>
             </Button>
           </div>
           <div className="w-full md:w-1/2 flex justify-center">
