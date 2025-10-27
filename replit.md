@@ -97,6 +97,12 @@ Preferred communication style: Simple, everyday language.
 ## Changelog
 
 Changelog:
+- October 27, 2025. Updated booking system from Brevo to Calendly:
+  - Replaced all Brevo meeting links (https://meet.brevo.com/david-jackson-1) with Calendly booking link (https://calendly.com/daveynj113/your-first-lesson)
+  - Updated all 11 booking CTAs across active components: Hero, Header, About, Services, PlanWise, Testimonials, Contact
+  - Updated unused components (Process, Booking, CTA) for consistency
+  - Updated SEO and AI optimization files across all languages (en, zh, ja, ko, vi)
+  - Booking system change improves user experience with Calendly's familiar interface
 - July 16, 2025. Fixed image loading issues for deployment:
   - Resolved static file serving order conflicts with Vite middleware
   - Fixed Dave's profile images by importing them as bundled assets instead of public directory references

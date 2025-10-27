@@ -58,7 +58,7 @@ export default function Process() {
                 className="bg-secondary hover:bg-secondary/90 text-white"
               >
                 <a 
-                  href="https://meet.brevo.com/david-jackson-1" 
+                  href="https://calendly.com/daveynj113/your-first-lesson" 
                   target="_blank"
                   rel="noopener noreferrer"
                 >

@@ -95,7 +95,7 @@ export default function Header() {
             className="bg-yellow-400 text-primary hover:bg-yellow-500 transition-colors font-bold shadow-md"
           >
             <a 
-              href="https://meet.brevo.com/david-jackson-1" 
+              href="https://calendly.com/daveynj113/your-first-lesson" 
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -146,7 +146,7 @@ export default function Header() {
             className="w-full bg-yellow-400 text-primary hover:bg-yellow-500 transition-colors font-bold shadow-md"
           >
             <a 
-              href="https://meet.brevo.com/david-jackson-1" 
+              href="https://calendly.com/daveynj113/your-first-lesson" 
               target="_blank"
               rel="noopener noreferrer"
             >

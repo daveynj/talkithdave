@@ -39,7 +39,7 @@ export default function Booking() {
               </div>
               
               <a 
-                href="https://meet.brevo.com/david-jackson-1" 
+                href="https://calendly.com/daveynj113/your-first-lesson" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-center"
