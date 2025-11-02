@@ -82,10 +82,10 @@ export interface Translation {
 export const translations: Record<string, Translation> = {
   en: {
     hero: {
-      headline: "Stop Struggling to Sound Professional. Book Your 30-Minute Trial Lesson for $20 and Get Fluent Fast.",
+      headline: "Stop Struggling to Sound Professional. Book Your 30-Minute Personalized Fluency Strategy Session for $20 and Get Fluent Fast.",
       subtitle: "1-on-1 personalized English lessons with Dave, your native-speaking online ESL teacher and creator of Plan Wise ESL - teaching software used by 500+ teachers worldwide.",
       description: "Learn from someone who doesn't just teach English, but innovates how English is taught online.",
-      ctaPrimary: "Book Your First Lesson for $20",
+      ctaPrimary: "Book Your Professional Assessment",
       ctaSecondary: "Learn More",
       socialProof: "Join 150+ students who improved their English"
     },
@@ -111,7 +111,7 @@ export const translations: Record<string, Translation> = {
         "Business English Specialist",
         "Conversation Expert"
       ],
-      cta: "Book Your First Lesson"
+      cta: "Book Your Professional Assessment"
     },
     services: {
       title: "English Learning Services",
@@ -142,8 +142,8 @@ export const translations: Record<string, Translation> = {
       subtitle: "Everything you need to know about learning English with Dave",
       questions: [
         {
-          question: "What is included in the $20 First Lesson?",
-          answer: "The $20 lesson is a one-time, 30-minute trial that includes a full English level assessment, a discussion of your learning goals, and a personalized learning plan. You'll also get to experience my teaching style and see how AI-powered lesson planning creates content tailored specifically to your job, industry, and interests."
+          question: "What is included in the $20 Professional Assessment?",
+          answer: "For $20, you get a 30-minute consultation where I will personally assess your current CEFR level, diagnose your specific fluency challenges, and deliver a customized learning plan for your professional goals. You'll also get to experience my teaching style and see how AI-powered lesson planning creates content tailored specifically to your job, industry, and interests."
         },
         {
           question: "Are you a qualified native English teacher?",
