@@ -117,8 +117,8 @@ export const translations: Record<string, Translation> = {
       title: "English Learning Services",
       subtitle: "Choose the perfect lesson type for your goals",
       conversation: {
-        title: "Conversation Practice",
-        description: "Improve your speaking fluency and confidence through natural conversations"
+        title: "Critical Thinking & Fluency",
+        description: "Go beyond casual chat. This course is an intellectual workout, using advanced topics like ethics, psychology, politics, religion, international business and philosophy to challenge your thinking and master the nuanced vocabulary and articulation required for high-level professional environments."
       },
       business: {
         title: "Business English",
