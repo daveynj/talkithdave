@@ -9,6 +9,7 @@ import LanguageDetector from "./components/LanguageDetector";
 import AnalyticsTracker from "./components/AnalyticsTracker";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
+import SiemReap from "@/pages/SiemReap";
 
 function Router() {
   return (
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/ja" component={Home} />
       <Route path="/ko" component={Home} />
       <Route path="/vi" component={Home} />
+      <Route path="/siem-reap" component={SiemReap} />
       <Route component={NotFound} />
     </Switch>
   );
