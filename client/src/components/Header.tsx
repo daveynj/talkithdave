@@ -4,10 +4,18 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "../hooks/useLanguage";
 import LanguageSwitcher from "./LanguageSwitcher";
 
-export default function Header() {
+interface HeaderProps {
+  customBookingText?: string;
+  customBookingLink?: string;
+}
+
+export default function Header({ customBookingText, customBookingLink }: HeaderProps = {}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { t } = useLanguage();
+  
+  const bookingText = customBookingText || t.nav.booking;
+  const bookingLink = customBookingLink || "https://calendly.com/daveynj113/your-first-lesson";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -95,11 +103,12 @@ export default function Header() {
             className="bg-yellow-400 text-primary hover:bg-yellow-500 transition-colors font-bold shadow-md"
           >
             <a 
-              href="https://calendly.com/daveynj113/your-first-lesson" 
+              href={bookingLink} 
               target="_blank"
               rel="noopener noreferrer"
+              data-testid="button-header-booking"
             >
-              {t.nav.booking}
+              {bookingText}
             </a>
           </Button>
         </nav>
@@ -146,11 +155,12 @@ export default function Header() {
             className="w-full bg-yellow-400 text-primary hover:bg-yellow-500 transition-colors font-bold shadow-md"
           >
             <a 
-              href="https://calendly.com/daveynj113/your-first-lesson" 
+              href={bookingLink} 
               target="_blank"
               rel="noopener noreferrer"
+              data-testid="button-header-booking-mobile"
             >
-              {t.nav.booking}
+              {bookingText}
             </a>
           </Button>
         </div>

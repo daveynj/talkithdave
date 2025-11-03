@@ -126,7 +126,10 @@ export default function SiemReap() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <Header 
+        customBookingText="Book Your Free Assessment"
+        customBookingLink="https://calendly.com/daveynj113/initial-meeting-and-assesment"
+      />
       <main className="flex-grow">
         <SiemReapHero />
         <SiemReapServices />
