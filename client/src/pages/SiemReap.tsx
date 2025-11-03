@@ -1,7 +1,7 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { siemReapTranslations } from "@/data/siemReapTranslations";
-import Helmet from "react-helmet";
 
 function SiemReapHero() {
   const { title, subtitle, description } = siemReapTranslations.hero;
@@ -61,11 +61,12 @@ function SiemReapBooking() {
 }
 
 export default function SiemReap() {
+  useEffect(() => {
+    document.title = siemReapTranslations.title;
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
-      <Helmet>
-        <title>{siemReapTranslations.title}</title>
-      </Helmet>
       <Header />
       <main className="flex-grow">
         <SiemReapHero />
