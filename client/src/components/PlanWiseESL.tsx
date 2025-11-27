@@ -13,7 +13,7 @@ export default function PlanWiseESL() {
               The Dave Jackson Difference: <span className="text-secondary">Faster Progress with AI-Powered Lessons</span>
             </h2>
             <p className="mb-4 text-lg">
-              As the <span className="font-semibold">founder and developer</span> of <a href="https://planwiseesl.com" target="_blank" rel="noopener noreferrer" className="text-secondary font-medium hover:underline">Plan Wise ESL</a> - a platform used by 500+ ESL teachers worldwide - I leverage cutting-edge AI technology to create exceptional learning experiences.
+              I use my own proprietary AI technology to build a 100% unique lesson plan for YOU. While other tutors hand out generic PDFs, I create a custom curriculum around your job, your industry, and your specific weaknesses so every minute is high-value practice.
             </p>
             <p className="mb-6">
               <span className="font-semibold">Lessons are 100% personalized to your job, industry, and goals.</span> You'll receive professionally designed, CEFR-aligned lessons tailored to your exact needs and learning style. This means more relevant practice, faster progress, and English skills that directly apply to your real-world needs.
@@ -55,8 +55,8 @@ export default function PlanWiseESL() {
                   <Star className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Proven Success</h4>
-                  <p className="text-sm text-gray-600">Used by 500+ teachers worldwide</p>
+                  <h4 className="font-medium">Custom AI Curriculum</h4>
+                  <p className="text-sm text-gray-600">100% unique lesson plans built around your job and goals</p>
                 </div>
               </div>
             </div>

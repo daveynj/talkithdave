@@ -82,10 +82,10 @@ export interface Translation {
 export const translations: Record<string, Translation> = {
   en: {
     hero: {
-      headline: "Stop Struggling to Sound Professional. Book Your 30-Minute Personalized Fluency Strategy Session for $20 and Get Fluent Fast.",
-      subtitle: "1-on-1 personalized English lessons with Dave, your native-speaking online ESL teacher and creator of Plan Wise ESL - teaching software used by 500+ teachers worldwide.",
-      description: "Learn from someone who doesn't just teach English, but innovates how English is taught online.",
-      ctaPrimary: "Book Your Professional Assessment",
+      headline: "Speak Business English with British Authority.",
+      subtitle: "Private 1-on-1 coaching for executives. Native UK expert. Book your fluency assessment today.",
+      description: "Your personalized roadmap to fluency.",
+      ctaPrimary: "Book Assessment ($20)",
       ctaSecondary: "Learn More",
       socialProof: "Join 150+ students who improved their English"
     },
@@ -96,16 +96,16 @@ export const translations: Record<string, Translation> = {
       testimonials: "Testimonials",
       faq: "FAQ",
       contact: "Contact",
-      booking: "Book Lesson"
+      booking: "Book Assessment ($20)"
     },
     about: {
       title: "Meet Your English Teacher",
-      subtitle: "Native UK speaker with 10+ years of teaching experience",
+      subtitle: "🇬🇧 Native UK speaker with 10+ years of teaching experience",
       experience: "With over a decade of teaching experience and a background in business, I specialize in helping students achieve their English language goals.",
       innovation: "As the creator of Plan Wise ESL, I combine traditional teaching methods with cutting-edge technology to deliver personalized learning experiences.",
       credentials: "Bachelor's in Business Administration from University of Southampton, 5+ years teaching in China, creator of AI-powered teaching platform used by 500+ educators worldwide.",
       qualifications: [
-        "Native English Speaker (UK)",
+        "🇬🇧 Native English Speaker (UK)",
         "10+ Years Teaching Experience", 
         "EdTech Innovator & Developer",
         "Business English Specialist",
@@ -117,8 +117,8 @@ export const translations: Record<string, Translation> = {
       title: "English Learning Services",
       subtitle: "Choose the perfect lesson type for your goals",
       conversation: {
-        title: "Critical Thinking & Fluency",
-        description: "Go beyond casual chat. This course is an intellectual workout, using advanced topics like ethics, psychology, politics, religion, international business and philosophy to challenge your thinking and master the nuanced vocabulary and articulation required for high-level professional environments."
+        title: "Executive Conversation",
+        description: "Discuss complex topics like economics, ethics, and global business to sharpen your articulation."
       },
       business: {
         title: "Business English",
@@ -131,7 +131,7 @@ export const translations: Record<string, Translation> = {
       price: "$20",
       duration: "30 minutes",
       includes: ["Personalized feedback", "Custom materials", "Homework assignments", "Progress tracking"],
-      cta: "Book Now"
+      cta: "Book Assessment ($20)"
     },
     testimonials: {
       title: "What Students Say",
@@ -171,7 +171,7 @@ export const translations: Record<string, Translation> = {
       title: "Book Your Lesson",
       subtitle: "Choose a time that works for you",
       description: "Select your preferred time slot and let's start improving your English together. All lessons are conducted via video call.",
-      button: "Schedule Now",
+      button: "Book Assessment ($20)",
       firstLessonTitle: "Your First Lesson Includes:",
       firstLessonBenefits: [
         "Assessment of your current English level",

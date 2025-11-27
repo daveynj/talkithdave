@@ -64,14 +64,15 @@ export default function Contact() {
                   <Mail className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="font-heading text-xl font-semibold mb-3">Email Me</h3>
-                <a 
-                  href="mailto:Dave@talkwithdave.co.uk" 
-                  className="text-primary hover:underline font-medium block mb-4 break-all"
+                <a
+                  href="mailto:Dave@talkwithdave.co.uk"
+                  className="text-sm text-gray-600 hover:underline block mb-3 break-all"
                 >
                   Dave@talkwithdave.co.uk
                 </a>
-                <Button 
-                  className="bg-primary hover:bg-primary/90 text-white w-full"
+                <Button
+                  variant="outline"
+                  className="w-full"
                   onClick={() => window.location.href = "mailto:Dave@talkwithdave.co.uk"}
                   data-testid="button-email"
                 >

@@ -14,7 +14,7 @@ export const siemReapTranslations = {
     description: "All lessons are 1-on-1 and customized using my AI-powered platform, Plan Wise ESL, to match your exact job and goals.",
     types: [
       {
-        title: "Critical Thinking & Fluency (ការគិតពិចារណា និងភាពស្ទាត់ជំនាញ)",
+        title: "Executive Conversation (ការសន្ទនាអគ្គិសនីផ្តល់សមត្ថភាព)",
         description: "An intellectual workout using advanced topics (like ethics, psychology, and philosophy) to help you master the nuanced vocabulary and articulation required for high-level professional environments. (វគ្គហ្វឹកហាត់បញ្ញាស្មារតី ដោយប្រើប្រធានបទកម្រិតខ្ពស់ (ដូចជា ក្រមសីលធម៌ ចិត្តវិទ្យា និងទស្សនវិជ្ជា) ដើម្បីជួយអ្នកឱ្យស្ទាត់ជំនាញលើពាក្យពេចន៍ និងការនិយាយបញ្ចេញមតិប្រកបដោយអត្ថន័យ សម្រាប់ការងារកម្រិតខ្ពស់។)"
       },
       {

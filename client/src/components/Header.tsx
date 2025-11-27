@@ -165,6 +165,22 @@ export default function Header({ customBookingText, customBookingLink }: HeaderP
           </Button>
         </div>
       </nav>
+      {/* Mobile sticky booking CTA (keeps book button visible on small screens) */}
+      <div className="md:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
+        <Button
+          asChild
+          className="bg-yellow-400 text-primary hover:bg-yellow-500 font-bold px-6 py-3 rounded-full shadow-xl"
+        >
+          <a
+            href={bookingLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="button-sticky-booking"
+          >
+            {bookingText}
+          </a>
+        </Button>
+      </div>
     </header>
   );
 }
