@@ -63,7 +63,7 @@ const services = [
             <li>✅ Business Negotiation & Presentation Skills</li>
             <li>✅ IELTS / TOEFL Exam Strategy</li>
             <li>✅ Executive Conversation & Soft Skills</li>
-            <li>✅ Industry-Specific Vocabulary (Tech, Finance, Logistics)</li>
+            <li>✅ Industry-Specific Vocabulary (Tech, Finance, Logistics, and more)</li>
           </ul>
           <div className="mt-8 flex justify-center">
             <a 
@@ -97,7 +97,7 @@ const services = [
             <div className="mb-2 font-semibold text-gray-800">"Built by AI. Refined by an Expert."</div>
             <div className="mb-2">Using my proprietary Plan Wise technology, I will design a 100% personalized curriculum just for you.</div>
             <ul className="mb-2 text-left list-disc ml-6 text-gray-800">
-              <li><b>Your Industry:</b> Vocabulary specific to Finance, Tech, or Management.</li>
+              <li><b>Your Industry:</b> Vocabulary specific to Finance, Tech, Management, or any profession/interest.</li>
               <li><b>Your Weakness:</b> Drills to fix your specific hesitation points.</li>
               <li><b>Your Goal:</b> Whether it's an interview, a presentation, or the IELTS exam, your plan is built backwards from that target.</li>
             </ul>
