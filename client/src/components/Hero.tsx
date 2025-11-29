@@ -61,11 +61,15 @@ export default function Hero() {
             </Button>
           </div>
           <div className="w-full md:w-1/2 flex justify-center">
-            <img 
-              src={daveImages.formal} 
-              alt="Dave, professional ESL teacher" 
-              className="rounded-lg shadow-lg max-w-sm w-full object-cover"
-            />
+            <div className="aspect-w-1 aspect-h-1 w-full rounded-lg shadow-lg">
+              <iframe
+                src="https://www.youtube.com/embed/oU39nHNpSZY"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full rounded-lg"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
