@@ -14,7 +14,7 @@ export default function Header({ customBookingText, customBookingLink }: HeaderP
   const [scrolled, setScrolled] = useState(false);
   const { t } = useLanguage();
   
-  const bookingText = customBookingText || t.nav.booking;
+  const bookingText = "Book Professional Assessment ($20)";
   const bookingLink = customBookingLink || "https://calendly.com/daveynj113/your-first-lesson";
 
   useEffect(() => {

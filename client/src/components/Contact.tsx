@@ -47,7 +47,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   data-testid="button-book-trial"
                 >
-                  {t.booking.button}
+                  Book Professional Assessment ($20)
                 </a>
               </Button>
               

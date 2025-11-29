@@ -56,7 +56,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 data-testid="button-book-lesson"
               >
-                {t.hero.ctaPrimary}
+                Book Professional Assessment ($20)
               </a>
             </Button>
           </div>

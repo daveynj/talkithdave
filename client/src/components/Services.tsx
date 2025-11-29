@@ -65,6 +65,17 @@ const services = [
             <li>✅ Executive Conversation & Soft Skills</li>
             <li>✅ Industry-Specific Vocabulary (Tech, Finance, Logistics)</li>
           </ul>
+          <div className="mt-8 flex justify-center">
+            <a 
+              href="https://calendly.com/daveynj113/your-first-lesson"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-primary text-white text-lg font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-primary/90 transition-all"
+              data-testid="button-book-assessment-areas"
+            >
+              Book Professional Assessment ($20)
+            </a>
+          </div>
         </div>
 
         {/* How It Works Section */}
@@ -102,6 +113,17 @@ const services = [
               <li>We track your progress against the goals we set in Step 1.</li>
             </ul>
           </div>
+        </div>
+        <div className="mt-12 flex justify-center">
+          <a 
+            href="https://calendly.com/daveynj113/your-first-lesson"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary text-white text-lg font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-primary/90 transition-all"
+            data-testid="button-book-assessment-roadmap"
+          >
+            Book Professional Assessment ($20)
+          </a>
         </div>
       </div>
     </section>

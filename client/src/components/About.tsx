@@ -51,7 +51,7 @@ export default function About() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Book a Conversation Now
+                Book Professional Assessment ($20)
               </a>
             </Button>
           </div>

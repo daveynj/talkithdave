@@ -194,7 +194,7 @@ export default function Testimonials() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Ready to Join Them? Book Your Trial Lesson
+              Book Professional Assessment ($20)
             </a>
           </Button>
         </div>

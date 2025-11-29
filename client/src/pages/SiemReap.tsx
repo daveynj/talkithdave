@@ -110,7 +110,7 @@ function SiemReapBooking() {
               rel="noopener noreferrer"
               data-testid="button-book-assessment"
             >
-              {cta}
+              {"Book Professional Assessment ($20)"}
             </a>
           </Button>
         </div>

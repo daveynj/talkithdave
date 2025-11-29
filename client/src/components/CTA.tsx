@@ -26,7 +26,7 @@ export default function CTA() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Book Your First Lesson
+              Book Professional Assessment ($20)
             </a>
           </Button>
           <Button 

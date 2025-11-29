@@ -75,7 +75,7 @@ export default function PlanWiseESL() {
                 rel="noopener noreferrer"
               >
                 <Button variant="outline">
-                  Book a Lesson
+                  Book Professional Assessment ($20)
                 </Button>
               </a>
             </div>

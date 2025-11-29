@@ -62,7 +62,7 @@ export default function Process() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Book Your First Lesson for $20
+                  Book Professional Assessment ($20)
                 </a>
               </Button>
             </div>
