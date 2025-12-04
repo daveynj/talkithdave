@@ -83,7 +83,7 @@ export const translations: Record<string, Translation> = {
   en: {
     hero: {
       headline: "Speak Business English with British Authority.",
-      subtitle: "Private 1-on-1 coaching for executives. Native UK expert. Book your fluency assessment today.",
+      subtitle: "Book your fluency assessment today and get a hyper-personal ESL curriculum built for you based on your industry, goals and interests.",
       description: "Your personalized roadmap to fluency.",
       ctaPrimary: "Book Assessment ($20)",
       ctaSecondary: "Learn More",
@@ -156,6 +156,10 @@ export const translations: Record<string, Translation> = {
         {
           question: "Can you help with business English and job interviews?",
           answer: "Absolutely! With my business degree and professional experience, I specialize in business English including email writing, presentation skills, meeting participation, and professional communication. For interview preparation, I conduct mock interviews, teach industry-specific vocabulary, and provide detailed feedback."
+        },
+        {
+          question: "What happens after the assessment?",
+          answer: "We review your custom curriculum. If you choose to proceed, we move to a lesson package. Packages typically start from $875 for 25 hours depending on the intensity of your roadmap."
         }
       ],
       contactPrompt: "Have a question that's not answered here?",
@@ -188,7 +192,7 @@ export const translations: Record<string, Translation> = {
   zh: {
     hero: {
       headline: "英语表达不够专业？快速提升流利度",
-      subtitle: "与英国本土ESL教师戴夫进行一对一个性化英语课程。他是Plan Wise ESL创始人，该教学软件被全球500+教师使用。",
+      subtitle: "立即预订您的流利度评估，并根据您的行业、目标和兴趣获得专为您打造的超个性化ESL课程。",
       description: "跟随不仅教授英语，更革新在线英语教学方式的专业老师学习。",
       ctaPrimary: "预订首节课程仅需20美元",
       ctaSecondary: "了解更多",
@@ -257,6 +261,10 @@ export const translations: Record<string, Translation> = {
         {
           question: "您能帮助商务英语和求职面试吗？",
           answer: "当然可以！凭借我的商学学位和专业经验，我专门从事商务英语教学，包括邮件写作、演示技巧、会议参与和专业沟通。对于面试准备，我进行模拟面试，教授行业专业词汇，并提供详细反馈。"
+        },
+        {
+          question: "评估结束后会发生什么？",
+          answer: "我们将审核您的定制课程。如果您选择继续，我们将进入课程包。课程包通常从25小时875美元起，根据您的学习路线强度而定。"
         }
       ],
       contactPrompt: "有未解答的问题？",
@@ -289,7 +297,7 @@ export const translations: Record<string, Translation> = {
   ja: {
     hero: {
       headline: "英語でプロフェッショナルに聞こえない？流暢さを素早く向上",
-      subtitle: "イギリス人ネイティブESL教師デイブとの1対1パーソナライズ英語レッスン。世界500+の教師が使用するPlan Wise ESLの創設者です。",
+      subtitle: "今すぐ流暢さアセスメントを予約し、あなたの業界、目標、興味に基づいて構築された超個別ESLカリキュラムを手に入れましょう。",
       description: "英語を教えるだけでなく、オンライン英語教育を革新する専門家から学びましょう。",
       ctaPrimary: "初回レッスンを20ドルで予約",
       ctaSecondary: "詳細を見る",
@@ -358,6 +366,10 @@ export const translations: Record<string, Translation> = {
         {
           question: "ビジネス英語と就職面接のサポートはできますか？",
           answer: "もちろんです！私の経営学学位と職業経験により、メール作成、プレゼンテーションスキル、会議参加、プロフェッショナルコミュニケーションを含むビジネス英語を専門としています。面接対策では、模擬面接を実施し、業界特有の語彙を教え、詳細なフィードバックを提供します。"
+        },
+        {
+          question: "アセスメントの後はどうなりますか？",
+          answer: "カスタムカリキュラムを確認します。続行を選択する場合、レッスンパッケージに移行します。パッケージは通常、学習ロードマップの強度に応じて25時間875ドルから開始します。"
         }
       ],
       contactPrompt: "こちらで回答されていない質問がありますか？",
@@ -390,7 +402,7 @@ export const translations: Record<string, Translation> = {
   ko: {
     hero: {
       headline: "영어로 전문적으로 들리지 않나요? 빠르게 유창해지세요",
-      subtitle: "영국 출신 ESL 원어민 교사 데이브와 함께하는 1:1 맞춤형 영어 레슨. 전 세계 500+명의 교사가 사용하는 Plan Wise ESL 창시자입니다.",
+      subtitle: "지금 바로 유창성 평가를 예약하고 귀하의 산업, 목표, 관심사에 기반한 초개인화 ESL 커리큘럼을 받아보세요.",
       description: "영어를 가르치는 것뿐만 아니라 온라인 영어 교육을 혁신하는 전문가로부터 배워보세요.",
       ctaPrimary: "첫 레슨 $20로 예약하기",
       ctaSecondary: "자세히 보기",
@@ -459,6 +471,10 @@ export const translations: Record<string, Translation> = {
         {
           question: "비즈니스 영어와 취업 면접 도움을 받을 수 있나요?",
           answer: "물론입니다! 경영학 학위와 전문 경험을 바탕으로 이메일 작성, 프레젠테이션 기술, 회의 참여, 전문적 의사소통을 포함한 비즈니스 영어를 전문으로 합니다. 면접 준비에서는 모의 면접을 실시하고, 업계별 전문 어휘를 가르치며, 상세한 피드백을 제공합니다."
+        },
+        {
+          question: "평가 후에는 어떻게 되나요?",
+          answer: "맞춤형 커리큘럼을 검토합니다. 계속 진행하기로 선택하면, 레슨 패키지로 이동합니다. 패키지는 일반적으로 학습 로드맵의 강도에 따라 25시간 875달러부터 시작합니다."
         }
       ],
       contactPrompt: "여기에 답변되지 않은 질문이 있나요?",
@@ -500,7 +516,7 @@ export const translations: Record<string, Translation> = {
     },
     hero: {
       headline: "Học Tiếng Anh với Giáo Viên Bản Ngữ",
-      subtitle: "Cải thiện kỹ năng tiếng Anh của bạn với các bài học cá nhân hóa từ giáo viên người Anh có kinh nghiệm",
+      subtitle: "Đặt lịch đánh giá độ lưu loát ngay hôm nay và nhận chương trình ESL siêu cá nhân hóa được xây dựng dựa trên ngành nghề, mục tiêu và sở thích của bạn.",
       description: "Bài học chất lượng cao với giáo viên bản ngữ người Anh",
       ctaPrimary: "Đặt Bài Học Đầu Tiên",
       ctaSecondary: "Tìm hiểu thêm",
@@ -556,6 +572,10 @@ export const translations: Record<string, Translation> = {
         {
           question: "Bạn có thể giúp tiếng Anh thương mại và chuẩn bị phỏng vấn không?",
           answer: "Hoàn toàn có thể! Với bằng cử nhân kinh doanh và kinh nghiệm chuyên môn, tôi chuyên về tiếng Anh thương mại bao gồm viết email, kỹ năng thuyết trình, tham gia họp và giao tiếp chuyên nghiệp. Đối với chuẩn bị phỏng vấn, tôi tiến hành phỏng vấn thử, dạy từ vựng chuyên ngành và cung cấp phản hồi chi tiết."
+        },
+        {
+          question: "Sau khi đánh giá thì sao?",
+          answer: "Chúng tôi sẽ xem xét chương trình học tùy chỉnh của bạn. Nếu bạn chọn tiếp tục, chúng tôi sẽ chuyển sang gói bài học. Các gói thường bắt đầu từ 875 đô la cho 25 giờ tùy thuộc vào cường độ lộ trình học tập của bạn."
         }
       ],
       contactPrompt: "Có câu hỏi nào chưa được trả lời ở đây không?",
