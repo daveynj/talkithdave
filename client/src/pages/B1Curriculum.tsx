@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { MessageCircle, Sparkles, Calendar, Zap, BookOpen, Target, ChevronUp, ChevronDown } from "lucide-react";
+import { Link } from "wouter";
+import { MessageCircle, Sparkles, Calendar, Zap, BookOpen, Target, ChevronUp, ChevronDown, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -157,11 +158,18 @@ export default function B1Curriculum() {
       {/* Header */}
       <header className="bg-white border-b sticky top-0 z-10 px-4 py-4">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">DJ</div>
-            <div>
-              <h1 className="text-lg font-bold leading-none">Talk with Dave</h1>
-              <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold">ESL Mastery</p>
+          <div className="flex items-center gap-4">
+            <Link href="/">
+              <Button variant="ghost" size="icon" className="rounded-full hover:bg-slate-100">
+                <Home className="w-5 h-5 text-slate-600" />
+              </Button>
+            </Link>
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">DJ</div>
+              <div>
+                <h1 className="text-lg font-bold leading-none">Talk with Dave</h1>
+                <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold">ESL Mastery</p>
+              </div>
             </div>
           </div>
           <Button className="bg-indigo-600 text-white px-5 py-2 rounded-full text-sm font-bold shadow-md flex items-center gap-2 hover:bg-indigo-700 transition-colors">
