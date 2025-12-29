@@ -10,6 +10,7 @@ import AnalyticsTracker from "./components/AnalyticsTracker";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import SiemReap from "@/pages/SiemReap";
+import B1Curriculum from "@/pages/B1Curriculum";
 
 function Router() {
   return (
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/ko" component={Home} />
       <Route path="/vi" component={Home} />
       <Route path="/siem-reap" component={SiemReap} />
+      <Route path="/b1-curriculum" component={B1Curriculum} />
       <Route component={NotFound} />
     </Switch>
   );
