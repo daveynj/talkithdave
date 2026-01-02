@@ -339,7 +339,8 @@ export default function Home() {
         .exact-user-site .faq-section { padding: var(--section-padding) 0; background: var(--bg-primary); }
         .exact-user-site .faq-grid { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
         .exact-user-site .faq-item { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; }
-        .exact-user-site .faq-question { width: 100%; padding: 24px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left; font-size: 1.125rem; font-weight: 600; color: var(--text-primary); }
+        .exact-user-site .faq-question { width: 100%; padding: 24px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left; font-size: 1.125rem; font-weight: 600; color: var(--text-primary); transition: all var(--transition-fast); }
+        .exact-user-site .faq-question:hover { color: var(--accent-primary); }
         .exact-user-site .faq-icon { font-size: 1.5rem; color: var(--accent-primary); transition: transform 0.3s ease; }
         .exact-user-site .faq-answer { max-height: 0; padding: 0 24px; overflow: hidden; transition: all 0.3s ease; color: var(--text-secondary); }
         .exact-user-site .faq-item.open .faq-answer { max-height: 200px; padding-bottom: 24px; }
