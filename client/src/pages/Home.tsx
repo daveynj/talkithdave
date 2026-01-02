@@ -95,7 +95,7 @@ export default function Home() {
     }, observerOptions);
 
     // Add animation classes to elements
-    document.querySelectorAll('.section-header, .problem-card, .step-card, .industry-card, .pricing-card, .testimonial-card, .about-content').forEach(el => {
+    document.querySelectorAll('.section-header, .problem-card, .step-card, .industry-card, .pricing-card, .testimonial-card, .about-content, .final-cta-content').forEach(el => {
       el.classList.add('animate-on-scroll');
       observer.observe(el);
     });
@@ -345,12 +345,23 @@ export default function Home() {
         .exact-user-site .faq-answer { max-height: 0; padding: 0 24px; overflow: hidden; transition: all 0.3s ease; color: var(--text-secondary); }
         .exact-user-site .faq-item.open .faq-answer { max-height: 200px; padding-bottom: 24px; }
         .exact-user-site .faq-item.open .faq-icon { transform: rotate(45deg); }
+        
+        .exact-user-site .final-cta-section { padding: var(--section-padding) 0; background: var(--bg-secondary); text-align: center; }
+        .exact-user-site .final-cta-content h2 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 24px; }
+        .exact-user-site .final-cta-content p { font-size: 1.25rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto 40px; }
+        .exact-user-site .btn-xl { padding: 24px 48px; font-size: 1.25rem; }
+        .exact-user-site .final-trust-signals { display: flex; justify-content: center; gap: 32px; margin-top: 48px; flex-wrap: wrap; }
+        .exact-user-site .trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.875rem; color: var(--text-muted); font-weight: 500; }
+
         .exact-user-site .footer { padding: 80px 0 40px; background: #050508; border-top: 1px solid var(--border-color); }
-        .exact-user-site .footer-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px; margin-bottom: 60px; }
-        .exact-user-site .footer-links { display: flex; gap: 32px; flex-wrap: wrap; }
-        .exact-user-site .footer-links a { color: var(--text-muted); font-size: 0.875rem; transition: color 0.2s ease; }
-        .exact-user-site .footer-links a:hover { color: var(--text-primary); }
-        .exact-user-site .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; }
+        .exact-user-site .footer-content { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; margin-bottom: 60px; }
+        .exact-user-site .footer-brand p { color: var(--text-muted); margin-top: 16px; max-width: 300px; }
+        .exact-user-site .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .exact-user-site .footer-column h4 { font-size: 1rem; margin-bottom: 24px; color: var(--text-primary); }
+        .exact-user-site .footer-column a { display: block; color: var(--text-muted); margin-bottom: 12px; transition: color 0.2s ease; }
+        .exact-user-site .footer-column a:hover { color: var(--text-primary); }
+        .exact-user-site .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-muted); font-size: 0.875rem; }
+
         .exact-user-site .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .exact-user-site .animate-visible { opacity: 1; transform: translateY(0); }
         .exact-user-site .problem-grid .animate-visible:nth-child(2) { transition-delay: 0.1s; }
@@ -369,6 +380,7 @@ export default function Home() {
             .exact-user-site .hero-guarantee { justify-content: center; }
             .exact-user-site .about-content { grid-template-columns: 1fr; }
             .exact-user-site .about-image { max-width: 500px; margin: 0 auto; }
+            .exact-user-site .footer-content { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
@@ -726,45 +738,85 @@ export default function Home() {
             <div className="faq-item">
               <button className="faq-question"><span>What if I'm not satisfied with the assessment?</span><span className="faq-icon">+</span></button>
               <div className="faq-answer">
-                <p>If you don't feel the session was valuable, I'll refund your $20 immediately. No questions asked. My goal is to find the perfect fit between my coaching and your needs.</p>
+                <p>If you don't feel the diagnostic session was valuable, I'll refund your $20 immediately—no questions asked. I'm confident you'll find it valuable, which is why I offer this guarantee.</p>
               </div>
             </div>
             <div className="faq-item">
-              <button className="faq-question"><span>How does the AI-built curriculum work?</span><span className="faq-icon">+</span></button>
+              <button className="faq-question"><span>How is your AI curriculum different from regular courses?</span><span className="faq-icon">+</span></button>
               <div className="faq-answer">
-                <p>I use custom-designed AI prompts to analyze your industry, job title, and daily communication tasks. The result is a set of 25 unique lessons that use the exact vocabulary and scenarios you encounter at work.</p>
+                <p>Traditional courses use pre-made materials. I use proprietary AI technology to analyze your job, industry, and goals, then generate a 100% unique curriculum. Every lesson and exercise is tailored specifically to your work.</p>
               </div>
             </div>
             <div className="faq-item">
-              <button className="faq-question"><span>What is the typical class schedule?</span><span className="faq-icon">+</span></button>
+              <button className="faq-question"><span>How long does the 25-hour program take?</span><span className="faq-icon">+</span></button>
               <div className="faq-answer">
-                <p>Most students find 1-2 sessions per week ideal. However, the 25-hour program is flexible to accommodate your busy executive schedule. We can adjust the pace based on your needs.</p>
+                <p>Most students complete the program in 3-6 months, taking 1-2 lessons per week. However, the schedule is completely flexible based on your availability.</p>
+              </div>
+            </div>
+            <div className="faq-item">
+              <button className="faq-question"><span>What if my industry isn't listed?</span><span className="faq-icon">+</span></button>
+              <div className="faq-answer">
+                <p>Finance, Medical, and Sales are my most common specializations, but I've worked across Technology, Legal, Consulting, Academia, and more. If your job requires professional English, I can build a curriculum for it.</p>
+              </div>
+            </div>
+            <div className="faq-item">
+              <button className="faq-question"><span>Can I pay for the package in installments?</span><span className="faq-icon">+</span></button>
+              <div className="faq-answer">
+                <p>Yes! I offer flexible payment options. We can discuss what works best during the diagnostic session. The most common arrangement is splitting the $750 into 2-3 payments.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Footer */}
-      <section className="footer" id="contact">
+      {/* Final CTA Section */}
+      <section className="final-cta-section">
         <div className="container">
-          <div className="footer-top">
-            <a href="#" className="nav-logo">
-              <span className="logo-icon">🇬🇧</span>
-              <span className="logo-text">Talk with Dave</span>
-            </a>
-            <div className="footer-links">
-              <a href="#how-it-works">How It Works</a>
-              <a href="#industries">Industries</a>
-              <a href="#testimonials">Results</a>
-              <a href="#faq">FAQ</a>
+          <div className="final-cta-content">
+            <h2>Ready to Command the Boardroom?</h2>
+            <p>Book your $20 diagnostic session today. If you don't find it valuable, get your money back. If you do, start your transformation.</p>
+            <div className="final-cta-buttons">
+              <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank" className="btn btn-primary btn-xl">
+                <span>Book Your Assessment Now</span>
+                <span className="btn-subtext">$20 • 100% Risk-Free • Credited to Package</span>
+              </a>
             </div>
-          </div>
-          <div className="footer-bottom">
-            <p>© 2025 Dave Jackson • Southampton, England • Professional British Coaching</p>
+            <div className="final-trust-signals">
+              <div className="trust-item"><span>🇬🇧</span><span>Native UK Speaker</span></div>
+              <div className="trust-item"><span>⭐</span><span>4.9/5 Rating</span></div>
+              <div className="trust-item"><span>🛡️</span><span>Money-Back Guarantee</span></div>
+            </div>
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="container">
+          <div className="footer-content">
+            <div className="footer-brand"><span className="logo-icon">🇬🇧</span><span className="logo-text">Talk with Dave</span>
+              <p>Executive English coaching for professionals who need to speak with authority.</p>
+            </div>
+            <div className="footer-links">
+              <div className="footer-column">
+                <h4>Quick Links</h4>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#industries">Industries</a>
+                <a href="#testimonials">Success Stories</a>
+                <a href="#faq">FAQ</a>
+              </div>
+              <div className="footer-column">
+                <h4>Contact</h4>
+                <a href="mailto:Dave@talkwithdave.co.uk">Dave@talkwithdave.co.uk</a>
+                <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank">Book a Session</a>
+              </div>
+            </div>
+          </div>
+          <div className="footer-bottom">
+            <p>&copy; 2026 Talk with Dave. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
