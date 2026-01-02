@@ -1226,14 +1226,14 @@ h6 {
     padding-bottom: 24px;
 }
 
-.faq-item.open .faq-icon {
+        .faq-item.open .faq-icon {
     transform: rotate(45deg);
 }
 
 /* ===== FINAL CTA SECTION ===== */
 .final-cta-section {
     padding: var(--section-padding) 0;
-    background: var(--bg-secondary);
+    background: radial-gradient(ellipse 80% 50% at 50% 50%, rgba(99, 102, 241, 0.2), transparent), var(--bg-secondary);
     text-align: center;
 }
 
