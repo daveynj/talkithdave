@@ -354,9 +354,10 @@ export default function Home() {
         .exact-user-site .trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.875rem; color: var(--text-muted); font-weight: 500; }
 
         .exact-user-site .footer { padding: 80px 0 40px; background: #050508; border-top: 1px solid var(--border-color); }
-        .exact-user-site .footer-content { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; margin-bottom: 60px; }
+        .exact-user-site .footer-content { display: flex; justify-content: space-between; align-items: flex-start; gap: 60px; margin-bottom: 60px; }
+        .exact-user-site .footer-brand { flex: 1.5; }
         .exact-user-site .footer-brand p { color: var(--text-muted); margin-top: 16px; max-width: 300px; }
-        .exact-user-site .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .exact-user-site .footer-links { flex: 1; display: flex; gap: 60px; }
         .exact-user-site .footer-column h4 { font-size: 1rem; margin-bottom: 24px; color: var(--text-primary); }
         .exact-user-site .footer-column a { display: block; color: var(--text-muted); margin-bottom: 12px; transition: color 0.2s ease; }
         .exact-user-site .footer-column a:hover { color: var(--text-primary); }
@@ -380,7 +381,7 @@ export default function Home() {
             .exact-user-site .hero-guarantee { justify-content: center; }
             .exact-user-site .about-content { grid-template-columns: 1fr; }
             .exact-user-site .about-image { max-width: 500px; margin: 0 auto; }
-            .exact-user-site .footer-content { grid-template-columns: 1fr; }
+            .exact-user-site .footer-content { flex-direction: column; }
         }
 
         @media (max-width: 768px) {
@@ -390,6 +391,7 @@ export default function Home() {
             .exact-user-site .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
             .exact-user-site .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
             .exact-user-site .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+            .exact-user-site .footer-links { flex-direction: column; gap: 40px; }
         }
       ` }} />
       
@@ -446,7 +448,7 @@ export default function Home() {
                 <iframe src="https://www.youtube.com/embed/oU39nHNpSZY?rel=0&modestbranding=1" title="Meet Dave" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
               <div className="video-caption">
-                <img src={davePhoto} alt="Dave Jackson" className="caption-avatar" />
+                <img src="https://talkwithdave.co.uk/dave_profile2.jpg" alt="Dave Jackson" className="caption-avatar" />
                 <div className="caption-text"><strong>Dave Jackson</strong><span>Native UK • 10+ Years Experience</span></div>
               </div>
             </div>
@@ -794,7 +796,11 @@ export default function Home() {
       <footer className="footer">
         <div className="container">
           <div className="footer-content">
-            <div className="footer-brand"><span className="logo-icon">🇬🇧</span><span className="logo-text">Talk with Dave</span>
+            <div className="footer-brand">
+              <a href="#" className="nav-logo">
+                <span className="logo-icon">🇬🇧</span>
+                <span className="logo-text">Talk with Dave</span>
+              </a>
               <p>Executive English coaching for professionals who need to speak with authority.</p>
             </div>
             <div className="footer-links">
