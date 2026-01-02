@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import davePhoto from "@assets/my_professional_photo_1767370992057.png";
 
 export default function Home() {
   useEffect(() => {
@@ -432,7 +433,7 @@ export default function Home() {
                 <iframe src="https://www.youtube.com/embed/oU39nHNpSZY?rel=0&modestbranding=1" title="Meet Dave" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
               <div className="video-caption">
-                <img src="https://talkwithdave.co.uk/dave_profile2.jpg" alt="Dave Jackson" className="caption-avatar" />
+                <img src={davePhoto} alt="Dave Jackson" className="caption-avatar" />
                 <div className="caption-text"><strong>Dave Jackson</strong><span>Native UK • 10+ Years Experience</span></div>
               </div>
             </div>
@@ -688,7 +689,7 @@ export default function Home() {
         <div className="container">
           <div className="about-content">
             <div className="about-image">
-              <img src="https://talkwithdave.co.uk/dave_profile2.jpg" alt="Dave Jackson - Executive English Coach" />
+              <img src={davePhoto} alt="Dave Jackson - Executive English Coach" />
               <div className="about-badge"><span className="badge-flag">🇬🇧</span><span>Native UK Speaker</span></div>
             </div>
             <div className="about-text">
