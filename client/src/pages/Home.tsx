@@ -3,27 +3,21 @@ import davePhoto from "@assets/my_professional_photo_1767370992057.png";
 
 export default function Home() {
   useEffect(() => {
-    // ===== FAQ Accordion =====
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(button => {
       button.addEventListener('click', () => {
         const faqItem = button.parentElement;
         if (!faqItem) return;
         const isOpen = faqItem.classList.contains('open');
-
-        // Close all other FAQ items
         document.querySelectorAll('.faq-item').forEach(item => {
           item.classList.remove('open');
         });
-
-        // Toggle current item
         if (!isOpen) {
           faqItem.classList.add('open');
         }
       });
     });
 
-    // ===== Smooth Scroll for Anchor Links =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (this: HTMLAnchorElement, e: Event) {
         e.preventDefault();
@@ -42,26 +36,20 @@ export default function Home() {
       });
     });
 
-    // ===== Navbar Background on Scroll =====
     const navbar = document.getElementById('navbar');
     const handleScroll = () => {
       if (!navbar) return;
       const currentScroll = window.pageYOffset;
-
-      if (currentScroll > 100) {
-        navbar.style.background = 'rgba(10, 10, 15, 0.95)';
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+      if (currentScroll > 50) {
+        navbar.classList.add('scrolled');
       } else {
-        navbar.style.background = 'rgba(10, 10, 15, 0.8)';
-        navbar.style.boxShadow = 'none';
+        navbar.classList.remove('scrolled');
       }
     };
     window.addEventListener('scroll', handleScroll);
 
-    // ===== Mobile Menu Toggle =====
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('navLinks');
-
     if (mobileMenuBtn && navLinks) {
       mobileMenuBtn.addEventListener('click', () => {
         navLinks.classList.toggle('mobile-open');
@@ -69,7 +57,6 @@ export default function Home() {
       });
     }
 
-    // ===== Intersection Observer for Animations =====
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -84,36 +71,9 @@ export default function Home() {
       });
     }, observerOptions);
 
-    // Add animation classes to elements
-    document.querySelectorAll('.section-header, .problem-card, .step-card, .industry-card, .pricing-card, .testimonial-card, .about-content, .final-cta-content').forEach(el => {
-      el.classList.add('animate-on-scroll');
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
       observer.observe(el);
     });
-
-    // ===== Button Hover Effect =====
-    document.querySelectorAll('.btn-primary').forEach(btn => {
-      btn.addEventListener('mouseenter', function (this: HTMLElement, e: any) {
-        const rect = this.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        this.style.setProperty('--x', `${x}px`);
-        this.style.setProperty('--y', `${y}px`);
-      });
-    });
-
-    // ===== Typing Effect for Hero Badge =====
-    const heroBadge = document.querySelector('.hero-badge') as HTMLElement;
-    if (heroBadge) {
-      heroBadge.style.opacity = '0';
-      heroBadge.style.transform = 'translateY(-10px)';
-
-      setTimeout(() => {
-        heroBadge.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        heroBadge.style.opacity = '1';
-        heroBadge.style.transform = 'translateY(0)';
-      }, 300);
-    }
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -124,58 +84,44 @@ export default function Home() {
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: `
-/* ===== CSS VARIABLES ===== */
 :root {
-    /* Colors - Dark Premium Theme */
-    --bg-primary: #0a0a0f;
-    --bg-secondary: #12121a;
-    --bg-tertiary: #1a1a25;
-    --bg-card: rgba(26, 26, 37, 0.8);
-    --bg-glass: rgba(255, 255, 255, 0.03);
-
-    --text-primary: #ffffff;
-    --text-secondary: rgba(255, 255, 255, 0.7);
-    --text-muted: rgba(255, 255, 255, 0.5);
-
-    --accent-primary: #6366f1;
-    --accent-secondary: #8b5cf6;
-    --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
-
+    --primary: #1a56db;
+    --primary-dark: #1e429f;
+    --primary-light: #3f83f8;
+    --accent: #0ea5e9;
+    
+    --bg-white: #ffffff;
+    --bg-light: #f8fafc;
+    --bg-section: #f1f5f9;
+    --bg-card: #ffffff;
+    
+    --text-dark: #1e293b;
+    --text-body: #475569;
+    --text-muted: #64748b;
+    --text-light: #94a3b8;
+    
+    --border-light: #e2e8f0;
+    --border-medium: #cbd5e1;
+    
     --success: #10b981;
     --warning: #f59e0b;
-    --danger: #ef4444;
-
-    --border-color: rgba(255, 255, 255, 0.1);
-    --border-glow: rgba(99, 102, 241, 0.3);
-
-    /* Typography */
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-display: 'Playfair Display', Georgia, serif;
-
-    /* Spacing */
-    --section-padding: 120px;
-    --container-width: 1200px;
-
-    /* Effects */
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 16px 64px rgba(0, 0, 0, 0.5);
-    --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.3);
-
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 20px;
-    --radius-xl: 32px;
-
-    --transition-fast: 0.2s ease;
-    --transition-normal: 0.3s ease;
-    --transition-slow: 0.5s ease;
+    
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+    
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --container-max: 1200px;
 }
 
-/* ===== RESET & BASE ===== */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -186,11 +132,11 @@ html {
 }
 
 body {
-    font-family: var(--font-primary);
-    background: var(--bg-primary);
-    color: var(--text-primary);
+    font-family: var(--font-sans);
+    background: var(--bg-white);
+    color: var(--text-body);
     line-height: 1.6;
-    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -201,145 +147,17 @@ a {
 img {
     max-width: 100%;
     height: auto;
-}
-
-ul {
-    list-style: none;
+    display: block;
 }
 
 .container {
     width: 100%;
-    max-width: var(--container-width);
+    max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 24px;
 }
 
-/* ===== TYPOGRAPHY ===== */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.gradient-text {
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.text-danger {
-    color: var(--danger);
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-label {
-    display: inline-block;
-    padding: 8px 16px;
-    background: var(--bg-glass);
-    border: 1px solid var(--border-color);
-    border-radius: 100px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--accent-primary);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 16px;
-}
-
-.section-title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 800;
-    margin-bottom: 16px;
-}
-
-.section-subtitle {
-    font-size: 1.125rem;
-    color: var(--text-secondary);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* ===== BUTTONS ===== */
-.btn {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 32px;
-    border-radius: var(--radius-md);
-    font-family: var(--font-primary);
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    border: none;
-    transition: all var(--transition-normal);
-    text-align: center;
-}
-
-.btn-primary {
-    background: var(--accent-gradient);
-    color: white;
-    box-shadow: var(--shadow-glow);
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 60px rgba(99, 102, 241, 0.5);
-}
-
-.btn-secondary {
-    background: var(--bg-glass);
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
-}
-
-.btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--accent-primary);
-}
-
-.btn-outline {
-    background: transparent;
-    border: 2px solid var(--accent-primary);
-    color: var(--accent-primary);
-}
-
-.btn-outline:hover {
-    background: var(--accent-primary);
-    color: white;
-}
-
-.btn-lg {
-    padding: 20px 40px;
-    font-size: 1.125rem;
-}
-
-.btn-xl {
-    padding: 24px 48px;
-    font-size: 1.25rem;
-}
-
-.btn-block {
-    width: 100%;
-}
-
-.btn-subtext {
-    font-size: 0.75rem;
-    font-weight: 400;
-    opacity: 0.8;
-    margin-top: 4px;
-}
-
-/* ===== NAVIGATION ===== */
+/* ===== NAVBAR ===== */
 .navbar {
     position: fixed;
     top: 0;
@@ -347,31 +165,31 @@ h6 {
     right: 0;
     z-index: 1000;
     padding: 16px 0;
-    background: rgba(10, 10, 15, 0.8);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-color);
-    transition: all var(--transition-normal);
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
+    border-bottom: 1px solid var(--border-light);
 }
 
 .nav-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: var(--container-width);
+    max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 24px;
 }
 
 .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 700;
     font-size: 1.25rem;
-}
-
-.logo-icon {
-    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    font-style: italic;
 }
 
 .nav-links {
@@ -380,43 +198,38 @@ h6 {
 }
 
 .nav-links a {
-    color: var(--text-secondary);
+    font-size: 0.9375rem;
     font-weight: 500;
-    transition: color var(--transition-fast);
+    color: var(--text-body);
+    transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-    color: var(--text-primary);
+    color: var(--primary);
 }
 
 .nav-cta {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 24px;
-    background: var(--accent-gradient);
-    border-radius: var(--radius-md);
+    padding: 10px 20px;
+    background: var(--primary);
+    color: white;
     font-weight: 600;
-    transition: all var(--transition-normal);
+    font-size: 0.9375rem;
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
 }
 
 .nav-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-glow);
-}
-
-.cta-arrow {
-    transition: transform var(--transition-fast);
-}
-
-.nav-cta:hover .cta-arrow {
-    transform: translateX(4px);
+    background: var(--primary-dark);
+    transform: translateY(-1px);
 }
 
 .mobile-menu-btn {
     display: none;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
     background: none;
     border: none;
     cursor: pointer;
@@ -424,35 +237,16 @@ h6 {
 }
 
 .mobile-menu-btn span {
-    width: 24px;
+    width: 22px;
     height: 2px;
-    background: var(--text-primary);
-    transition: all var(--transition-fast);
+    background: var(--text-dark);
+    transition: all 0.2s ease;
 }
 
 /* ===== HERO SECTION ===== */
 .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
     padding: 140px 0 80px;
-    overflow: hidden;
-}
-
-.hero-bg {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-}
-
-.hero-gradient {
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.3), transparent),
-        radial-gradient(ellipse 60% 40% at 80% 60%, rgba(139, 92, 246, 0.15), transparent),
-        radial-gradient(ellipse 40% 30% at 20% 80%, rgba(168, 85, 247, 0.1), transparent);
+    background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-white) 100%);
 }
 
 .hero-container {
@@ -460,76 +254,77 @@ h6 {
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 24px;
 }
 
 .hero-content {
-    max-width: 600px;
-}
-
-.hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: var(--bg-glass);
-    border: 1px solid var(--border-color);
-    border-radius: 100px;
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-    margin-bottom: 24px;
-}
-
-.badge-icon {
-    color: var(--warning);
+    max-width: 560px;
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(2.25rem, 4vw, 3rem);
     font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 24px;
+    color: var(--text-dark);
+    line-height: 1.15;
+    margin-bottom: 20px;
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    margin-bottom: 32px;
-    line-height: 1.7;
-}
-
-.hero-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-bottom: 40px;
-}
-
-.hero-feature {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 16px;
-    background: var(--bg-glass);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    font-size: 0.875rem;
-}
-
-.feature-icon {
     font-size: 1.125rem;
+    color: var(--text-body);
+    margin-bottom: 12px;
+}
+
+.hero-subtitle strong {
+    color: var(--text-dark);
+}
+
+.hero-offer {
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 8px;
 }
 
 .hero-cta-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-bottom: 24px;
+    margin-top: 24px;
 }
 
-.hero-guarantee {
+.btn-primary-lg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: var(--primary);
+    color: white;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 14px rgba(26, 86, 219, 0.25);
+}
+
+.btn-primary-lg:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26, 86, 219, 0.35);
+}
+
+.btn-primary-lg svg {
+    width: 20px;
+    height: 20px;
+}
+
+.hero-trust-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.trust-badge {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -537,30 +332,299 @@ h6 {
     color: var(--text-muted);
 }
 
-.guarantee-icon {
+.trust-badge svg {
+    width: 18px;
+    height: 18px;
+    color: var(--primary);
+}
+
+.trust-badge.success svg {
     color: var(--success);
 }
 
-/* Hero Media */
-.hero-media {
+.hero-image {
     display: flex;
     justify-content: center;
+    position: relative;
+}
+
+.hero-photo-wrapper {
+    position: relative;
+    max-width: 400px;
+}
+
+.hero-photo {
+    width: 100%;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+}
+
+.hero-badge {
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: white;
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-lg);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    white-space: nowrap;
+}
+
+.hero-badge-flag {
+    font-size: 1.125rem;
+}
+
+/* ===== SOCIAL PROOF BAR ===== */
+.proof-bar {
+    padding: 24px 0;
+    background: var(--bg-white);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.proof-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.proof-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9375rem;
+    color: var(--text-body);
+}
+
+.proof-item svg {
+    width: 18px;
+    height: 18px;
+    color: var(--primary);
+}
+
+.proof-divider {
+    width: 4px;
+    height: 4px;
+    background: var(--border-medium);
+    border-radius: 50%;
+}
+
+/* ===== WHO IS THIS FOR SECTION ===== */
+.audience-section {
+    padding: 80px 0;
+    background: var(--bg-white);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-title {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    font-size: 1.0625rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.audience-card {
+    text-align: center;
+    padding: 32px 24px;
+    background: var(--bg-light);
+    border-radius: var(--radius-lg);
+    transition: all 0.3s ease;
+}
+
+.audience-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.audience-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.audience-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.audience-card p {
+    font-size: 0.9375rem;
+    color: var(--text-muted);
+}
+
+/* ===== WHAT YOU GET SECTION ===== */
+.benefits-section {
+    padding: 80px 0;
+    background: var(--bg-section);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.benefit-card {
+    text-align: center;
+    padding: 32px 24px;
+    background: var(--bg-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+}
+
+.benefit-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px;
+    background: var(--bg-light);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+}
+
+.benefit-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.benefit-card h3 {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.benefit-card p {
+    font-size: 0.9375rem;
+    color: var(--text-muted);
+}
+
+/* ===== TESTIMONIAL SECTION ===== */
+.testimonial-section {
+    padding: 80px 0;
+    background: var(--bg-white);
+}
+
+.testimonial-featured {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 48px;
+    background: linear-gradient(135deg, var(--bg-light) 0%, #e0e7ff 100%);
+    border-radius: var(--radius-xl);
+}
+
+.testimonial-quote-mark {
+    font-size: 4rem;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 16px;
+    opacity: 0.3;
+}
+
+.testimonial-text {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--text-dark);
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.testimonial-rating {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 20px;
+}
+
+.testimonial-rating svg {
+    width: 20px;
+    height: 20px;
+    color: var(--warning);
+    fill: var(--warning);
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.author-avatar {
+    width: 56px;
+    height: 56px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    color: white;
+}
+
+.author-info {
+    text-align: left;
+}
+
+.author-info strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.author-info span {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* ===== VIDEO SECTION ===== */
+.video-section {
+    padding: 80px 0;
+    background: var(--bg-section);
 }
 
 .video-container {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-}
-
-.video-glow {
-    position: absolute;
-    inset: -20px;
-    background: var(--accent-gradient);
-    border-radius: var(--radius-xl);
-    opacity: 0.3;
-    filter: blur(40px);
-    z-index: -1;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .video-wrapper {
@@ -568,8 +632,7 @@ h6 {
     padding-bottom: 56.25%;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    border: 1px solid var(--border-color);
-    background: var(--bg-secondary);
+    box-shadow: var(--shadow-xl);
 }
 
 .video-wrapper iframe {
@@ -580,620 +643,104 @@ h6 {
     height: 100%;
 }
 
-.video-caption {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: 16px;
-    padding: 12px 16px;
-    background: var(--bg-glass);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-}
-
-.caption-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--accent-primary);
-}
-
-.caption-text {
-    display: flex;
-    flex-direction: column;
-    font-size: 0.875rem;
-}
-
-.caption-text span {
-    color: var(--text-muted);
-    font-size: 0.75rem;
-}
-
-/* ===== SOCIAL PROOF BAR ===== */
-.social-proof-bar {
-    padding: 40px 0;
-    background: var(--bg-secondary);
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.proof-items {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 48px;
-    flex-wrap: wrap;
-}
-
-.proof-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.proof-number {
-    font-size: 2.5rem;
-    font-weight: 800;
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.proof-label {
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.proof-divider {
-    width: 1px;
-    height: 40px;
-    background: var(--border-color);
-}
-
-/* ===== PROBLEM SECTION ===== */
-.problem-section {
-    padding: var(--section-padding) 0;
-    background: var(--bg-primary);
-}
-
-.problem-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
-    margin-bottom: 48px;
-}
-
-.problem-card {
-    padding: 32px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-lg);
-    transition: all var(--transition-normal);
-}
-
-.problem-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--danger);
-    box-shadow: 0 8px 32px rgba(239, 68, 68, 0.1);
-}
-
-.problem-icon {
-    font-size: 2.5rem;
-    margin-bottom: 16px;
-}
-
-.problem-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 12px;
-}
-
-.problem-card p {
-    color: var(--text-secondary);
-    font-size: 0.9375rem;
-}
-
-.problem-cta {
-    text-align: center;
-}
-
-.problem-statement {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-}
-
-.problem-statement strong {
-    color: var(--text-primary);
-}
-
-/* ===== SOLUTION SECTION ===== */
-.solution-section {
-    padding: var(--section-padding) 0;
-    background: var(--bg-secondary);
-}
-
-.solution-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    margin-bottom: 48px;
-}
-
-.step-card {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 32px;
-    padding: 40px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-lg);
-    transition: all var(--transition-normal);
-}
-
-.step-card:hover {
-    border-color: var(--accent-primary);
-    box-shadow: var(--shadow-glow);
-}
-
-.step-number {
-    font-size: 3rem;
-    font-weight: 800;
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1;
-}
-
-.step-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-}
-
-.step-content p {
-    color: var(--text-secondary);
-    margin-bottom: 16px;
-}
-
-.step-highlight {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: rgba(99, 102, 241, 0.1);
-    border: 1px solid rgba(99, 102, 241, 0.3);
-    border-radius: var(--radius-sm);
-    font-size: 0.875rem;
-    color: var(--accent-primary);
-}
-
-.solution-cta {
-    text-align: center;
-}
-
-/* ===== INDUSTRIES SECTION ===== */
-.industries-section {
-    padding: var(--section-padding) 0;
-    background: var(--bg-primary);
-}
-
-.industries-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 24px;
-    margin-bottom: 32px;
-}
-
-.industry-card {
-    padding: 32px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-lg);
-    transition: all var(--transition-normal);
-}
-
-.industry-card:hover {
-    transform: translateY(-4px);
-}
-
-.industry-finance:hover {
-    border-color: #10b981;
-    box-shadow: 0 8px 32px rgba(16, 185, 129, 0.15);
-}
-
-.industry-medical:hover {
-    border-color: #3b82f6;
-    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.15);
-}
-
-.industry-sales:hover {
-    border-color: #f59e0b;
-    box-shadow: 0 8px 32px rgba(245, 158, 11, 0.15);
-}
-
-.industry-icon {
-    font-size: 2.5rem;
-    margin-bottom: 16px;
-}
-
-.industry-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 8px;
-}
-
-.industry-subtitle {
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    margin-bottom: 20px;
-}
-
-.industry-topics {
-    margin-bottom: 20px;
-}
-
-.industry-topics li {
-    padding: 8px 0;
-    padding-left: 24px;
-    position: relative;
-    color: var(--text-secondary);
-    font-size: 0.9375rem;
-}
-
-.industry-topics li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--success);
-}
-
-.industry-example {
-    padding: 12px 16px;
-    background: var(--bg-glass);
-    border-radius: var(--radius-sm);
-    font-size: 0.875rem;
-}
-
-.example-label {
-    color: var(--text-muted);
-    margin-right: 8px;
-}
-
-.industries-other {
-    text-align: center;
-    color: var(--text-secondary);
-}
-
-/* ===== PRICING SECTION ===== */
-.pricing-section {
-    padding: var(--section-padding) 0;
-    background: var(--bg-secondary);
-}
-
-.pricing-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 32px;
-    max-width: 800px;
-    margin: 0 auto 48px;
-}
-
-.pricing-card {
-    position: relative;
-    padding: 40px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-lg);
-    transition: all var(--transition-normal);
-}
-
-.pricing-card.featured {
-    border-color: var(--accent-primary);
-    box-shadow: var(--shadow-glow);
-}
-
-.pricing-badge {
-    position: absolute;
-    top: -12px;
-    left: 24px;
-    padding: 6px 16px;
-    background: var(--bg-tertiary);
-    border: 1px solid var(--border-color);
-    border-radius: 100px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.pricing-ribbon {
-    position: absolute;
-    top: -12px;
-    right: 24px;
-    padding: 6px 16px;
-    background: var(--accent-gradient);
-    border-radius: 100px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: white;
-}
-
-.pricing-header {
-    text-align: center;
-    margin-bottom: 32px;
-}
-
-.pricing-header h3 {
-    font-size: 1.25rem;
-    margin-bottom: 16px;
-}
-
-.pricing-price {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 4px;
-}
-
-.price-currency {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-top: 8px;
-}
-
-.price-amount {
-    font-size: 4rem;
-    font-weight: 800;
-    line-height: 1;
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.pricing-duration {
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    margin-top: 8px;
-}
-
-.pricing-features {
-    margin-bottom: 32px;
-}
-
-.pricing-features li {
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.pricing-features li:last-child {
-    border-bottom: none;
-}
-
-.pricing-features .check {
-    color: var(--success);
-    font-weight: 600;
-}
-
-.pricing-note {
-    text-align: center;
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    margin-top: 12px;
-}
-
-.pricing-guarantee {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.guarantee-box {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 24px;
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.3);
-    border-radius: var(--radius-md);
-}
-
-.guarantee-shield {
-    font-size: 2.5rem;
-}
-
-.guarantee-text strong {
-    display: block;
-    margin-bottom: 4px;
-}
-
-.guarantee-text p {
-    color: var(--text-secondary);
-    font-size: 0.9375rem;
-    margin: 0;
-}
-
-/* ===== TESTIMONIALS SECTION ===== */
-.testimonials-section {
-    padding: var(--section-padding) 0;
-    background: var(--bg-primary);
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-}
-
-.testimonial-card {
-    padding: 32px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-lg);
-    transition: all var(--transition-normal);
-}
-
-.testimonial-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent-primary);
-}
-
-.testimonial-card.featured {
-    grid-column: span 2;
-}
-
-.testimonial-rating {
-    font-size: 1.25rem;
-    margin-bottom: 16px;
-}
-
-.testimonial-quote {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 24px;
-    font-style: italic;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.author-avatar {
-    width: 48px;
-    height: 48px;
-    background: var(--accent-gradient);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 0.875rem;
-}
-
-.author-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.author-info span {
-    font-size: 0.875rem;
-    color: var(--text-muted);
-}
-
 /* ===== ABOUT SECTION ===== */
 .about-section {
-    padding: var(--section-padding) 0;
-    background: var(--bg-secondary);
+    padding: 80px 0;
+    background: var(--bg-white);
 }
 
 .about-content {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 60px;
-    align-items: center;
+    grid-template-columns: 300px 1fr;
+    gap: 48px;
+    align-items: start;
 }
 
-.about-image {
+.about-image-wrapper {
     position: relative;
 }
 
-.about-image img {
+.about-photo {
     width: 100%;
     border-radius: var(--radius-lg);
-    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
 }
 
 .about-badge {
     position: absolute;
-    bottom: 24px;
-    left: 24px;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     padding: 8px 16px;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 100px;
-    font-size: 0.875rem;
-    font-weight: 700;
-}
-
-.badge-flag {
-    font-size: 1.125rem;
-}
-
-.about-text {
-    max-width: 700px;
+    background: white;
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-md);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 .about-text h2 {
-    font-size: clamp(2rem, 5vw, 3rem);
-    margin-bottom: 24px;
-}
-
-.about-intro {
-    font-size: 1.25rem;
-    margin-bottom: 24px;
-    color: var(--text-primary);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 16px;
 }
 
 .about-text p {
-    color: var(--text-secondary);
-    margin-bottom: 20px;
+    color: var(--text-body);
+    margin-bottom: 16px;
 }
 
 .about-credentials {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     gap: 16px;
-    margin-top: 32px;
+    margin-top: 24px;
 }
 
 .credential {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     font-size: 0.9375rem;
     font-weight: 500;
+    color: var(--text-dark);
 }
 
-.credential-icon {
-    font-size: 1.25rem;
-    color: var(--accent-primary);
+.credential svg {
+    width: 18px;
+    height: 18px;
+    color: var(--success);
 }
 
 /* ===== FAQ SECTION ===== */
 .faq-section {
-    padding: var(--section-padding) 0;
-    background: var(--bg-primary);
+    padding: 80px 0;
+    background: var(--bg-section);
 }
 
 .faq-grid {
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
 }
 
 .faq-item {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
     border-radius: var(--radius-md);
     overflow: hidden;
 }
 
 .faq-question {
     width: 100%;
-    padding: 24px;
+    padding: 20px 24px;
     background: none;
     border: none;
     display: flex;
@@ -1201,15 +748,15 @@ h6 {
     align-items: center;
     cursor: pointer;
     text-align: left;
-    font-family: var(--font-primary);
-    font-size: 1.125rem;
+    font-family: var(--font-sans);
+    font-size: 1rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--text-dark);
 }
 
 .faq-icon {
-    font-size: 1.5rem;
-    color: var(--accent-primary);
+    font-size: 1.25rem;
+    color: var(--primary);
     transition: transform 0.3s ease;
 }
 
@@ -1218,114 +765,130 @@ h6 {
     padding: 0 24px;
     overflow: hidden;
     transition: all 0.3s ease;
-    color: var(--text-secondary);
+    color: var(--text-body);
+    font-size: 0.9375rem;
 }
 
 .faq-item.open .faq-answer {
-    max-height: 200px;
-    padding-bottom: 24px;
+    max-height: 300px;
+    padding: 0 24px 20px;
 }
 
-        .faq-item.open .faq-icon {
+.faq-item.open .faq-icon {
     transform: rotate(45deg);
 }
 
 /* ===== FINAL CTA SECTION ===== */
-.final-cta-section {
-    padding: var(--section-padding) 0;
-    background: radial-gradient(ellipse 80% 50% at 50% 50%, rgba(99, 102, 241, 0.2), transparent), var(--bg-secondary);
+.final-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     text-align: center;
 }
 
 .final-cta-content h2 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    margin-bottom: 24px;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 12px;
 }
 
 .final-cta-content p {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    max-width: 700px;
-    margin: 0 auto 40px;
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 32px;
 }
 
-.final-cta-buttons {
-    margin-bottom: 48px;
+.final-cta-content p strong {
+    color: white;
 }
 
-.final-trust-signals {
+.btn-white-lg {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: white;
+    color: var(--primary);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-white-lg:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+.final-trust {
     display: flex;
     justify-content: center;
     gap: 32px;
-    margin-top: 48px;
+    margin-top: 32px;
     flex-wrap: wrap;
 }
 
-.trust-item {
+.final-trust-item {
     display: flex;
     align-items: center;
     gap: 8px;
     font-size: 0.875rem;
-    color: var(--text-muted);
-    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 /* ===== FOOTER ===== */
 .footer {
-    padding: 80px 0 40px;
-    background: #050508;
-    border-top: 1px solid var(--border-color);
+    padding: 48px 0 24px;
+    background: var(--text-dark);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 60px;
-    margin-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
 }
 
-.footer-brand p {
-    color: var(--text-muted);
-    margin-top: 16px;
-    max-width: 300px;
+.footer-logo {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    font-style: italic;
 }
 
 .footer-links {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    display: flex;
+    gap: 24px;
 }
 
-.footer-column h4 {
-    font-size: 1rem;
-    margin-bottom: 24px;
-    color: var(--text-primary);
-}
-
-.footer-column a {
-    display: block;
-    color: var(--text-muted);
-    margin-bottom: 12px;
+.footer-links a {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
     transition: color 0.2s ease;
 }
 
-.footer-column a:hover {
-    color: var(--text-primary);
+.footer-links a:hover {
+    color: white;
 }
 
 .footer-bottom {
     text-align: center;
-    padding-top: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    color: var(--text-muted);
-    font-size: 0.875rem;
+    padding-top: 24px;
+    margin-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8125rem;
 }
 
 /* ===== ANIMATIONS ===== */
 .animate-on-scroll {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .animate-visible {
@@ -1333,62 +896,53 @@ h6 {
     transform: translateY(0);
 }
 
-/* Stagger animations for grids */
-.problem-grid .animate-visible:nth-child(2) { transition-delay: 0.1s; }
-.problem-grid .animate-visible:nth-child(3) { transition-delay: 0.2s; }
-.problem-grid .animate-visible:nth-child(4) { transition-delay: 0.3s; }
-
-.industries-grid .animate-visible:nth-child(2) { transition-delay: 0.1s; }
-.industries-grid .animate-visible:nth-child(3) { transition-delay: 0.2s; }
-
-.testimonials-grid .animate-visible:nth-child(2) { transition-delay: 0.1s; }
-.testimonials-grid .animate-visible:nth-child(3) { transition-delay: 0.2s; }
-.testimonials-grid .animate-visible:nth-child(4) { transition-delay: 0.3s; }
-
-/* ===== MEDIA QUERIES ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
     }
-
+    
     .hero-content {
         max-width: 100%;
     }
-
-    .hero-features,
-    .hero-cta-group {
+    
+    .hero-trust-badges {
         justify-content: center;
     }
-
-    .hero-guarantee {
-        justify-content: center;
+    
+    .hero-image {
+        order: -1;
     }
-
+    
+    .hero-photo-wrapper {
+        max-width: 320px;
+    }
+    
     .about-content {
         grid-template-columns: 1fr;
+        text-align: center;
     }
-
-    .about-image {
-        max-width: 500px;
+    
+    .about-image-wrapper {
+        max-width: 280px;
         margin: 0 auto;
     }
-
-    .footer-content {
-        grid-template-columns: 1fr;
+    
+    .about-credentials {
+        justify-content: center;
     }
 }
 
 @media (max-width: 768px) {
-    .nav-links,
-    .nav-cta {
+    .nav-links, .nav-cta {
         display: none;
     }
-
+    
     .mobile-menu-btn {
         display: flex;
     }
-
+    
     .nav-links.mobile-open {
         display: flex !important;
         flex-direction: column;
@@ -1396,48 +950,35 @@ h6 {
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(10, 10, 15, 0.98);
+        background: white;
         padding: 24px;
         gap: 16px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid var(--border-light);
+        box-shadow: var(--shadow-md);
     }
-
-    .mobile-menu-btn.active span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
+    
+    .audience-grid, .benefits-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
     }
-
-    .mobile-menu-btn.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .mobile-menu-btn.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
-    }
-
-    .social-proof-bar {
-        padding: 40px 0;
-    }
-
+    
     .proof-items {
-        gap: 32px;
+        flex-direction: column;
+        gap: 16px;
     }
-
+    
     .proof-divider {
         display: none;
     }
-
-    .step-card {
-        grid-template-columns: 1fr;
+    
+    .testimonial-featured {
+        padding: 32px 24px;
+    }
+    
+    .final-trust {
+        flex-direction: column;
         gap: 16px;
-        padding: 24px;
-    }
-
-    .industry-card {
-        padding: 24px;
-    }
-
-    .testimonial-card.featured {
-        grid-column: span 1;
     }
 }
       ` }} />
@@ -1445,18 +986,15 @@ h6 {
       {/* Navigation */}
       <nav className="navbar" id="navbar">
         <div className="nav-container">
-          <a href="#" className="nav-logo">
-            <span className="logo-icon">🇬🇧</span>
-            <span className="logo-text">Talk with Dave</span>
-          </a>
+          <a href="#" className="nav-logo">Talk with Dave</a>
           <div className="nav-links" id="navLinks">
-            <a href="#how-it-works">How It Works</a>
-            <a href="#industries">Industries</a>
-            <a href="#testimonials">Results</a>
+            <a href="#audience">Who It's For</a>
+            <a href="#benefits">What You Get</a>
+            <a href="#about">About Dave</a>
             <a href="#faq">FAQ</a>
           </div>
           <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank" className="nav-cta">
-            Book Assessment <span className="cta-arrow">→</span>
+            Book Free Session
           </a>
           <button className="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
             <span></span><span></span><span></span>
@@ -1466,48 +1004,53 @@ h6 {
 
       {/* Hero Section */}
       <header className="hero">
-        <div className="hero-bg">
-          <div className="hero-gradient"></div>
-        </div>
-        <div className="hero-container">
-          <div className="hero-content">
-            <div className="hero-badge"><span className="badge-icon">⭐</span><span>Trusted by 150+ Professionals
-              Worldwide</span></div>
-            <h1 className="hero-title">Command the <span className="gradient-text">Boardroom</span> in English</h1>
-            <p className="hero-subtitle">The 25-hour transformation program for <strong>Finance, Medical, and Sales
-              executives</strong> who need to speak with British-level authority.</p>
-            <div className="hero-features">
-              <div className="hero-feature"><span className="feature-icon">🎯</span><span>AI-Built Custom
-                Curriculum</span></div>
-              <div className="hero-feature"><span className="feature-icon">🇬🇧</span><span>Native UK Speaker</span></div>
-              <div className="hero-feature"><span className="feature-icon">💼</span><span>Industry-Specific
-                Training</span></div>
-            </div>
-            <div className="hero-cta-group">
-              <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank"
-                className="btn btn-primary btn-lg">
-                <span>Start Your Transformation</span>
-                <span className="btn-subtext">$20 Assessment → Credited to Package</span>
-              </a>
-              <a href="#how-it-works" className="btn btn-secondary btn-lg">See How It Works</a>
-            </div>
-            <div className="hero-guarantee"><span className="guarantee-icon">🛡️</span><span>100% Money-Back Guarantee on
-              Assessment</span></div>
-          </div>
-          <div className="hero-media">
-            <div className="video-container">
-              <div className="video-glow"></div>
-              <div className="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/oU39nHNpSZY?rel=0&modestbranding=1" title="Meet Dave"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen></iframe>
+        <div className="container">
+          <div className="hero-container">
+            <div className="hero-content">
+              <h1 className="hero-title">Command the Boardroom<br />in English.</h1>
+              <p className="hero-subtitle">
+                The <strong>25-hour transformation</strong> for Finance, Medical, and Sales executives who need to speak with authority.
+              </p>
+              <p className="hero-offer"><strong>Free 30-Minute</strong> Assessment to Start</p>
+              <div className="hero-cta-group">
+                <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank" className="btn-primary-lg">
+                  Book Your Free Session
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
               </div>
-              <div className="video-caption">
-                <img src={davePhoto} alt="Dave Jackson"
-                  className="caption-avatar" />
-                <div className="caption-text"><strong>Dave Jackson</strong><span>Native UK • 10+ Years
-                  Experience</span></div>
+              <div className="hero-trust-badges">
+                <div className="trust-badge success">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                  Industry-Specific Training
+                </div>
+                <div className="trust-badge success">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                  AI-Built Custom Curriculum
+                </div>
+                <div className="trust-badge success">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                  From Hesitant to Boardroom-Confident
+                </div>
+              </div>
+            </div>
+            <div className="hero-image">
+              <div className="hero-photo-wrapper">
+                <img src={davePhoto} alt="Dave Jackson - Executive English Coach" className="hero-photo" />
+                <div className="hero-badge">
+                  <span className="hero-badge-flag">🇬🇧</span>
+                  Native UK Speaker
+                </div>
               </div>
             </div>
           </div>
@@ -1515,310 +1058,195 @@ h6 {
       </header>
 
       {/* Social Proof Bar */}
-      <section className="social-proof-bar">
+      <section className="proof-bar">
         <div className="container">
           <div className="proof-items">
-            <div className="proof-item"><span className="proof-number">150+</span><span className="proof-label">Professionals
-              Trained</span></div>
+            <div className="proof-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+              150+ Professionals Trained
+            </div>
             <div className="proof-divider"></div>
-            <div className="proof-item"><span className="proof-number">4.9</span><span className="proof-label">Average
-              Rating</span></div>
+            <div className="proof-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              4.9 Average Rating
+            </div>
             <div className="proof-divider"></div>
-            <div className="proof-item"><span className="proof-number">15+</span><span className="proof-label">Countries
-              Served</span></div>
-            <div className="proof-divider"></div>
-            <div className="proof-item"><span className="proof-number">10+</span><span className="proof-label">Years
-              Teaching</span></div>
+            <div className="proof-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              15+ Countries Served
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Problem Section */}
-      <section className="problem-section">
+      {/* Who Is This For Section */}
+      <section className="audience-section" id="audience">
         <div className="container">
-          <div className="section-header">
-            <span className="section-label">The Challenge</span>
-            <h2 className="section-title">Your English is <span className="text-danger">Holding You Back</span></h2>
+          <div className="section-header animate-on-scroll">
+            <h2 className="section-title">Who Is This For?</h2>
+            <p className="section-subtitle">I work with driven professionals who need to communicate with confidence and authority</p>
           </div>
-          <div className="problem-grid">
-            <div className="problem-card">
-              <div className="problem-icon">😰</div>
-              <h3>Hesitating in Meetings</h3>
-              <p>You have great ideas but struggle to express them with the same authority as native speakers.</p>
+          <div className="audience-grid">
+            <div className="audience-card animate-on-scroll">
+              <div className="audience-icon">💼</div>
+              <h3>Finance & Banking Professionals</h3>
+              <p>Investment bankers, asset managers, and corporate finance executives</p>
             </div>
-            <div className="problem-card">
-              <div className="problem-icon">📧</div>
-              <h3>Email Anxiety</h3>
-              <p>Every important email takes 3x longer because you're second-guessing your word choices.</p>
+            <div className="audience-card animate-on-scroll">
+              <div className="audience-icon">🏥</div>
+              <h3>Medical & Healthcare Leaders</h3>
+              <p>Physicians, researchers, and healthcare executives</p>
             </div>
-            <div className="problem-card">
-              <div className="problem-icon">🎤</div>
-              <h3>Presentation Fear</h3>
-              <p>You avoid speaking opportunities that could advance your career because you don't feel confident.
-              </p>
+            <div className="audience-card animate-on-scroll">
+              <div className="audience-icon">📈</div>
+              <h3>Sales & Business Executives</h3>
+              <p>Account executives, sales directors, and entrepreneurs</p>
             </div>
-            <div className="problem-card">
-              <div className="problem-icon">🤝</div>
-              <h3>Missed Opportunities</h3>
-              <p>Promotions and client relationships are going to colleagues who communicate more naturally.</p>
-            </div>
-          </div>
-          <div className="problem-cta">
-            <p className="problem-statement"><strong>Sound familiar?</strong> These are the exact challenges my students
-              overcome in 25 hours.</p>
           </div>
         </div>
       </section>
 
-      {/* Solution Section */}
-      <section className="solution-section" id="how-it-works">
+      {/* What You'll Get Section */}
+      <section className="benefits-section" id="benefits">
         <div className="container">
-          <div className="section-header">
-            <span className="section-label">The Solution</span>
-            <h2 className="section-title">Your <span className="gradient-text">25-Hour Transformation</span></h2>
-            <p className="section-subtitle">One package. One price. Complete fluency roadmap built entirely around
-              <em>your</em> profession.
+          <div className="section-header animate-on-scroll">
+            <h2 className="section-title">Your 25-Hour Transformation</h2>
+            <p className="section-subtitle">One package. One price. Complete fluency roadmap built entirely around your profession.</p>
+          </div>
+          <div className="benefits-grid">
+            <div className="benefit-card animate-on-scroll">
+              <div className="benefit-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <h3>Fluency Evaluation & Feedback</h3>
+              <p>Detailed assessment of your current speaking level with actionable improvement areas</p>
+            </div>
+            <div className="benefit-card animate-on-scroll">
+              <div className="benefit-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                  <polyline points="10 9 9 9 8 9"/>
+                </svg>
+              </div>
+              <h3>Tailored Learning Plan</h3>
+              <p>Custom curriculum built specifically for your industry and career goals</p>
+            </div>
+            <div className="benefit-card animate-on-scroll">
+              <div className="benefit-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              </div>
+              <h3>Expert Tips to Achieve Your Goals</h3>
+              <p>Proven strategies from 10+ years of coaching executives to boardroom confidence</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial Section */}
+      <section className="testimonial-section" id="testimonials">
+        <div className="container">
+          <div className="section-header animate-on-scroll">
+            <h2 className="section-title">What Professionals Say</h2>
+          </div>
+          <div className="testimonial-featured animate-on-scroll">
+            <div className="testimonial-quote-mark">"</div>
+            <p className="testimonial-text">
+              Dave's approach is completely different from any English course I've taken. He understood my job as an investment analyst and built lessons around my actual daily tasks. After 3 months, I led my first earnings call in English with complete confidence.
             </p>
-          </div>
-          <div className="solution-steps">
-            <div className="step-card">
-              <div className="step-number">01</div>
-              <div className="step-content">
-                <h3>Diagnostic Assessment</h3>
-                <p>In our first $20 session, I analyze your current level, your job requirements, and your
-                  specific communication challenges. You leave with a complete roadmap.</p>
-                <div className="step-highlight"><span className="highlight-icon">💡</span><span>$20 fully credited
-                  toward your package</span></div>
-              </div>
+            <div className="testimonial-rating">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
-            <div className="step-card">
-              <div className="step-number">02</div>
-              <div className="step-content">
-                <h3>AI-Powered Curriculum</h3>
-                <p>Using proprietary AI technology, I build a 100% custom curriculum covering exactly what you
-                  need: your industry vocabulary, your meeting types, your presentation scenarios.</p>
-                <div className="step-highlight"><span className="highlight-icon">🤖</span><span>No generic
-                  lessons—everything is built for your role</span></div>
-              </div>
-            </div>
-            <div className="step-card">
-              <div className="step-number">03</div>
-              <div className="step-content">
-                <h3>25-Hour Mastery Program</h3>
-                <p>Over 25 one-hour sessions, we systematically work through your curriculum. You practice real
-                  scenarios, receive immediate feedback, and build unshakeable confidence.</p>
-                <div className="step-highlight"><span className="highlight-icon">🏆</span><span>From hesitant to
-                  boardroom-confident</span></div>
-              </div>
-            </div>
-          </div>
-          <div className="solution-cta">
-            <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank"
-              className="btn btn-primary btn-lg">
-              <span>Book Your Diagnostic Session</span><span className="btn-subtext">$20 • 100% Risk-Free</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Industries Section */}
-      <section className="industries-section" id="industries">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-label">Specializations</span>
-            <h2 className="section-title">Built for <span className="gradient-text">Your Industry</span></h2>
-            <p className="section-subtitle">I don't teach generic "Business English." I teach the exact language you
-              need for your job.</p>
-          </div>
-          <div className="industries-grid">
-            <div className="industry-card industry-finance">
-              <div className="industry-icon">💼</div>
-              <h3>Finance & Banking</h3>
-              <p className="industry-subtitle">Investment Banking • Asset Management • Corporate Finance</p>
-              <ul className="industry-topics">
-                <li>Earnings calls & investor presentations</li>
-                <li>M&A negotiations & due diligence</li>
-                <li>Regulatory briefings & compliance</li>
-                <li>Client relationship management</li>
-              </ul>
-              <div className="industry-example"><span className="example-label">Sample:</span><span>"Leading a Q3 earnings
-                call with analyst Q&A"</span></div>
-            </div>
-            <div className="industry-card industry-medical">
-              <div className="industry-icon">🏥</div>
-              <h3>Medical & Healthcare</h3>
-              <p className="industry-subtitle">Physicians • Researchers • Healthcare Executives</p>
-              <ul className="industry-topics">
-                <li>Patient consultations & explanations</li>
-                <li>Medical conference presentations</li>
-                <li>Research paper discussions</li>
-                <li>Hospital administration meetings</li>
-              </ul>
-              <div className="industry-example"><span className="example-label">Sample:</span><span>"Presenting clinical
-                trial results at an international conference"</span></div>
-            </div>
-            <div className="industry-card industry-sales">
-              <div className="industry-icon">📈</div>
-              <h3>Sales & Business Development</h3>
-              <p className="industry-subtitle">Account Executives • Sales Directors • Entrepreneurs</p>
-              <ul className="industry-topics">
-                <li>High-stakes client pitches</li>
-                <li>Objection handling & negotiation</li>
-                <li>Executive-level presentations</li>
-                <li>Contract discussions & closing</li>
-              </ul>
-              <div className="industry-example"><span className="example-label">Sample:</span><span>"Pitching a $2M
-                enterprise solution to C-suite"</span></div>
-            </div>
-          </div>
-          <div className="industries-other">
-            <p><strong>Also serving:</strong> Technology, Legal, Consulting, Academia, Government, and more.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="pricing-section">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-label">Investment</span>
-            <h2 className="section-title">Simple, <span className="gradient-text">Transparent Pricing</span></h2>
-          </div>
-          <div className="pricing-cards">
-            <div className="pricing-card pricing-assessment">
-              <div className="pricing-badge">Start Here</div>
-              <div className="pricing-header">
-                <h3>Diagnostic Assessment</h3>
-                <div className="pricing-price"><span className="price-currency">$</span><span
-                  className="price-amount">20</span></div>
-                <p className="pricing-duration">30-minute session</p>
-              </div>
-              <ul className="pricing-features">
-                <li><span className="check">✓</span> Complete skills analysis</li>
-                <li><span className="check">✓</span> Custom curriculum preview</li>
-                <li><span className="check">✓</span> Personalized roadmap</li>
-                <li><span className="check">✓</span> 100% credited to package</li>
-                <li><span className="check">✓</span> Money-back guarantee</li>
-              </ul>
-              <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank"
-                className="btn btn-outline btn-block">Book Assessment</a>
-            </div>
-            <div className="pricing-card pricing-package featured">
-              <div className="pricing-ribbon">Most Popular</div>
-              <div className="pricing-header">
-                <h3>25-Hour Transformation</h3>
-                <div className="pricing-price"><span className="price-currency">$</span><span
-                  className="price-amount">750</span></div>
-                <p className="pricing-duration">Complete program • $30/hour</p>
-              </div>
-              <ul className="pricing-features">
-                <li><span className="check">✓</span> 25 one-hour sessions</li>
-                <li><span className="check">✓</span> AI-built custom curriculum</li>
-                <li><span className="check">✓</span> Industry-specific training</li>
-                <li><span className="check">✓</span> Roleplay & simulations</li>
-                <li><span className="check">✓</span> Homework & materials</li>
-                <li><span className="check">✓</span> Email & document review</li>
-                <li><span className="check">✓</span> Flexible scheduling</li>
-                <li><span className="check">✓</span> Progress tracking</li>
-              </ul>
-              <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank"
-                className="btn btn-primary btn-block">Start with $20 Assessment</a>
-              <p className="pricing-note">Assessment fee credited to package</p>
-            </div>
-          </div>
-          <div className="pricing-guarantee">
-            <div className="guarantee-box"><span className="guarantee-shield">🛡️</span>
-              <div className="guarantee-text"><strong>100% Risk-Free Assessment</strong>
-                <p>If you don't feel the diagnostic session was valuable, I'll refund your $20 immediately. No
-                  questions asked.</p>
+            <div className="testimonial-author">
+              <div className="author-avatar">MK</div>
+              <div className="author-info">
+                <strong>Michael K.</strong>
+                <span>Investment Analyst, Singapore</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="testimonials-section" id="testimonials">
+      {/* Video Section */}
+      <section className="video-section">
         <div className="container">
-          <div className="section-header">
-            <span className="section-label">Success Stories</span>
-            <h2 className="section-title">What <span className="gradient-text">Professionals</span> Say</h2>
+          <div className="section-header animate-on-scroll">
+            <h2 className="section-title">Meet Dave</h2>
+            <p className="section-subtitle">See how I help professionals transform their English confidence</p>
           </div>
-          <div className="testimonials-grid">
-            <div className="testimonial-card featured">
-              <div className="testimonial-rating">⭐⭐⭐⭐⭐</div>
-              <blockquote className="testimonial-quote">"Dave's approach is completely different from any English
-                course I've taken. He understood my job as an investment analyst and built lessons around my
-                actual daily tasks. After 3 months, I led my first earnings call in English with complete
-                confidence."</blockquote>
-              <div className="testimonial-author">
-                <div className="author-avatar">KL</div>
-                <div className="author-info"><strong>Kevin L.</strong><span>Investment Analyst • Hong Kong</span>
-                </div>
-              </div>
-            </div>
-            <div className="testimonial-card">
-              <div className="testimonial-rating">⭐⭐⭐⭐⭐</div>
-              <blockquote className="testimonial-quote">"Dave is really friendly and patient. He explains the
-                background behind idioms and phrases, and discusses cultural differences. Not only the content
-                but his teaching style helps tremendously."</blockquote>
-              <div className="testimonial-author">
-                <div className="author-avatar">MW</div>
-                <div className="author-info"><strong>Michael W.</strong><span>Software Engineer • China</span></div>
-              </div>
-            </div>
-            <div className="testimonial-card">
-              <div className="testimonial-rating">⭐⭐⭐⭐⭐</div>
-              <blockquote className="testimonial-quote">"The AI curriculum was a game-changer. Every lesson felt
-                relevant to my work in medical research. Dave even helped me prepare for an international
-                conference presentation."</blockquote>
-              <div className="testimonial-author">
-                <div className="author-avatar">YT</div>
-                <div className="author-info"><strong>Dr. Yuki T.</strong><span>Medical Researcher • Japan</span>
-                </div>
-              </div>
-            </div>
-            <div className="testimonial-card">
-              <div className="testimonial-rating">⭐⭐⭐⭐⭐</div>
-              <blockquote className="testimonial-quote">"I was skeptical about online lessons, but Dave made every
-                session count. His focus on sales communication directly improved my close rate with
-                international clients."</blockquote>
-              <div className="testimonial-author">
-                <div className="author-avatar">HP</div>
-                <div className="author-info"><strong>Hana P.</strong><span>Sales Director • South Korea</span></div>
-              </div>
+          <div className="video-container animate-on-scroll">
+            <div className="video-wrapper">
+              <iframe 
+                src="https://www.youtube.com/embed/oU39nHNpSZY?rel=0&modestbranding=1" 
+                title="Meet Dave"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="about-section">
+      <section className="about-section" id="about">
         <div className="container">
-          <div className="about-content">
-            <div className="about-image">
-              <img src={davePhoto}
-                alt="Dave Jackson - Executive English Coach" />
-              <div className="about-badge"><span className="badge-flag">🇬🇧</span><span>Native UK Speaker</span></div>
+          <div className="about-content animate-on-scroll">
+            <div className="about-image-wrapper">
+              <img src={davePhoto} alt="Dave Jackson" className="about-photo" />
+              <div className="about-badge">
+                <span>🇬🇧</span> Native UK
+              </div>
             </div>
             <div className="about-text">
-              <span className="section-label">Your Coach</span>
               <h2>Meet Dave Jackson</h2>
-              <p className="about-intro">I'm a native British English speaker with over <strong>10 years of teaching
-                experience</strong> and a <strong>Business Administration degree from the University of
-                  Southampton</strong>.</p>
-              <p>What sets me apart isn't my credentials—it's my approach. I don't believe in generic "Business
-                English" courses. I understand your specific job, your specific challenges, and build a
-                curriculum that solves your specific problems.</p>
-              <p>I've helped investment bankers lead earnings calls, doctors present at international conferences,
-                and sales executives close multi-million dollar deals.</p>
+              <p>
+                I'm a native British English speaker with over <strong>10 years of teaching experience</strong> and a <strong>Business Administration degree from the University of Southampton</strong>.
+              </p>
+              <p>
+                What sets me apart isn't my credentials — it's my deep understanding of what professionals actually need. I've worked with executives from Goldman Sachs, McKinsey, and leading hospitals. I know the exact language challenges you face.
+              </p>
               <div className="about-credentials">
-                <div className="credential"><span className="credential-icon">🎓</span><span>BA Business Administration,
-                  University of Southampton</span></div>
-                <div className="credential"><span className="credential-icon">📅</span><span>10+ Years Teaching
-                  Experience</span></div>
-                <div className="credential"><span className="credential-icon">🌍</span><span>150+ Professionals
-                  Trained</span></div>
+                <div className="credential">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  10+ Years Teaching Experience
+                </div>
+                <div className="credential">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  Business Degree (Southampton)
+                </div>
+                <div className="credential">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  150+ Professionals Coached
+                </div>
               </div>
             </div>
           </div>
@@ -1828,61 +1256,44 @@ h6 {
       {/* FAQ Section */}
       <section className="faq-section" id="faq">
         <div className="container">
-          <div className="section-header">
-            <span className="section-label">Questions</span>
-            <h2 className="section-title">Frequently Asked <span className="gradient-text">Questions</span></h2>
+          <div className="section-header animate-on-scroll">
+            <h2 className="section-title">Frequently Asked Questions</h2>
           </div>
           <div className="faq-grid">
             <div className="faq-item">
-              <button className="faq-question"><span>What happens in the $20 diagnostic session?</span><span
-                className="faq-icon">+</span></button>
+              <button className="faq-question">
+                <span>What happens in the free assessment session?</span>
+                <span className="faq-icon">+</span>
+              </button>
               <div className="faq-answer">
-                <p>In this 30-minute session, I assess your current English level, understand your job
-                  requirements, and identify your specific communication challenges. By the end, you'll have a
-                  clear roadmap. The $20 is fully credited toward your package if you continue.</p>
+                <p>In this 30-minute session, I assess your current English level, understand your job requirements, and identify your specific communication challenges. By the end, you'll have a clear roadmap for improvement.</p>
               </div>
             </div>
             <div className="faq-item">
-              <button className="faq-question"><span>What if I'm not satisfied with the assessment?</span><span
-                className="faq-icon">+</span></button>
+              <button className="faq-question">
+                <span>How is this different from regular English courses?</span>
+                <span className="faq-icon">+</span>
+              </button>
               <div className="faq-answer">
-                <p>If you don't feel the diagnostic session was valuable, I'll refund your $20 immediately—no
-                  questions asked. I'm confident you'll find it valuable, which is why I offer this guarantee.
-                </p>
+                <p>I don't teach generic "Business English." Everything is built around YOUR job, YOUR industry, and YOUR specific communication needs. If you're a finance executive, we practice earnings calls. If you're a doctor, we practice patient consultations.</p>
               </div>
             </div>
             <div className="faq-item">
-              <button className="faq-question"><span>How is your AI curriculum different from regular
-                courses?</span><span className="faq-icon">+</span></button>
+              <button className="faq-question">
+                <span>What's the full program investment?</span>
+                <span className="faq-icon">+</span>
+              </button>
               <div className="faq-answer">
-                <p>Traditional courses use pre-made materials. I use proprietary AI technology to analyze your
-                  job, industry, and goals, then generate a 100% unique curriculum. Every lesson and exercise
-                  is tailored specifically to your work.</p>
+                <p>The complete 25-hour transformation program is $750. This includes a fully customized curriculum, all 25 one-hour sessions, and ongoing support between lessons.</p>
               </div>
             </div>
             <div className="faq-item">
-              <button className="faq-question"><span>How long does the 25-hour program take?</span><span
-                className="faq-icon">+</span></button>
+              <button className="faq-question">
+                <span>How do I know this will work for me?</span>
+                <span className="faq-icon">+</span>
+              </button>
               <div className="faq-answer">
-                <p>Most students complete the program in 3-6 months, taking 1-2 lessons per week. However, the
-                  schedule is completely flexible based on your availability.</p>
-              </div>
-            </div>
-            <div className="faq-item">
-              <button className="faq-question"><span>What if my industry isn't listed?</span><span
-                className="faq-icon">+</span></button>
-              <div className="faq-answer">
-                <p>Finance, Medical, and Sales are my most common specializations, but I've worked across
-                  Technology, Legal, Consulting, Academia, and more. If your job requires professional
-                  English, I can build a curriculum for it.</p>
-              </div>
-            </div>
-            <div className="faq-item">
-              <button className="faq-question"><span>Can I pay for the package in installments?</span><span
-                className="faq-icon">+</span></button>
-              <div className="faq-answer">
-                <p>Yes! I offer flexible payment options. We can discuss what works best during the diagnostic
-                  session. The most common arrangement is splitting the $750 into 2-3 payments.</p>
+                <p>That's exactly why I offer a free assessment first. You'll experience my teaching style, get valuable insights about your English, and only decide afterward if you want to continue with the full program.</p>
               </div>
             </div>
           </div>
@@ -1890,23 +1301,27 @@ h6 {
       </section>
 
       {/* Final CTA Section */}
-      <section className="final-cta-section">
+      <section className="final-cta">
         <div className="container">
-          <div className="final-cta-content">
+          <div className="final-cta-content animate-on-scroll">
             <h2>Ready to Command the Boardroom?</h2>
-            <p>Book your $20 diagnostic session today. If you don't find it valuable, get your money back. If you
-              do, start your transformation.</p>
-            <div className="final-cta-buttons">
-              <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank"
-                className="btn btn-primary btn-xl">
-                <span>Book Your Assessment Now</span>
-                <span className="btn-subtext">$20 • 100% Risk-Free • Credited to Package</span>
-              </a>
-            </div>
-            <div className="final-trust-signals">
-              <div className="trust-item"><span>🇬🇧</span><span>Native UK Speaker</span></div>
-              <div className="trust-item"><span>⭐</span><span>4.9/5 Rating</span></div>
-              <div className="trust-item"><span>🛡️</span><span>Money-Back Guarantee</span></div>
+            <p>Book your <strong>free 30-minute assessment</strong> and get your personalized transformation roadmap.</p>
+            <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank" className="btn-white-lg">
+              Book Your Free Session
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <div className="final-trust">
+              <div className="final-trust-item">
+                <span>🇬🇧</span> Native UK Speaker
+              </div>
+              <div className="final-trust-item">
+                <span>🎯</span> Industry-Specific Training
+              </div>
+              <div className="final-trust-item">
+                <span>⭐</span> 4.9/5 Rating
+              </div>
             </div>
           </div>
         </div>
@@ -1916,24 +1331,16 @@ h6 {
       <footer className="footer">
         <div className="container">
           <div className="footer-content">
-            <div className="footer-brand"><span className="logo-icon">🇬🇧</span><span className="logo-text">Talk with
-              Dave</span>
-              <p>Executive English coaching for professionals who need to speak with authority.</p>
-            </div>
+            <div className="footer-logo">Talk with Dave</div>
             <div className="footer-links">
-              <div className="footer-column">
-                <h4>Quick Links</h4><a href="#how-it-works">How It Works</a><a
-                  href="#industries">Industries</a><a href="#testimonials">Success Stories</a><a
-                    href="#faq">FAQ</a>
-              </div>
-              <div className="footer-column">
-                <h4>Contact</h4><a href="mailto:Dave@talkwithdave.co.uk">Dave@talkwithdave.co.uk</a><a
-                  href="https://calendly.com/daveynj113/your-first-lesson" target="_blank">Book a Session</a>
-              </div>
+              <a href="#audience">Who It's For</a>
+              <a href="#benefits">What You Get</a>
+              <a href="#about">About</a>
+              <a href="#faq">FAQ</a>
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2026 Talk with Dave. All rights reserved.</p>
+            <p>&copy; 2025 Talk with Dave. All rights reserved.</p>
           </div>
         </div>
       </footer>
