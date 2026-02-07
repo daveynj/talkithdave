@@ -33,6 +33,9 @@ export function ProfessionalLandingPage({ data }: ProfessionalLandingPageProps) 
 
     // SEO and page title
     useEffect(() => {
+        // Scroll to top when component mounts
+        window.scrollTo(0, 0);
+
         document.title = data.metaTitle;
 
         // Update meta description
