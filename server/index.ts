@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // CRITICAL: Serve static files FIRST before any other middleware
 // In production, serve from dist/public; in development, serve from public
-const staticPath = process.env.NODE_ENV === 'production' 
+const staticPath = process.env.NODE_ENV === 'production'
   ? path.resolve(import.meta.dirname, "public")
   : path.resolve(import.meta.dirname, "..", "public");
 app.use(express.static(staticPath));
@@ -53,7 +53,7 @@ app.use((req, res, next) => {
       await (storage as DatabaseStorage).initializeDatabase();
       log("Database initialized successfully");
     }
-    
+
     const server = await registerRoutes(app);
 
     app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
@@ -81,11 +81,7 @@ app.use((req, res, next) => {
     // this serves both the API and the client.
     // It is the only port that is not firewalled.
     const port = 5000;
-    server.listen({
-      port,
-      host: "0.0.0.0",
-      reusePort: true,
-    }, () => {
+    server.listen(port, "0.0.0.0", () => {
       log(`serving on port ${port}`);
     });
   } catch (error) {

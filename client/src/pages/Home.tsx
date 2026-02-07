@@ -1,27 +1,42 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "wouter";
 import davePhoto from "@assets/my_professional_photo_1767370992057.png";
 
 export default function Home() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
+  const faqs = [
+    {
+      question: "What happens in the free diagnostic session?",
+      answer: "In this 30-minute session, I assess your current English level, understand your job requirements, and identify your specific communication challenges. By the end, you'll have a clear roadmap. There is no cost for this session."
+    },
+    {
+      question: "Is the assessment really free?",
+      answer: "Yes, the assessment is 100% free with no obligation to continue. I want you to feel confident before committing to the full program."
+    },
+    {
+      question: "How is your AI curriculum different from regular courses?",
+      answer: "Traditional courses use pre-made materials. I use proprietary AI technology to analyze your job, industry, and goals, then generate a 100% unique curriculum. Every lesson and exercise is tailored specifically to your work."
+    },
+    {
+      question: "How long does the 25-hour program take?",
+      answer: "Most students complete the program in 3-6 months, taking 1-2 lessons per week. However, the schedule is completely flexible based on your availability."
+    },
+    {
+      question: "What if my industry isn't listed?",
+      answer: "Finance, Medical, and Sales are my most common specializations, but I've worked across Technology, Legal, Consulting, Academia, and more. If your job requires professional English, I can build a curriculum for it."
+    },
+    {
+      question: "Can I pay for the package in installments?",
+      answer: "Yes! I offer flexible payment options. We can discuss what works best during the diagnostic session. The most common arrangement is splitting the $750 into 2-3 payments."
+    }
+  ];
+
   useEffect(() => {
-    // ===== FAQ Accordion =====
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(button => {
-      button.addEventListener('click', () => {
-        const faqItem = button.parentElement;
-        if (!faqItem) return;
-        const isOpen = faqItem.classList.contains('open');
-
-        // Close all other FAQ items
-        document.querySelectorAll('.faq-item').forEach(item => {
-          item.classList.remove('open');
-        });
-
-        // Toggle current item
-        if (!isOpen) {
-          faqItem.classList.add('open');
-        }
-      });
-    });
 
     // ===== Smooth Scroll for Anchor Links =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -123,7 +138,8 @@ export default function Home() {
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
 /* ===== CSS VARIABLES ===== */
 :root {
     /* Colors - Dark Premium Theme */
@@ -1487,12 +1503,11 @@ h6 {
               <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank"
                 className="btn btn-primary btn-lg">
                 <span>Start Your Transformation</span>
-                <span className="btn-subtext">$20 Assessment → Credited to Package</span>
+                <span className="btn-subtext">Free Assessment → No Commitment Required</span>
               </a>
               <a href="#how-it-works" className="btn btn-secondary btn-lg">See How It Works</a>
             </div>
-            <div className="hero-guarantee"><span className="guarantee-icon">🛡️</span><span>100% Money-Back Guarantee on
-              Assessment</span></div>
+            <div className="hero-guarantee"><span className="guarantee-icon">🛡️</span><span>Free Diagnostic Assessment</span></div>
           </div>
           <div className="hero-media">
             <div className="video-container">
@@ -1585,10 +1600,9 @@ h6 {
               <div className="step-number">01</div>
               <div className="step-content">
                 <h3>Diagnostic Assessment</h3>
-                <p>In our first $20 session, I analyze your current level, your job requirements, and your
+                <p>In our first free session, I analyze your current level, your job requirements, and your
                   specific communication challenges. You leave with a complete roadmap.</p>
-                <div className="step-highlight"><span className="highlight-icon">💡</span><span>$20 fully credited
-                  toward your package</span></div>
+                <div className="step-highlight"><span className="highlight-icon">💡</span><span>Free session to analyze your needs</span></div>
               </div>
             </div>
             <div className="step-card">
@@ -1615,7 +1629,7 @@ h6 {
           <div className="solution-cta">
             <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank"
               className="btn btn-primary btn-lg">
-              <span>Book Your Diagnostic Session</span><span className="btn-subtext">$20 • 100% Risk-Free</span>
+              <span>Book Your Diagnostic Session</span><span className="btn-subtext">Free • 100% Risk-Free</span>
             </a>
           </div>
         </div>
@@ -1689,16 +1703,16 @@ h6 {
               <div className="pricing-badge">Start Here</div>
               <div className="pricing-header">
                 <h3>Diagnostic Assessment</h3>
-                <div className="pricing-price"><span className="price-currency">$</span><span
-                  className="price-amount">20</span></div>
+                <div className="pricing-price"><span
+                  className="price-amount">Free</span></div>
                 <p className="pricing-duration">30-minute session</p>
               </div>
               <ul className="pricing-features">
                 <li><span className="check">✓</span> Complete skills analysis</li>
                 <li><span className="check">✓</span> Custom curriculum preview</li>
                 <li><span className="check">✓</span> Personalized roadmap</li>
-                <li><span className="check">✓</span> 100% credited to package</li>
-                <li><span className="check">✓</span> Money-back guarantee</li>
+                <li><span className="check">✓</span> No payment required</li>
+                <li><span className="check">✓</span> No credit card needed</li>
               </ul>
               <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank"
                 className="btn btn-outline btn-block">Book Assessment</a>
@@ -1722,15 +1736,14 @@ h6 {
                 <li><span className="check">✓</span> Progress tracking</li>
               </ul>
               <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank"
-                className="btn btn-primary btn-block">Start with $20 Assessment</a>
-              <p className="pricing-note">Assessment fee credited to package</p>
+                className="btn btn-primary btn-block">Start with Free Assessment</a>
+              <p className="pricing-note">First session is free</p>
             </div>
           </div>
           <div className="pricing-guarantee">
             <div className="guarantee-box"><span className="guarantee-shield">🛡️</span>
-              <div className="guarantee-text"><strong>100% Risk-Free Assessment</strong>
-                <p>If you don't feel the diagnostic session was valuable, I'll refund your $20 immediately. No
-                  questions asked.</p>
+              <div className="guarantee-text"><strong>100% Free Assessment</strong>
+                <p>The diagnostic session is completely free. There is absolutely no cost and no obligation to continue. I want you to be sure this is right for you.</p>
               </div>
             </div>
           </div>
@@ -1833,58 +1846,20 @@ h6 {
             <h2 className="section-title">Frequently Asked <span className="gradient-text">Questions</span></h2>
           </div>
           <div className="faq-grid">
-            <div className="faq-item">
-              <button className="faq-question"><span>What happens in the $20 diagnostic session?</span><span
-                className="faq-icon">+</span></button>
-              <div className="faq-answer">
-                <p>In this 30-minute session, I assess your current English level, understand your job
-                  requirements, and identify your specific communication challenges. By the end, you'll have a
-                  clear roadmap. The $20 is fully credited toward your package if you continue.</p>
+            {faqs.map((faq, index) => (
+              <div key={index} className={`faq-item ${openFaq === index ? 'open' : ''}`}>
+                <button
+                  className="faq-question"
+                  onClick={() => toggleFaq(index)}
+                >
+                  <span>{faq.question}</span>
+                  <span className="faq-icon">+</span>
+                </button>
+                <div className="faq-answer">
+                  <p>{faq.answer}</p>
+                </div>
               </div>
-            </div>
-            <div className="faq-item">
-              <button className="faq-question"><span>What if I'm not satisfied with the assessment?</span><span
-                className="faq-icon">+</span></button>
-              <div className="faq-answer">
-                <p>If you don't feel the diagnostic session was valuable, I'll refund your $20 immediately—no
-                  questions asked. I'm confident you'll find it valuable, which is why I offer this guarantee.
-                </p>
-              </div>
-            </div>
-            <div className="faq-item">
-              <button className="faq-question"><span>How is your AI curriculum different from regular
-                courses?</span><span className="faq-icon">+</span></button>
-              <div className="faq-answer">
-                <p>Traditional courses use pre-made materials. I use proprietary AI technology to analyze your
-                  job, industry, and goals, then generate a 100% unique curriculum. Every lesson and exercise
-                  is tailored specifically to your work.</p>
-              </div>
-            </div>
-            <div className="faq-item">
-              <button className="faq-question"><span>How long does the 25-hour program take?</span><span
-                className="faq-icon">+</span></button>
-              <div className="faq-answer">
-                <p>Most students complete the program in 3-6 months, taking 1-2 lessons per week. However, the
-                  schedule is completely flexible based on your availability.</p>
-              </div>
-            </div>
-            <div className="faq-item">
-              <button className="faq-question"><span>What if my industry isn't listed?</span><span
-                className="faq-icon">+</span></button>
-              <div className="faq-answer">
-                <p>Finance, Medical, and Sales are my most common specializations, but I've worked across
-                  Technology, Legal, Consulting, Academia, and more. If your job requires professional
-                  English, I can build a curriculum for it.</p>
-              </div>
-            </div>
-            <div className="faq-item">
-              <button className="faq-question"><span>Can I pay for the package in installments?</span><span
-                className="faq-icon">+</span></button>
-              <div className="faq-answer">
-                <p>Yes! I offer flexible payment options. We can discuss what works best during the diagnostic
-                  session. The most common arrangement is splitting the $750 into 2-3 payments.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -1894,19 +1869,19 @@ h6 {
         <div className="container">
           <div className="final-cta-content">
             <h2>Ready to Command the Boardroom?</h2>
-            <p>Book your $20 diagnostic session today. If you don't find it valuable, get your money back. If you
+            <p>Book your free diagnostic session today. If you don't find it valuable, you walk away with no obligation. If you
               do, start your transformation.</p>
             <div className="final-cta-buttons">
               <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank"
                 className="btn btn-primary btn-xl">
                 <span>Book Your Assessment Now</span>
-                <span className="btn-subtext">$20 • 100% Risk-Free • Credited to Package</span>
+                <span className="btn-subtext">Free • No Commitment • 30 Minutes</span>
               </a>
             </div>
             <div className="final-trust-signals">
               <div className="trust-item"><span>🇬🇧</span><span>Native UK Speaker</span></div>
               <div className="trust-item"><span>⭐</span><span>4.9/5 Rating</span></div>
-              <div className="trust-item"><span>🛡️</span><span>Money-Back Guarantee</span></div>
+              <div className="trust-item"><span>🛡️</span><span>Free Assessment</span></div>
             </div>
           </div>
         </div>
@@ -1925,6 +1900,14 @@ h6 {
                 <h4>Quick Links</h4><a href="#how-it-works">How It Works</a><a
                   href="#industries">Industries</a><a href="#testimonials">Success Stories</a><a
                     href="#faq">FAQ</a>
+              </div>
+              <div className="footer-column">
+                <h4>Specialized Courses</h4>
+                <Link href="/esl-lessons-for-software-engineers">Software Engineers</Link>
+                <Link href="/esl-lessons-for-finance-professionals">Finance Pros</Link>
+                <Link href="/esl-lessons-for-business-executives">Executives</Link>
+                <Link href="/esl-lessons-for-nurses">Nurses</Link>
+                <Link href="/esl-lessons-for-engineers">Engineers</Link>
               </div>
               <div className="footer-column">
                 <h4>Contact</h4><a href="mailto:Dave@talkwithdave.co.uk">Dave@talkwithdave.co.uk</a><a
