@@ -97,6 +97,11 @@ Preferred communication style: Simple, everyday language.
 ## Changelog
 
 Changelog:
+- February 8, 2026. Updated SEO meta descriptions across all pages:
+  - Replaced outdated $20/lesson messaging with value-focused snippets highlighting free diagnostic, AI-built curriculum, and British coaching
+  - Updated homepage meta description in index.html
+  - Updated all 5 profession landing page meta descriptions (Software Engineers, Nurses, Finance, Business Executives, Engineers) in professionData.ts
+  - Cleaned up LanguageSpecificHead.tsx to remove outdated multi-language $20 references
 - October 27, 2025. Updated booking system from Brevo to Calendly:
   - Replaced all Brevo meeting links (https://meet.brevo.com/david-jackson-1) with Calendly booking link (https://calendly.com/daveynj113/your-first-lesson)
   - Updated all 11 booking CTAs across active components: Hero, Header, About, Services, PlanWise, Testimonials, Contact
