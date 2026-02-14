@@ -66,41 +66,101 @@ export function ProfessionalLandingPage({ data }: ProfessionalLandingPageProps) 
         });
 
         // Add schema.org structured data
-        const schema = {
-            "@context": "https://schema.org",
-            "@type": "Course",
-            "name": data.title,
-            "description": data.metaDescription,
-            "provider": {
-                "@type": "EducationalOrganization",
-                "name": "Talk with Dave",
-                "url": window.location.origin
+        const schemas = [
+            {
+                "@context": "https://schema.org",
+                "@type": "Course",
+                "name": data.title,
+                "description": data.metaDescription,
+                "provider": {
+                    "@type": "EducationalOrganization",
+                    "name": "Talk with Dave",
+                    "url": window.location.origin
+                },
+                "courseCode": `ESL-${data.slug}`,
+                "hasCourseInstance": {
+                    "@type": "CourseInstance",
+                    "courseMode": "online",
+                    "courseWorkload": "25 hours",
+                    "instructor": {
+                        "@type": "Person",
+                        "name": "Dave Jackson",
+                        "jobTitle": "Executive English Coach",
+                        "nationality": "British",
+                        "alumniOf": {
+                            "@type": "CollegeOrUniversity",
+                            "name": "University of Southampton"
+                        },
+                        "hasCredential": [
+                            {
+                                "@type": "EducationalOccupationalCredential",
+                                "name": "TEFL Certificate"
+                            },
+                            {
+                                "@type": "EducationalOccupationalCredential",
+                                "name": "Bachelor's in Business Administration"
+                            }
+                        ]
+                    }
+                },
+                "audience": {
+                    "@type": "EducationalAudience",
+                    "audienceType": data.profession
+                },
+                "teaches": `Professional English communication skills for ${data.profession}`,
+                "educationalLevel": "Professional",
+                "inLanguage": "en",
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "name": "Free Diagnostic Session",
+                        "price": "0",
+                        "priceCurrency": "USD",
+                        "description": "100% risk-free 30-minute diagnostic assessment. No obligation.",
+                        "url": "https://calendly.com/daveynj113/your-first-lesson"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "25-Hour Transformation Program",
+                        "price": "750",
+                        "priceCurrency": "USD",
+                        "description": "25 personalised one-on-one lessons ($30/hour). AI-built curriculum tailored to your job, industry, and goals."
+                    }
+                ],
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "5.0",
+                    "bestRating": "5",
+                    "ratingCount": "150"
+                }
             },
-            "courseCode": `ESL-${data.slug}`,
-            "hasCourseInstance": {
-                "@type": "CourseInstance",
-                "courseMode": "online",
-                "courseWorkload": "P25W"
-            },
-            "audience": {
-                "@type": "EducationalAudience",
-                "audienceType": data.profession
-            },
-            "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD",
-                "description": "Free consultation session"
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": `English Coaching for ${data.profession}`,
+                "provider": {
+                    "@type": "Person",
+                    "name": "Dave Jackson",
+                    "url": "https://talkwithdave.co.uk"
+                },
+                "description": `Personalised 1-on-1 English coaching for ${data.profession}. Every lesson is custom-built using AI (PlanWise ESL) and personally taught by Dave Jackson, a native British coach with 10+ years experience.`,
+                "serviceType": "Online English Coaching",
+                "areaServed": "Worldwide",
+                "termsOfService": "https://talkwithdave.co.uk"
             }
-        };
+        ];
 
-        let scriptTag = document.querySelector('script[type="application/ld+json"]');
-        if (!scriptTag) {
-            scriptTag = document.createElement('script');
-            scriptTag.setAttribute('type', 'application/ld+json');
-            document.head.appendChild(scriptTag);
-        }
-        scriptTag.textContent = JSON.stringify(schema);
+        schemas.forEach((schema, index) => {
+            const id = `schema-profession-${index}`;
+            let scriptTag = document.getElementById(id);
+            if (!scriptTag) {
+                scriptTag = document.createElement('script');
+                scriptTag.id = id;
+                scriptTag.setAttribute('type', 'application/ld+json');
+                document.head.appendChild(scriptTag);
+            }
+            scriptTag.textContent = JSON.stringify(schema);
+        });
 
         // Show sticky CTA on scroll
         const handleScroll = () => {
@@ -112,6 +172,10 @@ export function ProfessionalLandingPage({ data }: ProfessionalLandingPageProps) 
         return () => {
             document.title = 'Talk with Dave | Professional ESL Coaching';
             window.removeEventListener('scroll', handleScroll);
+            schemas.forEach((_, index) => {
+                const el = document.getElementById(`schema-profession-${index}`);
+                if (el) el.remove();
+            });
         };
     }, [data]);
 

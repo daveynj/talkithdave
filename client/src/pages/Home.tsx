@@ -130,9 +130,195 @@ export default function Home() {
       }, 300);
     }
 
+    // ===== Schema.org Structured Data =====
+    const schemas = [
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dave Jackson",
+        "jobTitle": "Executive English Coach",
+        "description": "Native British English coach with 10+ years experience, TEFL certified, University of Southampton graduate. Creator of PlanWise ESL. Specialises in AI-personalised 1-on-1 business English coaching for professionals.",
+        "url": "https://talkwithdave.co.uk",
+        "email": "Dave@talkwithdave.co.uk",
+        "nationality": "British",
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Southampton",
+          "url": "https://www.southampton.ac.uk"
+        },
+        "knowsAbout": ["Business English", "ESL Teaching", "Executive Communication", "Interview Preparation", "AI-Powered Education", "Communicative Language Teaching", "Task-Based Learning"],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certificate",
+            "name": "TEFL Certificate"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "degree",
+            "name": "Bachelor's in Business Administration",
+            "recognizedBy": {
+              "@type": "CollegeOrUniversity",
+              "name": "University of Southampton"
+            }
+          }
+        ],
+        "sameAs": ["https://x.com/DaveTeacher1", "https://planwiseesl.com"]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Talk with Dave",
+        "url": "https://talkwithdave.co.uk",
+        "description": "Executive English coaching for non-native professionals. AI-personalised curriculum, 1-on-1 lessons with a native British coach.",
+        "founder": {
+          "@type": "Person",
+          "name": "Dave Jackson"
+        },
+        "areaServed": "Worldwide",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "bestRating": "5",
+          "ratingCount": "150"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "25-Hour Executive English Transformation Program",
+        "provider": {
+          "@type": "Person",
+          "name": "Dave Jackson",
+          "url": "https://talkwithdave.co.uk"
+        },
+        "description": "A personalised 25-lesson program for non-native professionals. Every lesson is custom-built using AI (PlanWise ESL) and personally taught 1-on-1 by Dave Jackson. Covers business English, executive communication, interview preparation, and industry-specific vocabulary.",
+        "serviceType": "Online English Coaching",
+        "areaServed": "Worldwide",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Free Diagnostic Session",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "100% risk-free 30-minute diagnostic assessment. No obligation.",
+            "url": "https://calendly.com/daveynj113/your-first-lesson"
+          },
+          {
+            "@type": "Offer",
+            "name": "25-Hour Transformation Program",
+            "price": "750",
+            "priceCurrency": "USD",
+            "description": "25 personalised one-on-one lessons ($30/hour). AI-built curriculum tailored to your job, industry, and goals. Flexible payment options available.",
+            "url": "https://talkwithdave.co.uk"
+          }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Lesson Types",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Executive Conversation",
+                "description": "Advanced discussion on economics, ethics, and global business to sharpen articulation for high-level environments"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Business English",
+                "description": "Professional communication for meetings, presentations, negotiations, and email writing"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Interview Preparation",
+                "description": "Mock interviews, industry-specific vocabulary, and feedback to help secure roles at global companies"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What happens in the free diagnostic session?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In this 30-minute session, I assess your current English level, understand your job requirements, and identify your specific communication challenges. By the end, you'll have a clear roadmap. There is no cost for this session."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the assessment really free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, the assessment is 100% free with no obligation to continue. I want you to feel confident before committing to the full program."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is your AI curriculum different from regular courses?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Traditional courses use pre-made materials. I use proprietary AI technology to analyze your job, industry, and goals, then generate a 100% unique curriculum. Every lesson and exercise is tailored specifically to your work."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does the 25-hour program take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most students complete the program in 3-6 months, taking 1-2 lessons per week. However, the schedule is completely flexible based on your availability."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if my industry isn't listed?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Finance, Medical, and Sales are my most common specializations, but I've worked across Technology, Legal, Consulting, Academia, and more. If your job requires professional English, I can build a curriculum for it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I pay for the package in installments?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! I offer flexible payment options. We can discuss what works best during the diagnostic session. The most common arrangement is splitting the $750 into 2-3 payments."
+            }
+          }
+        ]
+      }
+    ];
+
+    schemas.forEach((schema, index) => {
+      const id = `schema-home-${index}`;
+      let scriptTag = document.getElementById(id);
+      if (!scriptTag) {
+        scriptTag = document.createElement('script');
+        scriptTag.id = id;
+        scriptTag.setAttribute('type', 'application/ld+json');
+        document.head.appendChild(scriptTag);
+      }
+      scriptTag.textContent = JSON.stringify(schema);
+    });
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       observer.disconnect();
+      schemas.forEach((_, index) => {
+        const el = document.getElementById(`schema-home-${index}`);
+        if (el) el.remove();
+      });
     };
   }, []);
 
