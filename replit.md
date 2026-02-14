@@ -97,6 +97,12 @@ Preferred communication style: Simple, everyday language.
 ## Changelog
 
 Changelog:
+- February 14, 2026. Enhanced schema.org structured data across all pages:
+  - Homepage: Added Person, EducationalOrganization, Service, and FAQPage JSON-LD schemas
+  - Professional landing pages: Enhanced Course schema with instructor details, credentials, pricing ($750 + free diagnostic), and Service schema
+  - FAQ schema matches visible FAQ content exactly per Google requirements
+  - All schemas include proper cleanup on component unmount
+  - Removed outdated $20/lesson pricing from all meta descriptions and structured data
 - February 14, 2026. Created llms.txt file for AI discoverability:
   - Added public/llms.txt following the llms.txt standard (Markdown format) for AI systems
   - Covers Dave's full background, credentials (TEFL, Southampton degree), 10 years experience (5 in China, 5 online)
