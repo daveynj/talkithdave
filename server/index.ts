@@ -8,12 +8,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// CRITICAL: Serve static files FIRST before any other middleware
-// In production, serve from dist/public; in development, serve from public
-const staticPath = process.env.NODE_ENV === 'production'
-  ? path.resolve(import.meta.dirname, "public")
-  : path.resolve(import.meta.dirname, "..", "public");
-app.use(express.static(staticPath));
+const seoStaticPath = path.resolve(import.meta.dirname, "..", "public");
+app.use(express.static(seoStaticPath));
 
 app.use((req, res, next) => {
   const start = Date.now();
@@ -70,8 +66,8 @@ app.use((req, res, next) => {
     if (app.get("env") === "development") {
       await setupVite(app, server);
     } else {
-      // Static files already served at the top, just need the catch-all for production
       const distPath = path.resolve(import.meta.dirname, "public");
+      app.use(express.static(distPath));
       app.use("*", (_req, res) => {
         res.sendFile(path.resolve(distPath, "index.html"));
       });
