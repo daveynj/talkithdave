@@ -97,6 +97,12 @@ Preferred communication style: Simple, everyday language.
 ## Changelog
 
 Changelog:
+- February 14, 2026. Created llms.txt file for AI discoverability:
+  - Added public/llms.txt following the llms.txt standard (Markdown format) for AI systems
+  - Covers Dave's full background, credentials (TEFL, Southampton degree), 10 years experience (5 in China, 5 online)
+  - Highlights key differentiators: AI-personalised curriculum via PlanWise ESL, 1-on-1 teaching, free diagnostic
+  - Includes ICP (non-native professionals: doctors, engineers, finance, executives, scientists)
+  - Links to all profession-specific landing pages and booking
 - February 8, 2026. Updated SEO meta descriptions across all pages:
   - Replaced outdated $20/lesson messaging with value-focused snippets highlighting free diagnostic, AI-built curriculum, and British coaching
   - Updated homepage meta description in index.html
