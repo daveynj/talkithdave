@@ -52,9 +52,9 @@ export default function Header({ customBookingText, customBookingLink }: HeaderP
           <div className="bg-primary text-white p-2 rounded-md">
             <span className="font-heading font-bold text-xl">TD</span>
           </div>
-          <h1 className="font-heading font-bold text-xl md:text-2xl text-primary">
+          <span className="font-heading font-bold text-xl md:text-2xl text-primary">
             Talk with Dave
-          </h1>
+          </span>
         </div>
         
         {/* Mobile menu button */}

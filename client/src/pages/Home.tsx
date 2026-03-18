@@ -1657,7 +1657,7 @@ h6 {
             <a href="#testimonials">Results</a>
             <a href="#faq">FAQ</a>
           </div>
-          <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank" className="nav-cta">
+          <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank" rel="noopener noreferrer" className="nav-cta">
             Book Assessment <span className="cta-arrow">→</span>
           </a>
           <button className="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
@@ -1686,7 +1686,7 @@ h6 {
                 Training</span></div>
             </div>
             <div className="hero-cta-group">
-              <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank"
+              <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank" rel="noopener noreferrer"
                 className="btn btn-primary btn-lg">
                 <span>Start Your Transformation</span>
                 <span className="btn-subtext">Free Assessment → No Commitment Required</span>
@@ -1813,7 +1813,7 @@ h6 {
             </div>
           </div>
           <div className="solution-cta">
-            <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank"
+            <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank" rel="noopener noreferrer"
               className="btn btn-primary btn-lg">
               <span>Book Your Diagnostic Session</span><span className="btn-subtext">Free • 100% Risk-Free</span>
             </a>
@@ -1900,7 +1900,7 @@ h6 {
                 <li><span className="check">✓</span> No payment required</li>
                 <li><span className="check">✓</span> No credit card needed</li>
               </ul>
-              <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank"
+              <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank" rel="noopener noreferrer"
                 className="btn btn-outline btn-block">Book Assessment</a>
             </div>
             <div className="pricing-card pricing-package featured">
@@ -1921,7 +1921,7 @@ h6 {
                 <li><span className="check">✓</span> Flexible scheduling</li>
                 <li><span className="check">✓</span> Progress tracking</li>
               </ul>
-              <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank"
+              <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank" rel="noopener noreferrer"
                 className="btn btn-primary btn-block">Start with Free Assessment</a>
               <p className="pricing-note">First session is free</p>
             </div>
@@ -1997,7 +1997,7 @@ h6 {
           <div className="about-content">
             <div className="about-image">
               <img src={davePhoto}
-                alt="Dave Jackson - Executive English Coach" />
+                alt="Dave Jackson - Executive English Coach" loading="lazy" />
               <div className="about-badge"><span className="badge-flag">🇬🇧</span><span>Native UK Speaker</span></div>
             </div>
             <div className="about-text">
@@ -2058,7 +2058,7 @@ h6 {
             <p>Book your free diagnostic session today. If you don't find it valuable, you walk away with no obligation. If you
               do, start your transformation.</p>
             <div className="final-cta-buttons">
-              <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank"
+              <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank" rel="noopener noreferrer"
                 className="btn btn-primary btn-xl">
                 <span>Book Your Assessment Now</span>
                 <span className="btn-subtext">Free • No Commitment • 30 Minutes</span>
@@ -2097,7 +2097,7 @@ h6 {
               </div>
               <div className="footer-column">
                 <h4>Contact</h4><a href="mailto:Dave@talkwithdave.co.uk">Dave@talkwithdave.co.uk</a><a
-                  href="https://calendly.com/daveynj113/your-first-lesson" target="_blank">Book a Session</a>
+                  href="https://calendly.com/daveynj113/your-first-lesson" target="_blank" rel="noopener noreferrer">Book a Session</a>
               </div>
             </div>
           </div>
