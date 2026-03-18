@@ -30,12 +30,17 @@ export default function CTA() {
             </a>
           </Button>
           <Button 
-            onClick={() => scrollToSection('contact')}
+            asChild
             className="bg-transparent border-2 border-white hover:bg-white hover:text-primary px-8 py-6 h-auto"
             size="lg"
             variant="outline"
           >
-            Contact Me
+            <a 
+              href="#contact"
+              onClick={(e: { preventDefault: () => void }) => { e.preventDefault(); scrollToSection('contact'); }}
+            >
+              Contact Me
+            </a>
           </Button>
         </div>
       </div>

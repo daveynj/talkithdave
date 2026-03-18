@@ -186,9 +186,7 @@ export function ProfessionalLandingPage({ data }: ProfessionalLandingPageProps) 
         }
     };
 
-    const openCalendly = () => {
-        window.open('https://calendly.com/daveynj113/your-first-lesson', '_blank');
-    };
+    const calendlyUrl = 'https://calendly.com/daveynj113/your-first-lesson';
 
     return (
         <>
@@ -260,11 +258,13 @@ export function ProfessionalLandingPage({ data }: ProfessionalLandingPageProps) 
                     }}>
                         <span style={{ fontWeight: 600 }}>Ready to get started?</span>
                         <Button
-                            onClick={openCalendly}
+                            asChild
                             style={{ background: 'white', color: '#6366f1', fontWeight: 700 }}
                         >
-                            <Calendar className="w-4 h-4 mr-2" />
-                            Schedule Your Free Consultation
+                            <a href={calendlyUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                                <Calendar className="w-4 h-4 mr-2" />
+                                Schedule Your Free Consultation
+                            </a>
                         </Button>
                     </div>
                 )}
@@ -309,8 +309,10 @@ export function ProfessionalLandingPage({ data }: ProfessionalLandingPageProps) 
                                 </div>
                             </div>
                         </div>
-                        <button
-                            onClick={openCalendly}
+                        <a
+                            href={calendlyUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="btn-primary"
                             style={{
                                 display: 'flex',
@@ -322,13 +324,14 @@ export function ProfessionalLandingPage({ data }: ProfessionalLandingPageProps) 
                                 border: 'none',
                                 cursor: 'pointer',
                                 color: 'white',
-                                transition: 'all 0.3s ease'
+                                transition: 'all 0.3s ease',
+                                textDecoration: 'none'
                             }}
                         >
                             <Calendar className="w-4 h-4" />
                             Schedule Your Free Consultation
                             <ArrowRight className="w-4 h-4" />
-                        </button>
+                        </a>
                     </div>
                 </nav>
 
@@ -433,8 +436,10 @@ export function ProfessionalLandingPage({ data }: ProfessionalLandingPageProps) 
 
                             {/* CTAs */}
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', marginBottom: '24px' }}>
-                                <button
-                                    onClick={openCalendly}
+                                <a
+                                    href={calendlyUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="btn-primary"
                                     style={{
                                         display: 'flex',
@@ -447,7 +452,8 @@ export function ProfessionalLandingPage({ data }: ProfessionalLandingPageProps) 
                                         border: 'none',
                                         cursor: 'pointer',
                                         color: 'white',
-                                        transition: 'all 0.3s ease'
+                                        transition: 'all 0.3s ease',
+                                        textDecoration: 'none'
                                     }}
                                 >
                                     <span style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -458,7 +464,7 @@ export function ProfessionalLandingPage({ data }: ProfessionalLandingPageProps) 
                                     <span style={{ fontSize: '0.75rem', opacity: 0.8, marginTop: '4px' }}>
                                         No commitment required
                                     </span>
-                                </button>
+                                </a>
                                 <button
                                     onClick={() => scrollToSection('lesson-preview')}
                                     style={{
@@ -688,8 +694,10 @@ export function ProfessionalLandingPage({ data }: ProfessionalLandingPageProps) 
                             <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', marginBottom: '24px', maxWidth: '600px', margin: '0 auto 24px' }}>
                                 Your customized 25-lesson curriculum will address each of these challenges with practical, profession-specific English skills.
                             </p>
-                            <button
-                                onClick={openCalendly}
+                            <a
+                                href={calendlyUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="btn-primary"
                                 style={{
                                     display: 'inline-flex',
@@ -700,12 +708,13 @@ export function ProfessionalLandingPage({ data }: ProfessionalLandingPageProps) 
                                     fontWeight: 600,
                                     border: 'none',
                                     cursor: 'pointer',
-                                    color: 'white'
+                                    color: 'white',
+                                    textDecoration: 'none'
                                 }}
                             >
                                 <Calendar className="w-5 h-5" />
                                 Get Your Custom Curriculum
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </section>
@@ -795,8 +804,10 @@ export function ProfessionalLandingPage({ data }: ProfessionalLandingPageProps) 
                             Join {data.profession.toLowerCase()} worldwide who have advanced their careers.
                             Schedule your <strong style={{ color: 'white' }}>free consultation</strong> today.
                         </p>
-                        <button
-                            onClick={openCalendly}
+                        <a
+                            href={calendlyUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="btn-primary"
                             style={{
                                 display: 'inline-flex',
@@ -808,7 +819,8 @@ export function ProfessionalLandingPage({ data }: ProfessionalLandingPageProps) 
                                 fontSize: '1.25rem',
                                 border: 'none',
                                 cursor: 'pointer',
-                                color: 'white'
+                                color: 'white',
+                                textDecoration: 'none'
                             }}
                         >
                             <span style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -819,19 +831,46 @@ export function ProfessionalLandingPage({ data }: ProfessionalLandingPageProps) 
                             <span style={{ fontSize: '0.875rem', opacity: 0.8, marginTop: '8px' }}>
                                 No commitment · Custom curriculum · Native British tutor
                             </span>
-                        </button>
+                        </a>
                     </div>
                 </section>
 
                 {/* Footer */}
                 <footer style={{
-                    padding: '40px 24px',
+                    padding: '60px 24px 40px',
                     background: 'var(--bg-tertiary)',
-                    borderTop: '1px solid var(--border-color)',
-                    textAlign: 'center'
+                    borderTop: '1px solid var(--border-color)'
                 }}>
-                    <div style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>
-                        © {new Date().getFullYear()} Talk with Dave · Professional ESL Coaching · Southampton, England
+                    <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px', marginBottom: '40px' }}>
+                            <div>
+                                <div style={{ fontWeight: 700, fontSize: '1.125rem', marginBottom: '16px' }}>Talk with Dave</div>
+                                <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>
+                                    Executive English coaching for professionals who need to speak with authority.
+                                </p>
+                            </div>
+                            <div>
+                                <div style={{ fontWeight: 600, marginBottom: '16px' }}>Specialized Courses</div>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                                    <Link href="/esl-lessons-for-software-engineers" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>Software Engineers</Link>
+                                    <Link href="/esl-lessons-for-finance-professionals" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>Finance Professionals</Link>
+                                    <Link href="/esl-lessons-for-business-executives" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>Business Executives</Link>
+                                    <Link href="/esl-lessons-for-nurses" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>Nurses</Link>
+                                    <Link href="/esl-lessons-for-engineers" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>Engineers</Link>
+                                </div>
+                            </div>
+                            <div>
+                                <div style={{ fontWeight: 600, marginBottom: '16px' }}>Quick Links</div>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                                    <Link href="/" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>Home</Link>
+                                    <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>Book a Session</a>
+                                    <a href="mailto:Dave@talkwithdave.co.uk" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>Dave@talkwithdave.co.uk</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div style={{ textAlign: 'center', paddingTop: '24px', borderTop: '1px solid var(--border-color)', color: 'var(--text-muted)', fontSize: '0.875rem' }}>
+                            © {new Date().getFullYear()} Talk with Dave · Professional ESL Coaching · Southampton, England
+                        </div>
                     </div>
                 </footer>
             </div>

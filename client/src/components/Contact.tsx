@@ -73,10 +73,10 @@ export default function Contact() {
                 <Button
                   variant="outline"
                   className="w-full"
-                  onClick={() => window.location.href = "mailto:Dave@talkwithdave.co.uk"}
+                  asChild
                   data-testid="button-email"
                 >
-                  Send Email
+                  <a href="mailto:Dave@talkwithdave.co.uk">Send Email</a>
                 </Button>
               </div>
               

@@ -40,6 +40,11 @@ export default function Header({ customBookingText, customBookingLink }: HeaderP
     }
   };
 
+  const handleNavClick = (e: { preventDefault: () => void }, id: string) => {
+    e.preventDefault();
+    scrollToSection(id);
+  };
+
   return (
     <header className={`sticky top-0 z-50 w-full ${scrolled ? 'bg-white shadow-sm' : 'bg-white'} transition-all duration-200`}>
       <div className="container mx-auto flex justify-between items-center p-4">
@@ -67,36 +72,11 @@ export default function Header({ customBookingText, customBookingLink }: HeaderP
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <button 
-            onClick={() => scrollToSection('about')} 
-            className="font-medium hover:text-primary transition-colors"
-          >
-            {t.nav.about}
-          </button>
-          <button 
-            onClick={() => scrollToSection('services')} 
-            className="font-medium hover:text-primary transition-colors"
-          >
-            {t.nav.services}
-          </button>
-          <button 
-            onClick={() => scrollToSection('testimonials')} 
-            className="font-medium hover:text-primary transition-colors"
-          >
-            {t.nav.testimonials}
-          </button>
-          <button 
-            onClick={() => scrollToSection('faq')} 
-            className="font-medium hover:text-primary transition-colors"
-          >
-            {t.nav.faq}
-          </button>
-          <button 
-            onClick={() => scrollToSection('contact')} 
-            className="font-medium hover:text-primary transition-colors"
-          >
-            {t.nav.contact}
-          </button>
+          <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="font-medium hover:text-primary transition-colors">{t.nav.about}</a>
+          <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="font-medium hover:text-primary transition-colors">{t.nav.services}</a>
+          <a href="#testimonials" onClick={(e) => handleNavClick(e, 'testimonials')} className="font-medium hover:text-primary transition-colors">{t.nav.testimonials}</a>
+          <a href="#faq" onClick={(e) => handleNavClick(e, 'faq')} className="font-medium hover:text-primary transition-colors">{t.nav.faq}</a>
+          <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="font-medium hover:text-primary transition-colors">{t.nav.contact}</a>
           <LanguageSwitcher />
           <Button 
             asChild
@@ -117,36 +97,11 @@ export default function Header({ customBookingText, customBookingLink }: HeaderP
       {/* Mobile Navigation Menu */}
       <nav className={`bg-white py-4 md:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`}>
         <div className="container mx-auto space-y-3 px-4">
-          <button 
-            onClick={() => scrollToSection('about')} 
-            className="block w-full text-left py-2 font-medium hover:text-primary transition-colors"
-          >
-            {t.nav.about}
-          </button>
-          <button 
-            onClick={() => scrollToSection('services')} 
-            className="block w-full text-left py-2 font-medium hover:text-primary transition-colors"
-          >
-            {t.nav.services}
-          </button>
-          <button 
-            onClick={() => scrollToSection('testimonials')} 
-            className="block w-full text-left py-2 font-medium hover:text-primary transition-colors"
-          >
-            {t.nav.testimonials}
-          </button>
-          <button 
-            onClick={() => scrollToSection('faq')} 
-            className="block w-full text-left py-2 font-medium hover:text-primary transition-colors"
-          >
-            {t.nav.faq}
-          </button>
-          <button 
-            onClick={() => scrollToSection('contact')} 
-            className="block w-full text-left py-2 font-medium hover:text-primary transition-colors"
-          >
-            {t.nav.contact}
-          </button>
+          <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="block w-full text-left py-2 font-medium hover:text-primary transition-colors">{t.nav.about}</a>
+          <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="block w-full text-left py-2 font-medium hover:text-primary transition-colors">{t.nav.services}</a>
+          <a href="#testimonials" onClick={(e) => handleNavClick(e, 'testimonials')} className="block w-full text-left py-2 font-medium hover:text-primary transition-colors">{t.nav.testimonials}</a>
+          <a href="#faq" onClick={(e) => handleNavClick(e, 'faq')} className="block w-full text-left py-2 font-medium hover:text-primary transition-colors">{t.nav.faq}</a>
+          <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="block w-full text-left py-2 font-medium hover:text-primary transition-colors">{t.nav.contact}</a>
           <div className="py-2">
             <LanguageSwitcher />
           </div>
