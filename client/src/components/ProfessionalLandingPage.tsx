@@ -122,7 +122,7 @@ export function ProfessionalLandingPage({ data }: ProfessionalLandingPageProps) 
                     {
                         "@type": "Offer",
                         "name": "25-Hour Transformation Program",
-                        "price": "750",
+                        "price": "850",
                         "priceCurrency": "USD",
                         "description": "25 personalised one-on-one lessons ($30/hour). AI-built curriculum tailored to your job, industry, and goals."
                     }

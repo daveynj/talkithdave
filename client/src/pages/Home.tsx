@@ -32,7 +32,7 @@ export default function Home() {
     },
     {
       question: "Can I pay for the package in installments?",
-      answer: "Yes! I offer flexible payment options. We can discuss what works best during the diagnostic session. The most common arrangement is splitting the $750 into 2-3 payments."
+      answer: "Yes! I offer flexible payment options. We can discuss what works best during the diagnostic session. The most common arrangement is splitting the $850 into 2-3 payments."
     }
   ];
 
@@ -207,7 +207,7 @@ export default function Home() {
           {
             "@type": "Offer",
             "name": "25-Hour Transformation Program",
-            "price": "750",
+            "price": "850",
             "priceCurrency": "USD",
             "description": "25 personalised one-on-one lessons ($30/hour). AI-built curriculum tailored to your job, industry, and goals. Flexible payment options available.",
             "url": "https://talkwithdave.co.uk"
@@ -293,7 +293,7 @@ export default function Home() {
             "name": "Can I pay for the package in installments?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! I offer flexible payment options. We can discuss what works best during the diagnostic session. The most common arrangement is splitting the $750 into 2-3 payments."
+              "text": "Yes! I offer flexible payment options. We can discuss what works best during the diagnostic session. The most common arrangement is splitting the $850 into 2-3 payments."
             }
           }
         ]
@@ -1908,7 +1908,7 @@ h6 {
               <div className="pricing-header">
                 <h3>25-Hour Transformation</h3>
                 <div className="pricing-price"><span className="price-currency">$</span><span
-                  className="price-amount">750</span></div>
+                  className="price-amount">850</span></div>
                 <p className="pricing-duration">Complete program • $30/hour</p>
               </div>
               <ul className="pricing-features">
