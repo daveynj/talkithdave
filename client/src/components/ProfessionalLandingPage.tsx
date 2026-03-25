@@ -857,6 +857,16 @@ export function ProfessionalLandingPage({ data }: ProfessionalLandingPageProps) 
                                     <Link href="/esl-lessons-for-business-executives" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>Business Executives</Link>
                                     <Link href="/esl-lessons-for-nurses" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>Nurses</Link>
                                     <Link href="/esl-lessons-for-engineers" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>Engineers</Link>
+                                    <Link href="/esl-lessons-for-doctors" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>Doctors</Link>
+                                    <Link href="/esl-lessons-for-lawyers" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>Lawyers</Link>
+                                    <Link href="/esl-lessons-for-it-professionals" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>IT Professionals</Link>
+                                    <Link href="/esl-lessons-for-hospitality-professionals" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>Hospitality</Link>
+                                    <Link href="/esl-lessons-for-marketing-professionals" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>Marketing</Link>
+                                    <Link href="/esl-lessons-for-teachers" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>Teachers</Link>
+                                    <Link href="/esl-lessons-for-hr-professionals" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>HR Professionals</Link>
+                                    <Link href="/esl-lessons-for-architects" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>Architects</Link>
+                                    <Link href="/esl-lessons-for-pharmacists" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>Pharmacists</Link>
+                                    <Link href="/esl-lessons-for-accountants" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>Accountants</Link>
                                 </div>
                             </div>
                             <div>

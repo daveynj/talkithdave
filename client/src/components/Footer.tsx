@@ -26,7 +26,17 @@ export default function Footer() {
     { name: "Finance Professionals", href: "/esl-lessons-for-finance-professionals" },
     { name: "Business Executives", href: "/esl-lessons-for-business-executives" },
     { name: "Nurses", href: "/esl-lessons-for-nurses" },
-    { name: "Engineers", href: "/esl-lessons-for-engineers" }
+    { name: "Engineers", href: "/esl-lessons-for-engineers" },
+    { name: "Doctors", href: "/esl-lessons-for-doctors" },
+    { name: "Lawyers", href: "/esl-lessons-for-lawyers" },
+    { name: "IT Professionals", href: "/esl-lessons-for-it-professionals" },
+    { name: "Hospitality", href: "/esl-lessons-for-hospitality-professionals" },
+    { name: "Marketing", href: "/esl-lessons-for-marketing-professionals" },
+    { name: "Teachers", href: "/esl-lessons-for-teachers" },
+    { name: "HR Professionals", href: "/esl-lessons-for-hr-professionals" },
+    { name: "Architects", href: "/esl-lessons-for-architects" },
+    { name: "Pharmacists", href: "/esl-lessons-for-pharmacists" },
+    { name: "Accountants", href: "/esl-lessons-for-accountants" }
   ];
 
   const scrollToSection = (id: string) => {
