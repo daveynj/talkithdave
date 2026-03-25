@@ -2089,11 +2089,21 @@ h6 {
               </div>
               <div className="footer-column">
                 <h4>Specialized Courses</h4>
-                <Link href="/esl-lessons-for-software-engineers">Software Engineers</Link>
-                <Link href="/esl-lessons-for-finance-professionals">Finance Pros</Link>
-                <Link href="/esl-lessons-for-business-executives">Executives</Link>
-                <Link href="/esl-lessons-for-nurses">Nurses</Link>
-                <Link href="/esl-lessons-for-engineers">Engineers</Link>
+                <a href="/esl-lessons-for-software-engineers">Software Engineers</a>
+                <a href="/esl-lessons-for-finance-professionals">Finance Pros</a>
+                <a href="/esl-lessons-for-business-executives">Executives</a>
+                <a href="/esl-lessons-for-nurses">Nurses</a>
+                <a href="/esl-lessons-for-engineers">Engineers</a>
+                <a href="/esl-lessons-for-doctors">Doctors</a>
+                <a href="/esl-lessons-for-lawyers">Lawyers</a>
+                <a href="/esl-lessons-for-it-professionals">IT Professionals</a>
+                <a href="/esl-lessons-for-hospitality-professionals">Hospitality</a>
+                <a href="/esl-lessons-for-marketing-professionals">Marketing</a>
+                <a href="/esl-lessons-for-teachers">Teachers</a>
+                <a href="/esl-lessons-for-hr-professionals">HR Professionals</a>
+                <a href="/esl-lessons-for-architects">Architects</a>
+                <a href="/esl-lessons-for-pharmacists">Pharmacists</a>
+                <a href="/esl-lessons-for-accountants">Accountants</a>
               </div>
               <div className="footer-column">
                 <h4>Contact</h4><a href="mailto:Dave@talkwithdave.co.uk">Dave@talkwithdave.co.uk</a><a

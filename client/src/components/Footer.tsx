@@ -133,12 +133,12 @@ export default function Footer() {
             <ul className="space-y-2">
               {professionLinks.map((link, index) => (
                 <li key={index}>
-                  <Link 
+                  <a 
                     href={link.href}
                     className="hover:text-primary transition-colors"
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
