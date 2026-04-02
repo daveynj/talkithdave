@@ -2,11 +2,16 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import { storage, DatabaseStorage } from "./storage";
+import { registerSEORoutes } from "./seo-routes";
 import path from "path";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// Register SEO routes BEFORE static middleware so language paths like /zh
+// are not intercepted by the public/zh/ directory redirect
+registerSEORoutes(app);
 
 const seoStaticPath = path.resolve(import.meta.dirname, "..", "public");
 app.use(express.static(seoStaticPath));

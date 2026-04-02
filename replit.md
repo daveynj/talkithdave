@@ -48,6 +48,7 @@ This is a full-stack web application for "Talk with Dave", an online ESL (Englis
 - **Storage Layer**: Abstracted interface for data operations
 - **Email Service**: Contact form notifications
 - **API Routes**: RESTful endpoints for data retrieval
+- **SEO Route Injection** (`server/seo-routes.ts`): Server-side meta tag injection for all public pages. Runs before static middleware so Google's crawler sees correct titles, descriptions, canonicals, OG tags, and schema.org JSON-LD for every route without executing JavaScript.
 
 ## Data Flow
 
