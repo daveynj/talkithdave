@@ -11,7 +11,7 @@ interface MetaData {
 
 const languageMetaData: Record<string, MetaData> = {
   en: {
-    title: "Dave Jackson | Executive English Coach | British Business English for Professionals",
+    title: "Dave Jackson | British Business English Coach | Talk with Dave",
     description: "Free diagnostic session + AI-built curriculum personalised to your career. British business English coaching for Finance, Medical & Sales professionals.",
     keywords: "business English coach, executive English lessons, AI ESL curriculum, British English tutor, professional English coaching, online English teacher, career English training",
     canonical: "https://talkwithdave.co.uk/",

@@ -20,3 +20,7 @@ User-agent: Claude-Web
 Allow: /
 
 Sitemap: https://talkwithdave.co.uk/sitemap.xml
+Sitemap: https://talkwithdave.co.uk/sitemap-ja.xml
+Sitemap: https://talkwithdave.co.uk/sitemap-ko.xml
+Sitemap: https://talkwithdave.co.uk/sitemap-zh.xml
+Sitemap: https://talkwithdave.co.uk/sitemap-vi.xml

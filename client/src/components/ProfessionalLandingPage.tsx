@@ -47,12 +47,18 @@ export function ProfessionalLandingPage({ data }: ProfessionalLandingPageProps) 
         }
         metaDescription.setAttribute('content', data.metaDescription);
 
+        // Update canonical URL for this profession page
+        const canonicalLink = document.querySelector('link[rel="canonical"]');
+        if (canonicalLink) {
+            canonicalLink.setAttribute('href', `https://talkwithdave.co.uk/${data.slug}`);
+        }
+
         // Add Open Graph tags for social sharing
         const ogTags = [
             { property: 'og:title', content: data.metaTitle },
             { property: 'og:description', content: data.metaDescription },
             { property: 'og:type', content: 'website' },
-            { property: 'og:url', content: window.location.href },
+            { property: 'og:url', content: `https://talkwithdave.co.uk/${data.slug}` },
         ];
 
         ogTags.forEach(tag => {
@@ -171,6 +177,10 @@ export function ProfessionalLandingPage({ data }: ProfessionalLandingPageProps) 
         // Cleanup
         return () => {
             document.title = 'Talk with Dave | Professional ESL Coaching';
+            const canonical = document.querySelector('link[rel="canonical"]');
+            if (canonical) {
+                canonical.setAttribute('href', 'https://talkwithdave.co.uk/');
+            }
             window.removeEventListener('scroll', handleScroll);
             schemas.forEach((_, index) => {
                 const el = document.getElementById(`schema-profession-${index}`);
