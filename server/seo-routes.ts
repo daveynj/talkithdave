@@ -435,6 +435,56 @@ const PAGE_SEO: Record<string, PageSEO> = {
     ogImage: DEFAULT_IMAGE,
     schemas: [],
   },
+  "/siem-reap": {
+    title: "English Tutor in Siem Reap, Cambodia | Dave Jackson | Talk with Dave",
+    description:
+      "Native British English tutor based in Siem Reap. Personalised 1-on-1 lessons for Cambodian professionals, doctors, engineers & hospitality leaders. AI-built curriculum, flexible schedule.",
+    canonical: `${BASE_URL}/siem-reap`,
+    ogImage: DEFAULT_IMAGE,
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: "English Tutoring in Siem Reap, Cambodia",
+        provider: COURSE_PROVIDER,
+        description:
+          "Personalised 1-on-1 English lessons for professionals in Siem Reap. Taught by Dave Jackson, a native British coach with 10+ years experience. AI-generated curriculum tailored to your career.",
+        serviceType: "English Tutoring",
+        areaServed: {
+          "@type": "City",
+          name: "Siem Reap",
+          containedInPlace: {
+            "@type": "Country",
+            name: "Cambodia",
+          },
+        },
+        offers: {
+          "@type": "Offer",
+          name: "Free Diagnostic Session",
+          price: "0",
+          priceCurrency: "USD",
+          description: "30-minute free diagnostic session. No obligation.",
+          url: "https://calendly.com/daveynj113/your-first-lesson",
+        },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Dave Jackson",
+        jobTitle: "English Tutor",
+        url: `${BASE_URL}/siem-reap`,
+        image: DEFAULT_IMAGE,
+        nationality: "British",
+        description:
+          "Native British English teacher and EdTech innovator based in Siem Reap, Cambodia. Specialises in professional English for Cambodian doctors, engineers, and hospitality leaders.",
+        worksFor: {
+          "@type": "Organization",
+          name: "Talk with Dave",
+          url: BASE_URL,
+        },
+      },
+    ],
+  },
 };
 
 function escapeHtml(str: string): string {
@@ -532,8 +582,91 @@ function getTemplate(isDev: boolean): string | null {
   return cachedTemplate;
 }
 
+interface SitemapMeta {
+  priority: number;
+  changefreq: string;
+  hreflang?: { lang: string; href: string }[];
+}
+
+const HREFLANG_ALL = [
+  { lang: "en", href: `${BASE_URL}/` },
+  { lang: "zh", href: `${BASE_URL}/zh` },
+  { lang: "ja", href: `${BASE_URL}/ja` },
+  { lang: "ko", href: `${BASE_URL}/ko` },
+  { lang: "vi", href: `${BASE_URL}/vi` },
+];
+
+const SITEMAP_META: Record<string, SitemapMeta> = {
+  "/": { priority: 1.0, changefreq: "weekly", hreflang: HREFLANG_ALL },
+  "/zh": {
+    priority: 0.8,
+    changefreq: "weekly",
+    hreflang: [{ lang: "en", href: `${BASE_URL}/` }, { lang: "zh", href: `${BASE_URL}/zh` }],
+  },
+  "/ja": {
+    priority: 0.8,
+    changefreq: "weekly",
+    hreflang: [{ lang: "en", href: `${BASE_URL}/` }, { lang: "ja", href: `${BASE_URL}/ja` }],
+  },
+  "/ko": {
+    priority: 0.8,
+    changefreq: "weekly",
+    hreflang: [{ lang: "en", href: `${BASE_URL}/` }, { lang: "ko", href: `${BASE_URL}/ko` }],
+  },
+  "/vi": {
+    priority: 0.8,
+    changefreq: "weekly",
+    hreflang: [{ lang: "en", href: `${BASE_URL}/` }, { lang: "vi", href: `${BASE_URL}/vi` }],
+  },
+  "/b1-curriculum": { priority: 0.7, changefreq: "monthly" },
+  "/siem-reap": { priority: 0.6, changefreq: "monthly" },
+};
+
+function buildSitemap(): string {
+  const today = new Date().toISOString().split("T")[0];
+
+  const urlEntries = Object.keys(PAGE_SEO)
+    .map((route) => {
+      const meta = SITEMAP_META[route] ?? { priority: 0.9, changefreq: "weekly" };
+      const loc = `${BASE_URL}${route === "/" ? "/" : route}`;
+      const hreflangTags = meta.hreflang
+        ? meta.hreflang
+            .map(
+              (h) =>
+                `    <xhtml:link rel="alternate" hreflang="${h.lang}" href="${h.href}" />`
+            )
+            .join("\n")
+        : "";
+
+      return [
+        `  <url>`,
+        `    <loc>${loc}</loc>`,
+        `    <lastmod>${today}</lastmod>`,
+        `    <changefreq>${meta.changefreq}</changefreq>`,
+        `    <priority>${meta.priority.toFixed(1)}</priority>`,
+        hreflangTags,
+        `  </url>`,
+      ]
+        .filter(Boolean)
+        .join("\n");
+    })
+    .join("\n");
+
+  return [
+    `<?xml version="1.0" encoding="UTF-8"?>`,
+    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">`,
+    urlEntries,
+    `</urlset>`,
+  ].join("\n");
+}
+
 export function registerSEORoutes(app: Express): void {
   const isDev = app.get("env") === "development";
+
+  app.get("/sitemap.xml", (_req: Request, res: Response) => {
+    res.setHeader("Content-Type", "application/xml");
+    res.send(buildSitemap());
+  });
 
   const routes = Object.keys(PAGE_SEO);
 

@@ -7,7 +7,6 @@ import fs from "fs";
 export async function registerRoutes(app: Express): Promise<Server> {
   // Sitemap routes - explicitly served with correct XML content type
   const sitemapFiles = [
-    "sitemap.xml",
     "sitemap-ja.xml",
     "sitemap-ko.xml",
     "sitemap-vi.xml",
