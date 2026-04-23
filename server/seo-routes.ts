@@ -147,6 +147,7 @@ const HOME_SCHEMAS: object[] = [
         sameAs: [
           "https://planwiseesl.com",
           "https://youtube.com/@englishteacherdave",
+          "https://twitter.com/daveteacher1",
         ],
         contactPoint: {
           "@type": "ContactPoint",
@@ -182,6 +183,7 @@ const HOME_SCHEMAS: object[] = [
     sameAs: [
       "https://planwiseesl.com",
       "https://youtube.com/@englishteacherdave",
+      "https://twitter.com/daveteacher1",
     ],
     knowsAbout: [
       "Business English",
