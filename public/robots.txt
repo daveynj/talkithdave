@@ -11,7 +11,7 @@ User-agent: Google-Extended
 Allow: /
 
 User-agent: CCBot
-Allow: /
+Disallow: /
 
 User-agent: anthropic-ai
 Allow: /

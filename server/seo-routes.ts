@@ -3,6 +3,29 @@ import fs from "fs";
 import path from "path";
 
 const BASE_URL = "https://talkwithdave.co.uk";
+const MODIFIED_DATE = new Date().toISOString().split("T")[0];
+const PUBLISHED_DATE = "2025-01-15";
+
+function breadcrumbSchema(pageName: string, pagePath: string): object {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: BASE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: pageName,
+        item: `${BASE_URL}${pagePath}`,
+      },
+    ],
+  };
+}
 
 interface PageSEO {
   title: string;
@@ -28,12 +51,16 @@ function professionSchema(
   slug: string,
   profession: string
 ): object[] {
+  const pagePath = `/esl-lessons-for-${slug}`;
   return [
     {
       "@context": "https://schema.org",
       "@type": "Course",
       name: title,
       description,
+      url: `${BASE_URL}${pagePath}`,
+      datePublished: PUBLISHED_DATE,
+      dateModified: MODIFIED_DATE,
       provider: {
         "@type": "EducationalOrganization",
         name: "Talk with Dave",
@@ -87,6 +114,7 @@ function professionSchema(
       serviceType: "Online English Coaching",
       areaServed: "Worldwide",
     },
+    breadcrumbSchema(`ESL Lessons for ${profession}`, pagePath),
   ];
 }
 
@@ -116,7 +144,16 @@ const HOME_SCHEMAS: object[] = [
           "@type": "ImageObject",
           url: DEFAULT_IMAGE,
         },
-        sameAs: [],
+        sameAs: [
+          "https://planwiseesl.com",
+        ],
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "Customer Service",
+          url: "https://calendly.com/daveynj113/your-first-lesson",
+          availableLanguage: ["English"],
+          areaServed: "Worldwide",
+        },
         founder: {
           "@type": "Person",
           name: "Dave Jackson",
@@ -135,12 +172,34 @@ const HOME_SCHEMAS: object[] = [
     image: DEFAULT_IMAGE,
     nationality: "British",
     description:
-      "Native British English coach with 10+ years experience helping international professionals master business English.",
+      "Native British English coach with 10+ years experience helping international professionals master business English. Graduate of the University of Southampton with a degree in Business Administration. Creator of PlanWise ESL, an AI-powered lesson planning platform.",
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "University of Southampton",
+      url: "https://www.southampton.ac.uk/",
+    },
+    sameAs: [
+      "https://planwiseesl.com",
+    ],
     knowsAbout: [
       "Business English",
       "Executive Communication",
       "ESL Coaching",
       "Professional English",
+      "Interview Preparation",
+      "Communicative Language Teaching",
+      "Task-Based Learning",
+    ],
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "TEFL Certification",
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "Bachelor's Degree",
+        educationalLevel: "Bachelor",
+      },
     ],
   },
   {
@@ -428,12 +487,45 @@ const PAGE_SEO: Record<string, PageSEO> = {
     ),
   },
   "/b1-curriculum": {
-    title: "B1 English Curriculum | Free Business English Lesson Plan",
+    title: "B1 Business English Curriculum (Free Sample) | Talk with Dave",
     description:
-      "A complete B1-level business English curriculum built with AI. Sample lessons, vocabulary, and exercises for intermediate professional English learners.",
+      "Free B1-level business English curriculum built with AI. Sample lessons, vocabulary, and exercises for intermediate professional English learners. Native British coach.",
     canonical: `${BASE_URL}/b1-curriculum`,
     ogImage: DEFAULT_IMAGE,
-    schemas: [],
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        name: "B1 Business English Curriculum",
+        description:
+          "A complete B1 (intermediate) business English curriculum built with AI. Includes sample lessons, vocabulary, reading exercises, and comprehension tasks for intermediate professional English learners.",
+        url: `${BASE_URL}/b1-curriculum`,
+        datePublished: PUBLISHED_DATE,
+        dateModified: MODIFIED_DATE,
+        provider: {
+          "@type": "EducationalOrganization",
+          name: "Talk with Dave",
+          url: BASE_URL,
+        },
+        courseCode: "ESL-B1",
+        hasCourseInstance: {
+          "@type": "CourseInstance",
+          courseMode: "online",
+          instructor: COURSE_PROVIDER,
+        },
+        educationalLevel: "B1 (Intermediate)",
+        teaches: "Intermediate business English communication skills",
+        inLanguage: "en",
+        isAccessibleForFree: true,
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+          name: "Free Sample Curriculum",
+        },
+      },
+      breadcrumbSchema("B1 Business English Curriculum", "/b1-curriculum"),
+    ],
   },
   "/siem-reap": {
     title: "English Tutor in Siem Reap, Cambodia | Dave Jackson | Talk with Dave",
@@ -450,6 +542,8 @@ const PAGE_SEO: Record<string, PageSEO> = {
         description:
           "Personalised 1-on-1 English lessons for professionals in Siem Reap. Taught by Dave Jackson, a native British coach with 10+ years experience. AI-generated curriculum tailored to your career.",
         serviceType: "English Tutoring",
+        datePublished: PUBLISHED_DATE,
+        dateModified: MODIFIED_DATE,
         areaServed: {
           "@type": "City",
           name: "Siem Reap",
@@ -483,6 +577,7 @@ const PAGE_SEO: Record<string, PageSEO> = {
           url: BASE_URL,
         },
       },
+      breadcrumbSchema("English Tutor in Siem Reap", "/siem-reap"),
     ],
   },
 };
