@@ -1,0 +1,1 @@
+- [SSR SEO pages pattern](ssr-seo-pages.md) — public pages get meta/schema/sitemap via server/seo-routes.ts PAGE_SEO map; all SSR routes look blank in dev (vite preamble quirk), verify with curl + build, not screenshots.

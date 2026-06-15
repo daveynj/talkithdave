@@ -1655,6 +1655,7 @@ h6 {
             <a href="#how-it-works">How It Works</a>
             <a href="#industries">Industries</a>
             <a href="#testimonials">Results</a>
+            <a href="/blog">Blog</a>
             <a href="#faq">FAQ</a>
           </div>
           <a href="https://calendly.com/daveynj113/your-first-lesson" target="_blank" rel="noopener noreferrer" className="nav-cta">
@@ -2085,6 +2086,7 @@ h6 {
               <div className="footer-column">
                 <h4>Quick Links</h4><a href="#how-it-works">How It Works</a><a
                   href="#industries">Industries</a><a href="#testimonials">Success Stories</a><a
+                    href="/blog">Blog</a><a
                     href="#faq">FAQ</a>
               </div>
               <div className="footer-column">

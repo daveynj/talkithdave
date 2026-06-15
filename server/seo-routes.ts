@@ -1,6 +1,7 @@
 import type { Express, Request, Response, NextFunction } from "express";
 import fs from "fs";
 import path from "path";
+import { blogPosts } from "@shared/blog";
 
 const BASE_URL = "https://talkwithdave.co.uk";
 const MODIFIED_DATE = new Date().toISOString().split("T")[0];
@@ -584,7 +585,93 @@ const PAGE_SEO: Record<string, PageSEO> = {
       breadcrumbSchema("English Tutor in Siem Reap", "/siem-reap"),
     ],
   },
+  "/blog": {
+    title: "English Learning Blog for Professionals | Talk with Dave",
+    description:
+      "Practical English tips for international professionals: business writing, speaking confidence, interview prep and more, from native British coach Dave Jackson.",
+    canonical: `${BASE_URL}/blog`,
+    ogImage: DEFAULT_IMAGE,
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        name: "Talk with Dave — English Learning Blog",
+        description:
+          "Practical English tips for international professionals, from native British coach Dave Jackson.",
+        url: `${BASE_URL}/blog`,
+        inLanguage: "en",
+        publisher: {
+          "@type": "Organization",
+          name: "Talk with Dave",
+          url: BASE_URL,
+          logo: { "@type": "ImageObject", url: DEFAULT_IMAGE },
+        },
+        blogPost: blogPosts.map((post) => ({
+          "@type": "BlogPosting",
+          headline: post.title,
+          url: `${BASE_URL}/blog/${post.slug}`,
+          datePublished: post.date,
+          dateModified: post.date,
+          author: { "@type": "Person", name: "Dave Jackson" },
+        })),
+      },
+      breadcrumbSchema("Blog", "/blog"),
+    ],
+  },
 };
+
+for (const post of blogPosts) {
+  const pagePath = `/blog/${post.slug}`;
+  PAGE_SEO[pagePath] = {
+    title: post.metaTitle,
+    description: post.metaDescription,
+    canonical: `${BASE_URL}${pagePath}`,
+    ogImage: post.image,
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: post.title,
+        description: post.metaDescription,
+        image: post.image,
+        datePublished: post.date,
+        dateModified: post.date,
+        url: `${BASE_URL}${pagePath}`,
+        mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}${pagePath}` },
+        author: {
+          "@type": "Person",
+          name: "Dave Jackson",
+          jobTitle: "Executive English Coach",
+          url: BASE_URL,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Talk with Dave",
+          url: BASE_URL,
+          logo: { "@type": "ImageObject", url: DEFAULT_IMAGE },
+        },
+        keywords: post.keywords.join(", "),
+        articleSection: post.category,
+        wordCount: post.content
+          .map((b) =>
+            "text" in b ? b.text : "items" in b ? b.items.join(" ") : ""
+          )
+          .join(" ")
+          .split(/\s+/).length,
+        inLanguage: "en",
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+          { "@type": "ListItem", position: 2, name: "Blog", item: `${BASE_URL}/blog` },
+          { "@type": "ListItem", position: 3, name: post.title, item: `${BASE_URL}${pagePath}` },
+        ],
+      },
+    ],
+  };
+}
 
 function escapeHtml(str: string): string {
   return str
@@ -719,7 +806,12 @@ const SITEMAP_META: Record<string, SitemapMeta> = {
   },
   "/b1-curriculum": { priority: 0.7, changefreq: "monthly" },
   "/siem-reap": { priority: 0.6, changefreq: "monthly" },
+  "/blog": { priority: 0.8, changefreq: "weekly" },
 };
+
+for (const post of blogPosts) {
+  SITEMAP_META[`/blog/${post.slug}`] = { priority: 0.7, changefreq: "monthly" };
+}
 
 function buildSitemap(): string {
   const today = new Date().toISOString().split("T")[0];
@@ -782,4 +874,16 @@ export function registerSEORoutes(app: Express): void {
       res.status(200).set("Content-Type", "text/html").end(html);
     });
   }
+
+  // Unknown blog slugs: return a true 404 with noindex so crawlers don't index
+  // soft-404 pages. Known slugs are registered above and take precedence.
+  app.get("/blog/:slug", (_req: Request, res: Response, next: NextFunction) => {
+    const template = getTemplate(isDev);
+    if (!template) return next();
+    const html = template.replace(
+      "</head>",
+      `  <meta name="robots" content="noindex" />\n</head>`
+    );
+    res.status(404).set("Content-Type", "text/html").end(html);
+  });
 }

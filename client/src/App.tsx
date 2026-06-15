@@ -26,6 +26,8 @@ import HRProfessionalsPage from "@/pages/HRProfessionalsPage";
 import ArchitectsPage from "@/pages/ArchitectsPage";
 import PharmacistsPage from "@/pages/PharmacistsPage";
 import AccountantsPage from "@/pages/AccountantsPage";
+import BlogIndex from "@/pages/BlogIndex";
+import BlogArticle from "@/pages/BlogArticle";
 
 function Router() {
   return (
@@ -46,6 +48,10 @@ function Router() {
       <Route path="/esl-lessons-for-architects" component={ArchitectsPage} />
       <Route path="/esl-lessons-for-pharmacists" component={PharmacistsPage} />
       <Route path="/esl-lessons-for-accountants" component={AccountantsPage} />
+
+      {/* Blog - must be before "/" */}
+      <Route path="/blog/:slug" component={BlogArticle} />
+      <Route path="/blog" component={BlogIndex} />
 
       {/* Other pages */}
       <Route path="/siem-reap" component={SiemReap} />
