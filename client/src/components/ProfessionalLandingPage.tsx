@@ -130,15 +130,9 @@ export function ProfessionalLandingPage({ data }: ProfessionalLandingPageProps) 
                         "name": "25-Hour Transformation Program",
                         "price": "850",
                         "priceCurrency": "USD",
-                        "description": "25 personalised one-on-one lessons ($30/hour). AI-built curriculum tailored to your job, industry, and goals."
+                        "description": "25 personalised one-on-one lessons (about $34 an hour). AI-built curriculum tailored to your job, industry, and goals."
                     }
-                ],
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "5.0",
-                    "bestRating": "5",
-                    "ratingCount": "150"
-                }
+                ]
             },
             {
                 "@context": "https://schema.org",

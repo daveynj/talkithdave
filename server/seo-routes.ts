@@ -96,15 +96,9 @@ function professionSchema(
           price: "850",
           priceCurrency: "USD",
           description:
-            "25 personalised one-on-one lessons ($30/hour). AI-built curriculum tailored to your job, industry, and goals.",
+            "25 personalised one-on-one lessons (about $34 an hour). AI-built curriculum tailored to your job, industry, and goals.",
         },
       ],
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "5.0",
-        bestRating: "5",
-        ratingCount: "150",
-      },
     },
     {
       "@context": "https://schema.org",
@@ -146,6 +140,7 @@ const HOME_SCHEMAS: object[] = [
           url: DEFAULT_IMAGE,
         },
         sameAs: [
+          "https://speakwithdave.com",
           "https://planwiseesl.com",
           "https://youtube.com/@englishteacherdave",
           "https://twitter.com/daveteacher1",
@@ -182,6 +177,7 @@ const HOME_SCHEMAS: object[] = [
       url: "https://www.southampton.ac.uk/",
     },
     sameAs: [
+      "https://speakwithdave.com",
       "https://planwiseesl.com",
       "https://youtube.com/@englishteacherdave",
       "https://twitter.com/daveteacher1",
