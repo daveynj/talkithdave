@@ -87,7 +87,7 @@ export const translations: Record<string, Translation> = {
       description: "Your personalized roadmap to fluency.",
       ctaPrimary: "Book Assessment ($20)",
       ctaSecondary: "Learn More",
-      socialProof: "Join 150+ students who improved their English"
+      socialProof: "Join 2,000+ students who improved their English"
     },
     nav: {
       home: "Home",
@@ -196,7 +196,7 @@ export const translations: Record<string, Translation> = {
       description: "跟随不仅教授英语，更革新在线英语教学方式的专业老师学习。",
       ctaPrimary: "预订首节课程仅需20美元",
       ctaSecondary: "了解更多",
-      socialProof: "加入150+已提升英语水平的学生行列"
+      socialProof: "加入2000+已提升英语水平的学生行列"
     },
     nav: {
       home: "首页",
@@ -301,7 +301,7 @@ export const translations: Record<string, Translation> = {
       description: "英語を教えるだけでなく、オンライン英語教育を革新する専門家から学びましょう。",
       ctaPrimary: "初回レッスンを20ドルで予約",
       ctaSecondary: "詳細を見る",
-      socialProof: "英語を向上させた150+名の生徒に参加"
+      socialProof: "英語を向上させた2000+名の生徒に参加"
     },
     nav: {
       home: "ホーム",
@@ -406,7 +406,7 @@ export const translations: Record<string, Translation> = {
       description: "영어를 가르치는 것뿐만 아니라 온라인 영어 교육을 혁신하는 전문가로부터 배워보세요.",
       ctaPrimary: "첫 레슨 $20로 예약하기",
       ctaSecondary: "자세히 보기",
-      socialProof: "영어 실력을 향상시킨 150+명의 학생들과 함께하세요"
+      socialProof: "영어 실력을 향상시킨 2000+명의 학생들과 함께하세요"
     },
     nav: {
       home: "홈",

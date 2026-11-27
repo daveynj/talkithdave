@@ -163,7 +163,7 @@ export default function Home() {
             }
           }
         ],
-        "sameAs": ["https://x.com/DaveTeacher1", "https://planwiseesl.com"]
+        "sameAs": ["https://speakwithdave.com", "https://x.com/DaveTeacher1", "https://planwiseesl.com"]
       },
       {
         "@context": "https://schema.org",
@@ -175,13 +175,7 @@ export default function Home() {
           "@type": "Person",
           "name": "Dave Jackson"
         },
-        "areaServed": "Worldwide",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5.0",
-          "bestRating": "5",
-          "ratingCount": "150"
-        }
+        "areaServed": "Worldwide"
       },
       {
         "@context": "https://schema.org",
@@ -209,7 +203,7 @@ export default function Home() {
             "name": "25-Hour Transformation Program",
             "price": "850",
             "priceCurrency": "USD",
-            "description": "25 personalised one-on-one lessons ($30/hour). AI-built curriculum tailored to your job, industry, and goals. Flexible payment options available.",
+            "description": "25 personalised one-on-one lessons (about $34 an hour). AI-built curriculum tailored to your job, industry, and goals. Flexible payment options available.",
             "url": "https://talkwithdave.co.uk"
           }
         ],
@@ -1674,8 +1668,8 @@ h6 {
         </div>
         <div className="hero-container">
           <div className="hero-content">
-            <div className="hero-badge"><span className="badge-icon">⭐</span><span>Trusted by 150+ Professionals
-              Worldwide</span></div>
+            <div className="hero-badge"><span className="badge-icon">⭐</span><span>Over 2,000 Students Taught
+              Since 2015</span></div>
             <h1 className="hero-title">Command the <span className="gradient-text">Boardroom</span> in English</h1>
             <p className="hero-subtitle">The 25-hour transformation program for <strong>Finance, Medical, and Sales
               executives</strong> who need to speak with British-level authority.</p>
@@ -1720,11 +1714,8 @@ h6 {
       <section className="social-proof-bar">
         <div className="container">
           <div className="proof-items">
-            <div className="proof-item"><span className="proof-number">150+</span><span className="proof-label">Professionals
-              Trained</span></div>
-            <div className="proof-divider"></div>
-            <div className="proof-item"><span className="proof-number">4.9</span><span className="proof-label">Average
-              Rating</span></div>
+            <div className="proof-item"><span className="proof-number">2,000+</span><span className="proof-label">Students
+              Taught</span></div>
             <div className="proof-divider"></div>
             <div className="proof-item"><span className="proof-number">15+</span><span className="proof-label">Countries
               Served</span></div>
@@ -1910,7 +1901,7 @@ h6 {
                 <h3>25-Hour Transformation</h3>
                 <div className="pricing-price"><span className="price-currency">$</span><span
                   className="price-amount">850</span></div>
-                <p className="pricing-duration">Complete program • $30/hour</p>
+                <p className="pricing-duration">Complete program • about $34/hour</p>
               </div>
               <ul className="pricing-features">
                 <li><span className="check">✓</span> 25 one-hour sessions</li>
@@ -2017,8 +2008,8 @@ h6 {
                   University of Southampton</span></div>
                 <div className="credential"><span className="credential-icon">📅</span><span>10+ Years Teaching
                   Experience</span></div>
-                <div className="credential"><span className="credential-icon">🌍</span><span>150+ Professionals
-                  Trained</span></div>
+                <div className="credential"><span className="credential-icon">🌍</span><span>2,000+ Students
+                  Taught</span></div>
               </div>
             </div>
           </div>
@@ -2067,7 +2058,7 @@ h6 {
             </div>
             <div className="final-trust-signals">
               <div className="trust-item"><span>🇬🇧</span><span>Native UK Speaker</span></div>
-              <div className="trust-item"><span>⭐</span><span>4.9/5 Rating</span></div>
+              <div className="trust-item"><span>📅</span><span>Teaching Since 2015</span></div>
               <div className="trust-item"><span>🛡️</span><span>Free Assessment</span></div>
             </div>
           </div>
@@ -2114,7 +2105,7 @@ h6 {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2026 Talk with Dave. All rights reserved.</p>
+            <p>&copy; 2026 Talk with Dave. All rights reserved. My main site is now <a href="https://speakwithdave.com">speakwithdave.com</a>: current prices, lessons and reviews.</p>
           </div>
         </div>
       </footer>
