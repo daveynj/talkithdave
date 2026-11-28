@@ -47,7 +47,21 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"></noscript>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Plain HTML for search engines and AI crawlers that do not run JavaScript. React replaces it on load. -->
+      <main style="max-width:640px;margin:40px auto;padding:0 16px;font-family:Arial,sans-serif;line-height:1.5">
+        <h1>Dave Jackson, British English teacher</h1>
+        <p>
+          Dave now teaches at <a href="https://speakwithdave.com/">speakwithdave.com</a>: private one-to-one English conversation
+          lessons online, built around your job. Teaching English since 2015, to over 2,000 students.
+        </p>
+        <p>
+          <a href="https://speakwithdave.com/how-lessons-work">How lessons work</a> ·
+          <a href="https://speakwithdave.com/reviews">Student reviews</a> ·
+          <a href="https://speakwithdave.com/book">Book a free diagnostic</a>
+        </p>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
     <script>
       window.replainSettings = { id: '574522cf-d403-40e8-b7d3-d9e268469adf' };
